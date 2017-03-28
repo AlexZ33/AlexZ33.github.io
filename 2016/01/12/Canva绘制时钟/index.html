@@ -41,7 +41,7 @@ var _hmt = _hmt || [];
 
   
   
-  <link href="../../lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="../../../../lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -75,33 +75,54 @@ var _hmt = _hmt || [];
 
 
 
-<link href="../../lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="../../../../lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="../../css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<link href="../../../../css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="前端,日志,canvas,时钟,慕课网," />
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico?v=5.1.0" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=5.1.0" />
 
 
 
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="赵康的个人博客">
-<meta property="og:url" content="http://jxdxsw.com/tags/气泡效果/index.html">
+<meta name="description" content="Canvas 绘制时钟演示链接  主要知识点
+
+canvas画图
+rotate(),lineCap(),save(),store()等api
+
+总体思路和教程慕课网 Canvas 绘制时钟">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Canvas 绘制时钟">
+<meta property="og:url" content="http://jxdxsw.com/2016/01/12/Canva绘制时钟/index.html">
 <meta property="og:site_name" content="赵康的个人博客">
+<meta property="og:description" content="Canvas 绘制时钟演示链接  主要知识点
+
+canvas画图
+rotate(),lineCap(),save(),store()等api
+
+总体思路和教程慕课网 Canvas 绘制时钟">
+<meta property="og:image" content="http://on891bjlf.bkt.clouddn.com/gif/GIF.gif">
+<meta property="og:updated_time" content="2017-03-28T12:07:03.971Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="赵康的个人博客">
+<meta name="twitter:title" content="Canvas 绘制时钟">
+<meta name="twitter:description" content="Canvas 绘制时钟演示链接  主要知识点
+
+canvas画图
+rotate(),lineCap(),save(),store()等api
+
+总体思路和教程慕课网 Canvas 绘制时钟">
+<meta name="twitter:image" content="http://on891bjlf.bkt.clouddn.com/gif/GIF.gif">
 
 
 
@@ -129,14 +150,14 @@ var _hmt = _hmt || [];
 
 
 
-  <link rel="canonical" href="http://jxdxsw.com/tags/气泡效果/"/>
+  <link rel="canonical" href="http://jxdxsw.com/2016/01/12/Canva绘制时钟/"/>
 
 
 
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title> 标签: 气泡效果 | 赵康的个人博客 </title>
+  <title> Canvas 绘制时钟 | 赵康的个人博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -161,7 +182,7 @@ var _hmt = _hmt || [];
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -323,46 +344,261 @@ var _hmt = _hmt || [];
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        气泡效果
-        <small>标签</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AlexZ33">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="赵康的个人博客">
+    </span>
+
+<span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">38(字)</span> 
+         </span>
+        
+         
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Canvas 绘制时钟
+              
+            
+          </h1>
+        
+        
+
+        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-12T09:44:12+08:00">
+                2016-01-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../../../../categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="" class="leancloud_visitors" data-flag-title="Canvas 绘制时钟">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h2 id="Canvas-绘制时钟"><a href="#Canvas-绘制时钟" class="headerlink" title="Canvas 绘制时钟"></a><b>Canvas 绘制时钟<b></b></b></h2><h2 id="演示链接"><a href="#演示链接" class="headerlink" title="演示链接  "></a><a href="http://jxdxsw.com/canvas_demo/clock.html">演示链接</a>  </h2><p><img src="http://on891bjlf.bkt.clouddn.com/gif/GIF.gif" alt="显示效果"><br>主要知识点</p>
+<ul>
+<li>canvas画图</li>
+<li>rotate(),lineCap(),save(),store()等api</li>
+</ul>
+<h2 id="总体思路和教程"><a href="#总体思路和教程" class="headerlink" title="总体思路和教程"></a>总体思路和教程</h2><p><a href="http://www.imooc.com/learn/612" target="_blank" rel="external">慕课网 Canvas 绘制时钟</a></p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="../../2016/01/07/CSS3实现三角形和气泡效果/" itemprop="url">
-              
-                <span itemprop="name">CSS3实现三角形和气泡效果</span>
-              
-            </a>
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="http://on891bjlf.bkt.clouddn.com/image/wechat微信公众号.jpg" alt="AlexZ33 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码订阅公众号</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>如果文章对您有用请随意打赏，谢谢支持！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://on891bjlf.bkt.clouddn.com/image/2code/wechatpay.jpg" alt="AlexZ33 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://on891bjlf.bkt.clouddn.com/image/2code/alipay.png" alt="AlexZ33 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-01-07T18:44:12+08:00"
-              content="2016-01-07" >
-          01-07
-        </time>
-      </div>
 
-    </header>
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      AlexZ33
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://jxdxsw.com/2016/01/12/Canva绘制时钟/" title="Canvas 绘制时钟">http://jxdxsw.com/2016/01/12/Canva绘制时钟/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="../../../../tags/前端/" rel="tag"># 前端</a>
+          
+            <a href="../../../../tags/日志/" rel="tag"># 日志</a>
+          
+            <a href="../../../../tags/canvas/" rel="tag"># canvas</a>
+          
+            <a href="../../../../tags/时钟/" rel="tag"># 时钟</a>
+          
+            <a href="../../../../tags/慕课网/" rel="tag"># 慕课网</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="../../07/CSS3实现三角形和气泡效果/" rel="next" title="CSS3实现三角形和气泡效果">
+                <i class="fa fa-chevron-left"></i> CSS3实现三角形和气泡效果
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -370,6 +606,12 @@ var _hmt = _hmt || [];
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
 
         </div>
         
@@ -389,8 +631,17 @@ var _hmt = _hmt || [];
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg"
@@ -404,7 +655,7 @@ var _hmt = _hmt || [];
 
           
             <div class="site-state-item site-state-posts">
-              <a href="../../index.html">
+              <a href="../../../../index.html">
                 <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
@@ -415,7 +666,7 @@ var _hmt = _hmt || [];
             
             
             <div class="site-state-item site-state-categories">
-              <a href="../../categories/index.html">
+              <a href="../../../../categories/index.html">
                 <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -426,7 +677,7 @@ var _hmt = _hmt || [];
             
             
             <div class="site-state-item site-state-tags">
-              <a href="../index.html">
+              <a href="../../../../tags/index.html">
                 <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
@@ -539,6 +790,22 @@ var _hmt = _hmt || [];
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Canvas-绘制时钟"><span class="nav-number">1.</span> <span class="nav-text">Canvas 绘制时钟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#演示链接"><span class="nav-number">2.</span> <span class="nav-text">演示链接  </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总体思路和教程"><span class="nav-number">3.</span> <span class="nav-text">总体思路和教程</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -623,49 +890,53 @@ var _hmt = _hmt || [];
 
 
   
-  <script type="text/javascript" src="../../lib/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="../../../../lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="../../lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="../../../../lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
-  <script type="text/javascript" src="../../lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="../../../../lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
-  <script type="text/javascript" src="../../lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="../../../../lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="../../lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="../../../../lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="../../lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="../../js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="../../js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="../../js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="../../js/src/schemes/pisces.js?v=5.1.0"></script>
-
+  <script type="text/javascript" src="../../../../lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
 
+
+  <script type="text/javascript" src="../../../../js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="../../../../js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
   
 
 
-  <script type="text/javascript" src="../../js/src/bootstrap.js?v=5.1.0"></script>
+  <script type="text/javascript" src="../../../../js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="../../../../js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="../../../../js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="../../../../js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="../../../../js/src/bootstrap.js?v=5.1.0"></script>
 
 
 
@@ -693,6 +964,10 @@ var _hmt = _hmt || [];
   
     
 
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2128477"></script>
+      <!-- UY END -->
     
   
 
@@ -841,14 +1116,14 @@ var _hmt = _hmt || [];
   
   
   
-  <link rel="stylesheet" href="../../lib/algolia-instant-search/instantsearch.min.css">
+  <link rel="stylesheet" href="../../../../lib/algolia-instant-search/instantsearch.min.css">
 
   
   
-  <script src="../../lib/algolia-instant-search/instantsearch.min.js"></script>
+  <script src="../../../../lib/algolia-instant-search/instantsearch.min.js"></script>
   
 
-  <script src="../../js/src/algolia-search.js?v=5.1.0"></script>
+  <script src="../../../../js/src/algolia-search.js?v=5.1.0"></script>
 
 
 
