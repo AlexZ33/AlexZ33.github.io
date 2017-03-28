@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[canvas������������֪����¼ҳ�涯����]]></title>
+      <url>%2F2016%2F01%2F17%2Fcanvas%E4%BB%BF%E7%9F%A5%E4%B9%8E%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2%E5%8A%A8%E7%94%BB%2F</url>
+      <content type="text"><![CDATA[canvas������������֪����¼ҳ�涯���� ��ʾ���� ��Ҫ֪ʶ�� canvas��ͼ es6 class �﷨Ӧ�� ����˼· ���� canvas ���� canvas ��Բ�ͻ�ֱ�� ԲȦ�ƶ� �����㻭Բ��˸�䶯���Լ���������ԭ�� requestAnimationFrame ���»��� �ο���ECMAScript 6 ���� Class��ѧcanvas��֪����¼ҳ�涯��]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[Canvas 绘制时钟]]></title>
       <url>%2F2016%2F01%2F12%2FCanva%E7%BB%98%E5%88%B6%E6%97%B6%E9%92%9F%2F</url>
       <content type="text"><![CDATA[Canvas 绘制时钟演示链接 主要知识点 canvas画图 rotate(),lineCap(),save(),store()等api 总体思路和教程慕课网 Canvas 绘制时钟]]></content>
