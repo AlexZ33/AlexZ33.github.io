@@ -3,9 +3,16 @@
   
     
     <entry>
-      <title><![CDATA[canvas������������֪����¼ҳ�涯����]]></title>
+      <title></title>
+      <url>%2F2017%2F03%2F29%2FCanvas%E7%BB%98%E5%88%B6%E9%97%AA%E7%83%81%E7%9A%84%E6%98%9F%E6%98%9F%2F</url>
+      <content type="text"></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[canvas背景动画（仿知乎登录页面动画）]]></title>
       <url>%2F2016%2F01%2F17%2Fcanvas%E4%BB%BF%E7%9F%A5%E4%B9%8E%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2%E5%8A%A8%E7%94%BB%2F</url>
-      <content type="text"><![CDATA[canvas������������֪����¼ҳ�涯���� ��ʾ���� ��Ҫ֪ʶ�� canvas��ͼ es6 class �﷨Ӧ�� ����˼· ���� canvas ���� canvas ��Բ�ͻ�ֱ�� ԲȦ�ƶ� �����㻭Բ��˸�䶯���Լ���������ԭ�� requestAnimationFrame ���»��� �ο���ECMAScript 6 ���� Class��ѧcanvas��֪����¼ҳ�涯��]]></content>
+      <content type="text"><![CDATA[canvas背景动画（仿知乎登录页面动画） 演示链接 主要知识点 canvas画图 es6 class 语法应用 总体思路 创建 canvas 对象 canvas 画圆和画直线 圆圈移动 鼠标点画圆闪烁变动，以及连线其他原点 requestAnimationFrame 更新画面 参考：requestAnimationFrameECMAScript 6 入门 Class初学canvas仿知乎登录页面动画]]></content>
     </entry>
 
     
