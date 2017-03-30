@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title></title>
+      <url>%2F2017%2F03%2F30%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB%2F</url>
+      <content type="text"></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[canvas绘制闪烁星星效果]]></title>
       <url>%2F2016%2F01%2F25%2FCanvas%E7%BB%98%E5%88%B6%E9%97%AA%E7%83%81%E7%9A%84%E6%98%9F%E6%98%9F%2F</url>
       <content type="text"><![CDATA[canvas绘制闪烁星星效果 演示链接 主要知识点 如何轮播序列帧 canvas API drawImage(); globalAlpha; Save; Restore 如何添加鼠标事件 循环调用 Window API -requestAnimFrame(function(){}); -setTimeout(function(){},time); -setInterval(function(){},time); 三者的区别 总体思路 搭建网页结构 绘制背景 绘制女孩图片 鼠标点画圆闪烁变动，以及连线其他原点 requestAnimationFrame 更新画面 参考：慕课网 canvas实现星星闪烁特效GameLoop的几种实现方式Javascript中的setTimeout,setInterval,requestAnimFrame[Request Animation Frame for Better Performance]https://software.intel.com/en-us/html5/hub/blogs/request-animation-frame-for-better-performance/]]></content>
