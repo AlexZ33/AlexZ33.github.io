@@ -52,16 +52,16 @@
 
     
     <entry>
-      <title><![CDATA[js闭包]]></title>
-      <url>%2F2016%2F03%2F07%2Fjs%E9%97%AD%E5%8C%85%2F</url>
-      <content type="text"><![CDATA[js闭包 闭包（1）概念闭包是指有权访问另一个函数作用域中的变量的函数。（2）特性闭包只能取得包含函数中任何变量的最后一个值。（3）创建方式在一个函数内部创建另一个函数。（4）原理在一个函数内部中定义的函数会将包含函数（外部函数）的活动对象添加到其作用域中，直至解除对内部函数的应用，内部函数被销毁，外部函数的活动对象才会被销毁。（5）实例 12345678910111213141516function closure()&#123; var result=[]; for (var i = 0; i &lt; 4; i++) &#123; result[i]=function()&#123; console.log(i); return i; &#125; &#125;; return result;&#125;var result=closure();for (var i = 0; i &lt; 4; i++) &#123; result[i]();&#125;;//4 4 4 4]]></content>
+      <title><![CDATA[CSS实现简单图片展示]]></title>
+      <url>%2F2016%2F03%2F07%2Fcss%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E5%9B%BE%E7%89%87%E5%B1%95%E7%A4%BA%2F</url>
+      <content type="text"><![CDATA[CSS实现简单图片展示 效果： css部分123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051 div,ul,li,dl,dt,dd&#123; margin:0; padding:0;&#125;ul,li,dl,dt,dd&#123; list-style:none;&#125;.demo&#123; margin:0 auto; width:930px;&#125;.demo ul li&#123; float:left; width:300px; margin-right:6px; position:relative;&#125;.demo ul li img&#123; border:none; position:relative; z-index:22;&#125;.demo ul li a&#123; width:300px; display:block; border:2px solid #ccc;&#125;.demo ul li a:hover&#123; border:2px solid #C03;&#125;.demo ul li a span&#123; position:absolute; z-index:33; bottom:2px; left:2px; width:300px; height:40px; filter:alpha(Opacity=50); -moz-opacity:0.5; opacity: 0.5; background:#000; color:#fff; line-height:40px; text-align:left; display:none;&#125;.demo ul li a:hover span&#123; display:block;&#125; html部分 &lt;div class=&quot;demo&quot;&gt; &lt;ul&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;1.jpg&quot; /&gt; &lt;span&gt;keep moving&lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;2.jpg&quot; /&gt; &lt;span&gt;stay hungry &lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;3.jpg&quot; /&gt; &lt;span&gt;stay foolish&lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;/ul&gt; 参考慕课网 图片展示特效]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[CSS实现简单图片展示]]></title>
-      <url>%2F2016%2F03%2F07%2Fcss%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E5%9B%BE%E7%89%87%E5%B1%95%E7%A4%BA%2F</url>
-      <content type="text"><![CDATA[CSS实现简单图片展示 效果： css部分123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051 div,ul,li,dl,dt,dd&#123; margin:0; padding:0;&#125;ul,li,dl,dt,dd&#123; list-style:none;&#125;.demo&#123; margin:0 auto; width:930px;&#125;.demo ul li&#123; float:left; width:300px; margin-right:6px; position:relative;&#125;.demo ul li img&#123; border:none; position:relative; z-index:22;&#125;.demo ul li a&#123; width:300px; display:block; border:2px solid #ccc;&#125;.demo ul li a:hover&#123; border:2px solid #C03;&#125;.demo ul li a span&#123; position:absolute; z-index:33; bottom:2px; left:2px; width:300px; height:40px; filter:alpha(Opacity=50); -moz-opacity:0.5; opacity: 0.5; background:#000; color:#fff; line-height:40px; text-align:left; display:none;&#125;.demo ul li a:hover span&#123; display:block;&#125; html部分 &lt;div class=&quot;demo&quot;&gt; &lt;ul&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;1.jpg&quot; /&gt; &lt;span&gt;keep moving&lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;2.jpg&quot; /&gt; &lt;span&gt;stay hungry &lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;3.jpg&quot; /&gt; &lt;span&gt;stay foolish&lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;/ul&gt; 参考慕课网 图片展示特效]]></content>
+      <title><![CDATA[js闭包]]></title>
+      <url>%2F2016%2F03%2F07%2Fjs%E9%97%AD%E5%8C%85%2F</url>
+      <content type="text"><![CDATA[js闭包 闭包（1）概念闭包是指有权访问另一个函数作用域中的变量的函数。（2）特性闭包只能取得包含函数中任何变量的最后一个值。（3）创建方式在一个函数内部创建另一个函数。（4）原理在一个函数内部中定义的函数会将包含函数（外部函数）的活动对象添加到其作用域中，直至解除对内部函数的应用，内部函数被销毁，外部函数的活动对象才会被销毁。（5）实例 12345678910111213141516function closure()&#123; var result=[]; for (var i = 0; i &lt; 4; i++) &#123; result[i]=function()&#123; console.log(i); return i; &#125; &#125;; return result;&#125;var result=closure();for (var i = 0; i &lt; 4; i++) &#123; result[i]();&#125;;//4 4 4 4]]></content>
     </entry>
 
     
@@ -108,16 +108,16 @@
 
     
     <entry>
-      <title><![CDATA[前端面试题汇总]]></title>
-      <url>%2F2015%2F12%2F30%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB%2F</url>
-      <content type="text"><![CDATA[前端面试题汇总 罗列一些面试常见问题前端面试（一）前端面试（二）前端面试（三）前端面试（四） ·END·]]></content>
+      <title><![CDATA[Linux 各目录的作用]]></title>
+      <url>%2F2015%2F12%2F30%2FLinux%E5%90%84%E7%9B%AE%E5%BD%95%E7%9A%84%E4%BD%9C%E7%94%A8%2F</url>
+      <content type="text"><![CDATA[/根目录 /bin bin是binary的缩写。这个目录沿袭了UNIX系统的结构，存放着使用者最经常使用的命令。例如cp、ls、cat，等等。命令保存目录（普通用户就可以读取的命令） 根目录下的bin和sbin，usr目录下的bin和sbin，这四个目录都是用来保存系统命令的。 其中，bin目录下的命令任何用户都可以执行，sbin目录下只有root才可以执行。 linux使用此方式来区分用户权限。 /boot启动目录，启动相关文件，这里存放的是启动Linux时使用的一些核心文件。 /dev设备文件保存目录dev是device（设备）的缩写。这个目录下是所有Linux的外部设备，其功能类似DOS下的.sys和Win下的.vxd。在Linux中设备和文件是用同种方法访问的。例如：/dev/hda代表第一个物理IDE硬盘。/etc配置文件保存目录这个目录用来存放系统管理所需要的配置文件和子目录。/home普通用户的家目录用户的主目录，比如说有个用户叫zk，那他的主目录就是/home/zk也可以用~zk表示。 /lib系统库保存目录这个目录里存放着系统最基本的动态链接共享库，其作用类似于Windows里的.dll文件。几乎所有的应用程序都须要用到这些共享库。 /mnt系统挂载目录这个目录是空的，系统提供这个目录是让用户临时挂载别的文件系统。/media挂载目录 /root超级用户的家目录系统管理员（也叫超级用户）的主目录。作为系统的拥有者，总要有些特权啊！比如单独拥有一个目录。 /tmp临时目录这个目录不用说，一定是用来存放一些临时文件的地方了。 /sbin命令保存目录（超级用户才能使用的目录）s就是Super User的意思，也就是说这里存放的是系统管理员使用的管理程序。 /proc直接写入内存（是内存中有关系统进程的实时信息）这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。也就是说，这个目录的内容不在硬盘上而是在内存里。 /sys直接写入内存（是有关系统内核以及驱动的实时信息）这个目录中存放着那些不断在扩充着的东西，为了保持/usr的相对稳定，那些经常被修改的目录可以放在这个目录下，实际上许多系统管理员都是这样干的。顺带说一下系统的日志文件就在/var/log目录中。 porc同sys目录不能直接操作，这两个目录保存的是内存的挂载点。 其中的数据直接写在内存中。避免数据丢失或由于内存溢出导致系统崩溃。 /usr系统软件资源目录这是最庞大的目录，我们要用到的应用程序和文件几乎都存放在这个目录下。其中包含以下子目录： /usr/bin存放着许多应用程序；系统命令（普通用户） /usr/sbin给超级用户使用的一些管理程序就放在这里；系统命令（超级用户） /usr/includeLinux下开发和编译应用程序需要的头文件，在这里查找； /usr/lib存放一些常用的动态链接共享库和静态档案库； /usr/local这是提供给一般用户的/usr目录，在这里安装软件最适合； /usr/srcLinux开放的源代码就存在这个目录，爱好者们别放过哦！ /var系统相关文档内容这个目录中存放着那些不断在扩充着的东西，为了保持/usr的相对稳定，那些经常被修改的目录可以放在这个目录下，实际上许多系统管理员都是这样干的。顺带说一下系统的日志文件就在/var/log目录中。]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[Linux 各目录的作用]]></title>
-      <url>%2F2015%2F12%2F30%2FLinux%E5%90%84%E7%9B%AE%E5%BD%95%E7%9A%84%E4%BD%9C%E7%94%A8%2F</url>
-      <content type="text"><![CDATA[/根目录 /bin bin是binary的缩写。这个目录沿袭了UNIX系统的结构，存放着使用者最经常使用的命令。例如cp、ls、cat，等等。命令保存目录（普通用户就可以读取的命令） 根目录下的bin和sbin，usr目录下的bin和sbin，这四个目录都是用来保存系统命令的。 其中，bin目录下的命令任何用户都可以执行，sbin目录下只有root才可以执行。 linux使用此方式来区分用户权限。 /boot启动目录，启动相关文件，这里存放的是启动Linux时使用的一些核心文件。 /dev设备文件保存目录dev是device（设备）的缩写。这个目录下是所有Linux的外部设备，其功能类似DOS下的.sys和Win下的.vxd。在Linux中设备和文件是用同种方法访问的。例如：/dev/hda代表第一个物理IDE硬盘。/etc配置文件保存目录这个目录用来存放系统管理所需要的配置文件和子目录。/home普通用户的家目录用户的主目录，比如说有个用户叫zk，那他的主目录就是/home/zk也可以用~zk表示。 /lib系统库保存目录这个目录里存放着系统最基本的动态链接共享库，其作用类似于Windows里的.dll文件。几乎所有的应用程序都须要用到这些共享库。 /mnt系统挂载目录这个目录是空的，系统提供这个目录是让用户临时挂载别的文件系统。/media挂载目录 /root超级用户的家目录系统管理员（也叫超级用户）的主目录。作为系统的拥有者，总要有些特权啊！比如单独拥有一个目录。 /tmp临时目录这个目录不用说，一定是用来存放一些临时文件的地方了。 /sbin命令保存目录（超级用户才能使用的目录）s就是Super User的意思，也就是说这里存放的是系统管理员使用的管理程序。 /proc直接写入内存（是内存中有关系统进程的实时信息）这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。也就是说，这个目录的内容不在硬盘上而是在内存里。 /sys直接写入内存（是有关系统内核以及驱动的实时信息）这个目录中存放着那些不断在扩充着的东西，为了保持/usr的相对稳定，那些经常被修改的目录可以放在这个目录下，实际上许多系统管理员都是这样干的。顺带说一下系统的日志文件就在/var/log目录中。 porc同sys目录不能直接操作，这两个目录保存的是内存的挂载点。 其中的数据直接写在内存中。避免数据丢失或由于内存溢出导致系统崩溃。 /usr系统软件资源目录这是最庞大的目录，我们要用到的应用程序和文件几乎都存放在这个目录下。其中包含以下子目录： /usr/bin存放着许多应用程序；系统命令（普通用户） /usr/sbin给超级用户使用的一些管理程序就放在这里；系统命令（超级用户） /usr/includeLinux下开发和编译应用程序需要的头文件，在这里查找； /usr/lib存放一些常用的动态链接共享库和静态档案库； /usr/local这是提供给一般用户的/usr目录，在这里安装软件最适合； /usr/srcLinux开放的源代码就存在这个目录，爱好者们别放过哦！ /var系统相关文档内容这个目录中存放着那些不断在扩充着的东西，为了保持/usr的相对稳定，那些经常被修改的目录可以放在这个目录下，实际上许多系统管理员都是这样干的。顺带说一下系统的日志文件就在/var/log目录中。]]></content>
+      <title><![CDATA[前端面试题汇总]]></title>
+      <url>%2F2015%2F12%2F30%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB%2F</url>
+      <content type="text"><![CDATA[前端面试题汇总 罗列一些面试常见问题前端面试（一）前端面试（二）前端面试（三）前端面试（四） ·END·]]></content>
     </entry>
 
     
