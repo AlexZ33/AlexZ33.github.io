@@ -66,16 +66,16 @@
 
     
     <entry>
-      <title><![CDATA[js闭包]]></title>
-      <url>%2F2016%2F03%2F07%2Fjs%E9%97%AD%E5%8C%85%2F</url>
-      <content type="text"><![CDATA[js闭包 闭包（1）概念闭包是指有权访问另一个函数作用域中的变量的函数。（2）特性闭包只能取得包含函数中任何变量的最后一个值。（3）创建方式在一个函数内部创建另一个函数。（4）原理在一个函数内部中定义的函数会将包含函数（外部函数）的活动对象添加到其作用域中，直至解除对内部函数的应用，内部函数被销毁，外部函数的活动对象才会被销毁。（5）实例 12345678910111213141516function closure()&#123; var result=[]; for (var i = 0; i &lt; 4; i++) &#123; result[i]=function()&#123; console.log(i); return i; &#125; &#125;; return result;&#125;var result=closure();for (var i = 0; i &lt; 4; i++) &#123; result[i]();&#125;;//4 4 4 4]]></content>
+      <title><![CDATA[CSS实现简单图片展示]]></title>
+      <url>%2F2016%2F03%2F07%2Fcss%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E5%9B%BE%E7%89%87%E5%B1%95%E7%A4%BA%2F</url>
+      <content type="text"><![CDATA[CSS实现简单图片展示 效果： css部分123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051 div,ul,li,dl,dt,dd&#123; margin:0; padding:0;&#125;ul,li,dl,dt,dd&#123; list-style:none;&#125;.demo&#123; margin:0 auto; width:930px;&#125;.demo ul li&#123; float:left; width:300px; margin-right:6px; position:relative;&#125;.demo ul li img&#123; border:none; position:relative; z-index:22;&#125;.demo ul li a&#123; width:300px; display:block; border:2px solid #ccc;&#125;.demo ul li a:hover&#123; border:2px solid #C03;&#125;.demo ul li a span&#123; position:absolute; z-index:33; bottom:2px; left:2px; width:300px; height:40px; filter:alpha(Opacity=50); -moz-opacity:0.5; opacity: 0.5; background:#000; color:#fff; line-height:40px; text-align:left; display:none;&#125;.demo ul li a:hover span&#123; display:block;&#125; html部分 &lt;div class=&quot;demo&quot;&gt; &lt;ul&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;1.jpg&quot; /&gt; &lt;span&gt;keep moving&lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;2.jpg&quot; /&gt; &lt;span&gt;stay hungry &lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;3.jpg&quot; /&gt; &lt;span&gt;stay foolish&lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;/ul&gt; 参考慕课网 图片展示特效]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[CSS实现简单图片展示]]></title>
-      <url>%2F2016%2F03%2F07%2Fcss%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E5%9B%BE%E7%89%87%E5%B1%95%E7%A4%BA%2F</url>
-      <content type="text"><![CDATA[CSS实现简单图片展示 效果： css部分123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051 div,ul,li,dl,dt,dd&#123; margin:0; padding:0;&#125;ul,li,dl,dt,dd&#123; list-style:none;&#125;.demo&#123; margin:0 auto; width:930px;&#125;.demo ul li&#123; float:left; width:300px; margin-right:6px; position:relative;&#125;.demo ul li img&#123; border:none; position:relative; z-index:22;&#125;.demo ul li a&#123; width:300px; display:block; border:2px solid #ccc;&#125;.demo ul li a:hover&#123; border:2px solid #C03;&#125;.demo ul li a span&#123; position:absolute; z-index:33; bottom:2px; left:2px; width:300px; height:40px; filter:alpha(Opacity=50); -moz-opacity:0.5; opacity: 0.5; background:#000; color:#fff; line-height:40px; text-align:left; display:none;&#125;.demo ul li a:hover span&#123; display:block;&#125; html部分 &lt;div class=&quot;demo&quot;&gt; &lt;ul&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;1.jpg&quot; /&gt; &lt;span&gt;keep moving&lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;2.jpg&quot; /&gt; &lt;span&gt;stay hungry &lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;3.jpg&quot; /&gt; &lt;span&gt;stay foolish&lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;/ul&gt; 参考慕课网 图片展示特效]]></content>
+      <title><![CDATA[js闭包]]></title>
+      <url>%2F2016%2F03%2F07%2Fjs%E9%97%AD%E5%8C%85%2F</url>
+      <content type="text"><![CDATA[js闭包 闭包（1）概念闭包是指有权访问另一个函数作用域中的变量的函数。（2）特性闭包只能取得包含函数中任何变量的最后一个值。（3）创建方式在一个函数内部创建另一个函数。（4）原理在一个函数内部中定义的函数会将包含函数（外部函数）的活动对象添加到其作用域中，直至解除对内部函数的应用，内部函数被销毁，外部函数的活动对象才会被销毁。（5）实例 12345678910111213141516function closure()&#123; var result=[]; for (var i = 0; i &lt; 4; i++) &#123; result[i]=function()&#123; console.log(i); return i; &#125; &#125;; return result;&#125;var result=closure();for (var i = 0; i &lt; 4; i++) &#123; result[i]();&#125;;//4 4 4 4]]></content>
     </entry>
 
     
