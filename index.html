@@ -335,6 +335,206 @@ var _hmt = _hmt || [];
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com2017/02/04/CSS_Sprite/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AlexZ33">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="镜心的小树屋">
+    </span>
+
+<span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">991(字)</span> 
+         </span>
+        
+         
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="2017/02/04/CSS_Sprite/" itemprop="url">
+                  CSS Sprite 雪碧图
+                </a>
+              
+            
+          </h1>
+        
+        
+
+        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-04T07:44:12+08:00">
+                2017-02-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="2017/02/04/CSS_Sprite/" class="leancloud_visitors" data-flag-title="CSS Sprite 雪碧图">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>CSS Sprite 雪碧图</strong></p>
+<blockquote>
+<p>为了减少http请求数量，加速网页内容显示，很多网站的导航栏图标、登录框图片等，使用的并不是<code>&lt;image&gt;</code>标签，而是CSS Sprite雪碧图。</p>
+</blockquote>
+<p>说到雪碧图，我们需要稍微扯一扯，浏览器端优化。</p>
+<p>在下面这篇文章  <a href="http://jxdxsw.com/2016/01/12/http/">在浏览器输入url到页面打开，都做了些什么？</a></p>
+<p>我们知道了，http发出和响应的全过程。而要优化页面显示，加快速度，这个过程过程中大部分，我们是控制不了的，我们只能从浏览器端入手来找一些可以做的事情。那么，我们可以做些什么呢？</p>
+<ul>
+<li><strong>少发送请求</strong><ul>
+<li>把要加载的js文件（css文件同理）合并成一个（尽量少）文件，则可以向服务器少发送请求，从而减少等待时间。</li>
+</ul>
+</li>
+<li><strong>压缩文件</strong><ul>
+<li>使用压缩之后的js、css、img文件，同样可以减少请求时间。这里可以使用<code>gulp</code>，<code>webpack</code>这些自动化工具</li>
+</ul>
+</li>
+<li><strong>Css Sprite</strong><ul>
+<li>这是css的一项技术，将图片尽可能多的合并成一个图片文件，第一次使用的时候加载这张图片，然后浏览器会缓存下来，其他地方再使用的时候就不需要重新请求了。</li>
+</ul>
+</li>
+<li><strong>js／css位置</strong><ul>
+<li>css引用建议放在head标签里面；js脚本建议放到body内容的最后，原因：等待js加载或者脚本有错误的时候不会影响html页面的展示。</li>
+</ul>
+</li>
+</ul>
+<p>ps:更多详细内容可以看这里</p>
+<p><a href="http://tongji.baidu.com/web/help/article?id=255&amp;type=0" target="_blank" rel="external">百度速度统计及优化</a></p>
+<p><a href="https://github.com/AlexZ33/ife-course/tree/master/小薇学院" target="_blank" rel="external"><strong>github仓库</strong></a></p>
+<p><strong>预览效果</strong><br><img src="http://on891bjlf.bkt.clouddn.com/image/%E6%88%AA%E5%9B%BE1491480835.png" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</div><div class="line">&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;</div><div class="line">&lt;title&gt;登陆框雪碧图 | 镜心书社&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;style&gt;</div><div class="line">*&#123;margin: 0;</div><div class="line">padding: 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.container&#123;</div><div class="line">	width: 220px;</div><div class="line">	height: 400px;</div><div class="line">	background: #ebfafa;</div><div class="line"></div><div class="line">&#125;</div><div class="line">.login-form&#123;</div><div class="line">	padding: 15px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.login-input&#123;</div><div class="line">	display: block;</div><div class="line">	height: 32px;</div><div class="line">	width: 188px;</div><div class="line">	margin-top: 15px;</div><div class="line">	border: 1px solid #adb6c9;</div><div class="line">	border-radius: 3px;</div><div class="line">	text-indent: 30px;</div><div class="line">	font-size: 15px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">p&#123;</div><div class="line">	height: 13px;</div><div class="line">	margin-top: 15px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">p label&#123;</div><div class="line">	font-size: 13px;</div><div class="line">	vertical-align: top;</div><div class="line">&#125;</div><div class="line"></div><div class="line">p a&#123;</div><div class="line">	font-size: 13px;</div><div class="line">	text-decoration: none;</div><div class="line">	float: right;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.btn&#123;</div><div class="line">	width: 190px;</div><div class="line">	height: 38px;</div><div class="line">	margin-top: 15px;</div><div class="line">	border: 0;</div><div class="line">	background: url(login.jpg) no-repeat;</div><div class="line">	text-indent: -9999em;</div><div class="line">	cursor: pointer;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.register-btn&#123;</div><div class="line">	background-position:0 -38px;</div><div class="line"></div><div class="line">&#125;</div><div class="line">hr&#123;margin-top: 20px;&#125;	</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=&quot;container&quot;&gt;</div><div class="line">		&lt;form class=&quot;login-form&quot;&gt;</div><div class="line">			&lt;input class=&quot;login-input&quot; type=&quot;text&quot; placeholder=&quot;邮箱/手机号/用户名&quot; /&gt;</div><div class="line">			&lt;input class=&quot;login-input&quot; type=&quot;password&quot; placeholder=&quot;请输入密码&quot; /&gt;</div><div class="line"></div><div class="line">			&lt;p&gt;</div><div class="line">				&lt;input type=&quot;checkbox&quot; id=&quot;autologin&quot;&gt;</div><div class="line">				&lt;label for=&quot;autologin&quot;&gt;下次自动登录&lt;/label&gt;</div><div class="line">				&lt;a href=&quot;javascipt:;&quot; title=&quot;&quot;&gt;忘记密码？&lt;/a&gt;</div><div class="line">			&lt;/p&gt;</div><div class="line">			&lt;input type=&quot;submit&quot; class=&quot;btn login-btn&quot; value=&quot;登录&quot; /&gt;</div><div class="line">			&lt;input type=&quot;button&quot; class=&quot;btn register-btn&quot; value=&quot;注册&quot; /&gt;</div><div class="line">		&lt;/form&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p><strong>预览效果</strong><br><img src="http://on891bjlf.bkt.clouddn.com/image/%E6%88%AA%E5%9B%BE1491480916.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot; http-equiv=&quot;Content-Type&quot; content=&quot;text/html&quot;&gt;</div><div class="line">	&lt;title&gt;css sprite | 雪碧图&lt;/title&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">		h3,ul&#123;margin: 0;padding: 0;&#125;</div><div class="line">		ul&#123;</div><div class="line">			list-style: none;</div><div class="line"></div><div class="line">		&#125;</div><div class="line">		li&#123;display: block;height: 31px;</div><div class="line">			line-height: 31px;</div><div class="line">			overflow: hidden;</div><div class="line">			border-bottom: 1px solid #dedede;</div><div class="line">		&#125;</div><div class="line">		li i&#123;background:url(sidebar.png);</div><div class="line">			display: inline;</div><div class="line">			width: 30px;</div><div class="line">			height: 24px;</div><div class="line">			float: left;</div><div class="line">			margin: 3px 10px 0 0;</div><div class="line"></div><div class="line">		&#125;</div><div class="line">		li h3&#123;</div><div class="line">			font-size: 14px;</div><div class="line">			font-weight:400; </div><div class="line">		&#125;</div><div class="line"></div><div class="line">		.cat&#123;</div><div class="line">			width: 150px;</div><div class="line">			background: #f8f8f8;</div><div class="line">			border:1px solid #bbb ;</div><div class="line">		&#125;</div><div class="line">		.cat-1 i&#123;</div><div class="line">			background-position:0 0; </div><div class="line">		&#125;</div><div class="line">		.cat-2 i&#123;</div><div class="line">			background-position:0 -24px; </div><div class="line">		&#125;</div><div class="line">		.cat-3 i&#123;</div><div class="line">			background-position:0 -48px; </div><div class="line">		&#125;</div><div class="line">		.cat-4 i&#123;</div><div class="line">			background-position:0 -72px; </div><div class="line">		&#125;</div><div class="line">		.cat-5 i&#123;</div><div class="line">			background-position:0 -96px; </div><div class="line">		&#125;</div><div class="line">		.cat-6 i&#123;</div><div class="line">			background-position:0 -120px; </div><div class="line">		&#125;</div><div class="line">		.cat-7 i&#123;</div><div class="line">			background-position:0 -144px; </div><div class="line">		&#125;</div><div class="line">		.cat-8 i&#123;</div><div class="line">			background-position:0 -168px; </div><div class="line">		&#125;</div><div class="line">		.cat-9 i&#123;</div><div class="line">			background-position:-40px 0px; </div><div class="line">		&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=&quot;cat&quot;&gt;</div><div class="line">		&lt;ul&gt;</div><div class="line">			&lt;li class=&quot;cat-1&quot;&gt;</div><div class="line">				&lt;i&gt;&lt;/i&gt;</div><div class="line">				&lt;h3&gt;服装内衣&lt;/h3&gt;</div><div class="line">			&lt;/li&gt;</div><div class="line">			&lt;li class=&quot;cat-2&quot;&gt;</div><div class="line">				&lt;i&gt;&lt;/i&gt;</div><div class="line">				&lt;h3&gt;鞋包配饰&lt;/h3&gt;</div><div class="line">			&lt;/li&gt;</div><div class="line">			&lt;li class=&quot;cat-3&quot;&gt;</div><div class="line">				&lt;i&gt;&lt;/i&gt;</div><div class="line">				&lt;h3&gt;运动户外&lt;/h3&gt;</div><div class="line">			&lt;/li&gt;</div><div class="line">			&lt;li class=&quot;cat-4&quot;&gt;</div><div class="line">				&lt;i&gt;&lt;/i&gt;</div><div class="line">				&lt;h3&gt;珠宝手表&lt;/h3&gt;</div><div class="line">			&lt;/li&gt;</div><div class="line">			&lt;li class=&quot;cat-5&quot;&gt;</div><div class="line">				&lt;i&gt;&lt;/i&gt;</div><div class="line">				&lt;h3&gt;手机数码&lt;/h3&gt;</div><div class="line">			&lt;/li&gt;</div><div class="line">			&lt;li class=&quot;cat-6&quot;&gt;</div><div class="line">				&lt;i&gt;&lt;/i&gt;</div><div class="line">				&lt;h3&gt;办公家电&lt;/h3&gt;</div><div class="line">			&lt;/li&gt;</div><div class="line">			&lt;li class=&quot;cat-7&quot;&gt;</div><div class="line">				&lt;i&gt;&lt;/i&gt;</div><div class="line">				&lt;h3&gt;护肤彩妆&lt;/h3&gt;</div><div class="line">			&lt;/li&gt;</div><div class="line">			&lt;li class=&quot;cat-8&quot;&gt;</div><div class="line">				&lt;i&gt;&lt;/i&gt;</div><div class="line">				&lt;h3&gt;母婴用品&lt;/h3&gt;</div><div class="line">			&lt;/li&gt;</div><div class="line">			&lt;li class=&quot;cat-9&quot;&gt;</div><div class="line">				&lt;i&gt;&lt;/i&gt;</div><div class="line">				&lt;h3&gt;其他分类&lt;/h3&gt;</div><div class="line">			&lt;/li&gt;</div><div class="line">		&lt;/ul&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>雪碧图的优点：1、减少http访问次数；<br>缺点：1、内存缺陷；2、页面缩放有暴露风险3、对爬虫不友好<br><strong>参考</strong></p>
+<blockquote>
+<p><a href="http://www.99css.com/cssgaga/" target="_blank" rel="external">CssGaga 生成雪碧图工具 </a><br><a href="http://www.imooc.com/learn/93" target="_blank" rel="external">慕课网   CSS Sprite雪碧图应用</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://jxdxsw.com2017/02/04/ajax跨域请求/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2174,174 +2374,6 @@ var _hmt = _hmt || [];
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com2016/03/07/js闭包/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AlexZ33">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="镜心的小树屋">
-    </span>
-
-<span class="post-time">
-	   &nbsp; | &nbsp;
-           <span class="post-meta-item-icon">
-             <i class="fa fa-calendar-o"></i>
-           </span>
-           <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">187(字)</span> 
-         </span>
-        
-         
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="2016/03/07/js闭包/" itemprop="url">
-                  js闭包
-                </a>
-              
-            
-          </h1>
-        
-        
-
-        
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-07T18:44:12+08:00">
-                2016-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="2016/03/07/js闭包/" class="leancloud_visitors" data-flag-title="js闭包">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><b>js闭包<b></b></b></p>
-<p>闭包<br>（1）概念<br>闭包是指有权访问另一个函数作用域中的变量的函数。<br>（2）特性<br>闭包只能取得包含函数中任何变量的最后一个值。<br>（3）创建方式<br>在一个函数内部创建另一个函数。<br>（4）原理<br>在一个函数内部中定义的函数会将包含函数（外部函数）的活动对象添加到其作用域中，直至解除对内部函数的应用，内部函数被销毁，外部函数的活动对象才会被销毁。<br>（5）实例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function closure()&#123;</div><div class="line">    var result=[];</div><div class="line">    for (var i = 0; i &lt; 4; i++) &#123;</div><div class="line">        result[i]=function()&#123;</div><div class="line">            console.log(i);</div><div class="line">            return i;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">    return result;</div><div class="line">&#125;</div><div class="line">var result=closure();</div><div class="line">for (var i = 0; i &lt; 4; i++) &#123;</div><div class="line">    result[i]();</div><div class="line">&#125;;</div><div class="line"></div><div class="line">//4 4 4 4</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2391,7 +2423,7 @@ var _hmt = _hmt || [];
           
             <div class="site-state-item site-state-posts">
               <a href="index.html">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2413,7 +2445,7 @@ var _hmt = _hmt || [];
             
             <div class="site-state-item site-state-tags">
               <a href="tags/index.html">
-                <span class="site-state-item-count">60</span>
+                <span class="site-state-item-count">63</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
