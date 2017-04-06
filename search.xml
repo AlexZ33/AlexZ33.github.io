@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[ajax跨域请求]]></title>
+      <url>%2F2017%2F02%2F04%2Fajax%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82%2F</url>
+      <content type="text"><![CDATA[ajax跨域请求 一、什么是跨域 我们先回顾一下域名地址的组成： 1http:// www . google : 8080 / script/jquery.js http:// （协议号） www （子域名） google （主域名） 8080 （端口号） script/jquery.js （请求的地址） 当协议、子域名、主域名、端口号中任意一个不相同时，都算不同的“域”。 不同的域之间相互请求资源，就叫“跨域”。 比如：http://www.jxdxsw.com/index.html 请求 http://www.unclay.com/sever.php 二、出现跨域问题的情况 工作中需要使用AJAX请求其他域名下的请求，但是会出现拒绝访问的情况，这是因为基于安全的考虑，AJAX只能访问本地的资源，而不能跨域访问。 比如说你的网站域名是jxdsxw.com，想要通过AJAX请求unclay.com域名中的内容，浏览器就会认为是不安全的，所以拒绝访问。 会出现跨域问题的几种情况： 三、处理跨域的方法1 – 代理 这种方式是通过后台(ASP、PHP、JAVA、ASP.NET)获取其他域名下的内容，然后再把获得内容返回到前端，这样因为在同一个域名下，所以就不会出现跨域的问题。 比如在北京（www.beijing.com/sever.php）和上海（www.shanghai.com/sever.php）各有一个服务器，北京的后端（www.beijing.com/sever.php）直接访问上海的服务，然后把获取的响应值返回给前端。也就是北京的服务在后台做了一个代理，前端只需要访问北京的服务器也就相当与访问了上海的服务器。这种代理属于后台的技术，所以不展开叙述。 处理跨域的方法2 – JSONPjsonp本质上就是一个script的标签 假设在http://www.jxdxsw.com/index.php这个页面中向http://www.unclay.com/getinfo.php提交GET请求，那么我们在www.jxdxsw.com页面中添加如下代码： 1234567var eleScript= document.createElement("script"); //创建一个script元素 eleScript.type = "text/javascript"; //声明类型、 eleScript.src = "http://www.unclay.com/getinfo.php"; //添加src属性 引入跨域访问的url document.getElementsByTagName("HEAD")[0].appendChild(eleScript); //在页面中添加新创建的script元素 当GET请求从http://www.unclay.com/getinfo.php返回时，可以返回一段JavaScript代码，这段代码会自动执行，可以用来负责调用http://www.jxdxsw.com/index.php页面中的一个callback函数。看下面一个列子： 在www.jxdxsw.com页面中： 12345678&lt;script&gt; function jsonp( json )&#123; document.write( json.name ); //输出镜心 &#125;&lt;script&gt; &lt;script src=&quot;http://www.unclay.com/getinfo.php&quot;&gt;&lt;/script&gt; 在www.unclay.com页面中： 1jsonp(&#123; &quot;name&quot;:&quot;镜心&quot;,&quot;age&quot;:8 &#125;); 也就是在www.jxdxsw.com页面中声明，在www.unclay.com页面中调用。但是JSONP只支持 “GET” 请求，但不支持 “POST” 请求。 处理跨域的方法3 – XHR2（推荐方法） 以前 xhr时候 这里的 url必须在同域，如果主域同，子域不同是绝对不能跨域的 现在升级成xhr2后 “XHR2” 全称 “XMLHttpRequest Level2” 是HTML5提供的方法，对跨域访问提供了很好的支持，并且还有一些新的功能。 IE10一下的版本都不支持 只需要在服务器端头部加上下面两句代码： 1header( &quot;Access-Control-Allow-Origin:*&quot; ); 打成*是所有域，如果限定特定的域,我们希望百度和镜心的服务器能跨域请求我们的接口1header( &apos;Access-Control-Allow-Origin:www.baidu.com&apos;); 我们以MDN这个网站为例，看看，就是允许任何域向这个域发起请求 1header( &quot;Access-Control-Allow-Methods:POST,GET&quot; ); 处理跨域的方法4 – 利用hash来进行iframe结构的跨域访问 更多内容参考这两篇博文 iframe跨域访问 JavaScript跨域脚本调用（iframe方式）]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[2017读书计划]]></title>
       <url>%2F2016%2F12%2F29%2F2017%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92%2F</url>
       <content type="text"><![CDATA[2017读书计划 我这人比较懒散，兴之所至往往能把一本书一口气看完，或言“毎归私第,阖户启箧取书,读之竟日”。而大多数时候，都是拿起书来提起了兴趣便读一读，失却了兴致就放在一边，所以留下很多“半读品”。 时至今日，再也不想东一榔头西一棒子，捡起什么就看什么。所以又起了建构、丰满自身识见体系的抱负。 于是，便有了这篇2017年读书计划。其实，这不仅仅是一个书单列表，也是一份学习计划。 细心的朋友会发现，它主要涉及三个方面 ： 历史文学阅读+编程知识+经济财务。历史类将以两宋和伊斯兰文明和美国史为主。编程以前端为主，兼有建站、小程序到Linux，看学习进度。全栈将是一个长期目标经济财务类主要是经济理论和服务于cpa考试的财务知识。 有兴趣的书友可以一起参与。 文末可加读书群。 以下所列书目有不少以前已经看过或者开了篇没有看完。 ①已读 下面标有此类的将视时间温故 ②未读 ③读未尽 历史 历史类书籍一直是我的最爱，“一切历史都是当代史。” 这些历史材料就像今日和未来的镜子，镜人，镜心。 易中天老师在《文明的意志与中华的位置》一书中言： 只有中华，伊斯兰，和西方现代才代表了三代文明。同时最具世界性。 所以本年度将以此三者作为读史的重点。 《人类群星闪耀时》① 《你一定喜爱的欧洲极简史》① 《易中天中华史》① 截止2017年1月9日出版的已读 《赫逊河畔谈中国历史》① 《全球通史》① 这本书作为读史的框架不错 《丝绸之路》 《宋代政治史》③ 《剑桥中国 辽西夏金元史》① 《剑桥伊朗史》(Cambridge History of Iran) ③ 《草原帝国》(The Empire of the Steppes)中文版，作者：（法）格鲁塞(Grousset) ③ 《阿拉伯通史》中文版，作者：（美）希提(Philip Khuri Hitti) 《 文明的冲突与世界秩序的重建 》 （美） 赛缪尔.亨廷顿 《 重回耶路撒冷 - 犹太人的三千年 》 （中）张力升 《土耳其通史》① 《埃及通史》① 《费城风云：美国宪法的诞生及启示》 《1491》 《1493》 《殖民地》 《美国宪法的经济观》 《万历十五年》① 《明朝那些事儿》① 《明史讲义》 互联网&amp;编程 《JavaScript设计模式与开发实践》 《JavaScript高级程序设计》 《你不知道的JavaScript》 《jQuery权威指南》 《微信小程序入门指南》 编程相关只是近期想看的 更多内容请留意公众号的技术文章和博客（http://jxdxsw.com） 《数据之巅》① 《大数据时代》① KK三部曲 《失控》① 《科技想要什么》③ 《必然》③ 经济&amp;财务 《魔鬼经济学》 《历代经济变革》① 《理念的力量》① 《市场的逻辑》① 《理解公司》① 《国富论》 （《资本论》这本看情况吧） 《激荡30年》① 《哈耶克传》① 《变革中国：市场经济的中国之路》③ 《让数字说话：审计就这么简单》③ 《一本书读懂财报》③ cpa相关以 镜心的小树屋 推送的笔记为准 文学&amp;写作&amp;相关 《千面英雄》① 《故事：材质、结构、风格和银幕剧作的原理》 《故事策略：电影剧本必备的23个故事段落》 《小说写作教程：虚构文学》 《作家之旅：源自神话的写作要义》 《写作这回事：创作生涯回忆录》 史蒂芬金 《纸牌屋》 《无声告白》 《虫：2.5次世界大战》③ 《马克吐温小说全集》③ 《迟子建散文》 《三体》① 《皮囊》蔡崇达 ① 注 : 镜心书社 『读书给你听』 系列会读到 《战争与和平》 《雾都孤儿》 《培根随笔》 《毛姆读书笔记》① 《毛姆短篇小说精选集》③ 《京华烟云》 《一个陌生女人的来信》① 《査令十字街84号》 《文学回忆录 》③ 《纪伯伦散文集》 《世界最好的杂文》 《变形记》① 《三个火枪手》 《朱自清散文集》③ 《了不起的盖茨比》① 《东野圭吾全集》 注： 书友可以挑选着看 真的很多 推荐《彷徨之刃》《嫌疑人x的献身》《虚无的十字架》 《24个比利》 《东方快车谋杀案》 《无人生还》 《大江东去》 《巨人的陨落》 思想&amp;社会&amp;哲学 《顾准文集》③ 《胡适的北大哲学课（四卷）》 《西方哲学史》伯特兰罗素① 《论美国的民主》① 《旧制度与大革命》① 《君主论论李维》① 《社会契约论》① 《中国哲学简史》冯友兰 《宽容》房龙 《公正》迈克尔?桑德尔 有公开课视频，书友可以去找下 《反对完美》 诗集 《随园诗话》 《人间词话》① 《万叶集》① 注：日本俳句 中译版本众多，不记得以前买的是哪本了，有时间回味下。《言叶之庭》里面经典那句出自于此 杂 《我可以咬你一口吗》 《从0到1》① 《异类》① 《美食家》 《雅舍谈吃》 《如何阅读一本书》① 《自私的基因》 《谈美书简》 《听音乐》罗杰·凯密恩（Roger Kamien） 《认识电影》[美] 路易斯·贾内梯 / [瑞典] 英格玛·伯格曼 [日] 黑泽明 等供图 《七堂极简物理课》 《时间简史》 文末引用狄更斯说过的话： “这是最好的时代，这是最坏的时代；这是智慧的时代，这是愚蠢的时代；这是信仰的时期，这是怀疑的时期；这是光明的季节，这是黑暗的季节；这是希望之春，这是失望之冬；人们面前有着各样事物，人们面前一无所有；人们正在直登天堂，人们正在直下地狱。” 诸君，有长风起于青萍之末，你可曾听到？ 如有疏漏或删减我会在留言中补上，以实际阅读为准 1.10《虫：2.5次世界大战》 已读 1.14 《易中天中华史：国家》 已读 1.16 《变革中国：市场经济的中国之路》 已读 1.21 《宋史十讲》 已读 1.23 《我的剑桥历史笔记》已读 1.27 《如果这就是宋史7》 已读 1.30 《如果这就是宋史6》 已读 2.2 《虫：虫子的世界》 已读 2.5 《如果这就是宋史5》 已读 2.10 《培根随笔》 已读 建议反复阅读 2.13 《你一定爱读的法国极简史》 这本书写的很差 条理不清，语句颠三倒四 看了一半弃了 转战 《法国通史》 吕一民 2.15 《神探伽利略》东野圭吾 已读 2.17 《最璀璨的银河》 刘慈欣经典作品集 已读 有一两篇不太喜欢，大部分比较有意思。推荐 2.21 《法国通史》 吕一民已读 详实有条例，但众所周知的原因，一写到左派或者罢工革命之类的就不那么客观。 2.22 《未来边缘》已读 5个科幻小故事。大刘的脑洞确实大，简直科幻沙漠里的一股清泉。对比同侪的科幻作者的作品就能发现。 2.24 《如果这就是宋史4》 已读 主要是仁宗期间的事 2.25《追杀k星人》 王晋康 10篇科幻短篇 作者的脑洞虽不及大刘 、故事却更为完整，充满人性的冲突与讨论。]]></content>
@@ -52,16 +59,16 @@
 
     
     <entry>
-      <title><![CDATA[js闭包]]></title>
-      <url>%2F2016%2F03%2F07%2Fjs%E9%97%AD%E5%8C%85%2F</url>
-      <content type="text"><![CDATA[js闭包 闭包（1）概念闭包是指有权访问另一个函数作用域中的变量的函数。（2）特性闭包只能取得包含函数中任何变量的最后一个值。（3）创建方式在一个函数内部创建另一个函数。（4）原理在一个函数内部中定义的函数会将包含函数（外部函数）的活动对象添加到其作用域中，直至解除对内部函数的应用，内部函数被销毁，外部函数的活动对象才会被销毁。（5）实例 12345678910111213141516function closure()&#123; var result=[]; for (var i = 0; i &lt; 4; i++) &#123; result[i]=function()&#123; console.log(i); return i; &#125; &#125;; return result;&#125;var result=closure();for (var i = 0; i &lt; 4; i++) &#123; result[i]();&#125;;//4 4 4 4]]></content>
+      <title><![CDATA[CSS实现简单图片展示]]></title>
+      <url>%2F2016%2F03%2F07%2Fcss%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E5%9B%BE%E7%89%87%E5%B1%95%E7%A4%BA%2F</url>
+      <content type="text"><![CDATA[CSS实现简单图片展示 效果： css部分123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051 div,ul,li,dl,dt,dd&#123; margin:0; padding:0;&#125;ul,li,dl,dt,dd&#123; list-style:none;&#125;.demo&#123; margin:0 auto; width:930px;&#125;.demo ul li&#123; float:left; width:300px; margin-right:6px; position:relative;&#125;.demo ul li img&#123; border:none; position:relative; z-index:22;&#125;.demo ul li a&#123; width:300px; display:block; border:2px solid #ccc;&#125;.demo ul li a:hover&#123; border:2px solid #C03;&#125;.demo ul li a span&#123; position:absolute; z-index:33; bottom:2px; left:2px; width:300px; height:40px; filter:alpha(Opacity=50); -moz-opacity:0.5; opacity: 0.5; background:#000; color:#fff; line-height:40px; text-align:left; display:none;&#125;.demo ul li a:hover span&#123; display:block;&#125; html部分 &lt;div class=&quot;demo&quot;&gt; &lt;ul&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;1.jpg&quot; /&gt; &lt;span&gt;keep moving&lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;2.jpg&quot; /&gt; &lt;span&gt;stay hungry &lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;3.jpg&quot; /&gt; &lt;span&gt;stay foolish&lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;/ul&gt; 参考慕课网 图片展示特效]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[CSS实现简单图片展示]]></title>
-      <url>%2F2016%2F03%2F07%2Fcss%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E5%9B%BE%E7%89%87%E5%B1%95%E7%A4%BA%2F</url>
-      <content type="text"><![CDATA[CSS实现简单图片展示 效果： css部分123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051 div,ul,li,dl,dt,dd&#123; margin:0; padding:0;&#125;ul,li,dl,dt,dd&#123; list-style:none;&#125;.demo&#123; margin:0 auto; width:930px;&#125;.demo ul li&#123; float:left; width:300px; margin-right:6px; position:relative;&#125;.demo ul li img&#123; border:none; position:relative; z-index:22;&#125;.demo ul li a&#123; width:300px; display:block; border:2px solid #ccc;&#125;.demo ul li a:hover&#123; border:2px solid #C03;&#125;.demo ul li a span&#123; position:absolute; z-index:33; bottom:2px; left:2px; width:300px; height:40px; filter:alpha(Opacity=50); -moz-opacity:0.5; opacity: 0.5; background:#000; color:#fff; line-height:40px; text-align:left; display:none;&#125;.demo ul li a:hover span&#123; display:block;&#125; html部分 &lt;div class=&quot;demo&quot;&gt; &lt;ul&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;1.jpg&quot; /&gt; &lt;span&gt;keep moving&lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;2.jpg&quot; /&gt; &lt;span&gt;stay hungry &lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;3.jpg&quot; /&gt; &lt;span&gt;stay foolish&lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;/ul&gt; 参考慕课网 图片展示特效]]></content>
+      <title><![CDATA[js闭包]]></title>
+      <url>%2F2016%2F03%2F07%2Fjs%E9%97%AD%E5%8C%85%2F</url>
+      <content type="text"><![CDATA[js闭包 闭包（1）概念闭包是指有权访问另一个函数作用域中的变量的函数。（2）特性闭包只能取得包含函数中任何变量的最后一个值。（3）创建方式在一个函数内部创建另一个函数。（4）原理在一个函数内部中定义的函数会将包含函数（外部函数）的活动对象添加到其作用域中，直至解除对内部函数的应用，内部函数被销毁，外部函数的活动对象才会被销毁。（5）实例 12345678910111213141516function closure()&#123; var result=[]; for (var i = 0; i &lt; 4; i++) &#123; result[i]=function()&#123; console.log(i); return i; &#125; &#125;; return result;&#125;var result=closure();for (var i = 0; i &lt; 4; i++) &#123; result[i]();&#125;;//4 4 4 4]]></content>
     </entry>
 
     
@@ -94,6 +101,13 @@
 
     
     <entry>
+      <title><![CDATA[Canvas 绘制时钟]]></title>
+      <url>%2F2016%2F01%2F12%2FCanva%E7%BB%98%E5%88%B6%E6%97%B6%E9%92%9F%2F</url>
+      <content type="text"><![CDATA[Canvas 绘制时钟演示链接 主要知识点 canvas画图 rotate(),lineCap(),save(),store()等api 总体思路和教程慕课网 Canvas 绘制时钟]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[在浏览器输入url到页面打开，都做了些什么？]]></title>
       <url>%2F2016%2F01%2F12%2Fhttp%2F</url>
       <content type="text"><![CDATA[在浏览器输入url到页面打开，都做了些什么？ 浏览器里输入网址 浏览器查找域名对应的IP地址 （这一步包括DNS具体的查找过程，包括：浏览器缓存-&gt;系统缓存-&gt;路由器缓存…） 浏览器搜索自身DNS缓存 搜索操作系统自身的DNS缓存（浏览器没有找到缓存或者缓存已失效） 读取本地host文件（未找到） 浏览器发起一个DNS的系统调用(向运营商DNS服务器发起域名解析请求) 宽带运营商服务器查看自身缓存 （未找到） 运营商服务器发起一个迭代DNS解析请求（找根域DNS服务器-&gt;com域DNS服务器…） 最后运营商服务器把结果返回给操作系统内核同时缓存起来 操作系统内核把结果返回给浏览器 浏览器获取域名对应的IP地址后，发起HTTP“三次握手” TCP/IP连接建立后，浏览器向web服务器发送一个HTTP请求 服务器的永久重定向响应（从http://example.com 到 http://www.example.com） 关于为什么要重定向。其中一个原因跟搜索引擎排名有关。如果一个页面有两个地址，就像http://example.com/和http://www.example.com/，搜索引擎会认为它们是两个网站，结果造成每一个的搜索链接都减少从而降低排名。所以要把带www的和不带www的地址归到同一个网站排名下。还有一个原因是用不同的地址会造成缓存友好性变差。 浏览器跟踪重定向地址，发起GET请求 服务器”处理”请求，向浏览器发回一个HTML响应 浏览器解析显示HTML 浏览器发送请求获取嵌入在 HTML 中的资源（如图片、音频、视频、CSS、JS等等） 浏览器发送异步请求（ajax请求等） 查看浏览器DNS缓存（以chrome为例）在chrome地址栏输入 chrome://net-internals/#dns TCP/IP三次握手 DOM文档加载步骤 解析HTML结构 加载外部脚本和样式表文件 解析并执行脚本代码 构造HTML DOM模型 //ready 加载图片等外部文件 页面加载完毕//load 这里有一个坑 我们在写脚本时候，以jQuery为例 123$(document).ready(function()&#123; //代码&#125;) 123$(document).load(function()&#123; //代码&#125;) 这两个是jQuery的文档加载方法，只是用ready就是在构建HTML DOM时候执行脚本 用load就是页面加载完毕执行更多内容可以看看jQuery源码的解析，这里顺带提一下参考 慕课网 node.js基础 HTTP知识慕课网 Linux网络基础]]></content>
@@ -104,13 +118,6 @@
       <title><![CDATA[HTTP概念进阶]]></title>
       <url>%2F2016%2F01%2F12%2Fhttpfurther%2F</url>
       <content type="text"><![CDATA[HTTP概念进阶 Nodejs中http模块不解析请求的具体内容，只分离出请求头和请求体1、什么是回调函数？回调试异步编程时的基础，将后续逻辑封装成起始函数的参数，逐层嵌套2、什么事同步/异步？同步：发送方发送数据后，等待接收方发回响应以后才发下一个数据包的通讯方式异步：发送方发出数据后，不等接收方发回响应，接着发送下个数据包的通讯方式3、什么事I/O?磁盘的写入（in）磁盘的读取（out）4、什么是单线程/多线程？一次只能执行一个程序叫做单线程一次能执行多个程序叫做多线程5、什么是阻塞/非阻塞？阻塞：前一个程序未执行完就得一直等待非阻塞：前一个程序未执行完时可以挂起，继续执行其他程序，等到使用时再执行6、什么是事件？一个触发动作（例如点击按钮）7、什么是事件驱动？一个触发动作引起的操作（例如点击按钮后弹出一个对话框）8、什么是基于事件驱动的回调？为了某个事件注册了回调函数，但是这个回调函数不是马上执行，只有当事件发生的时候，才会调用回掉函数，这种函数执行的方式叫做事件驱动~这种注册回掉就是基于事件驱动的回调，如果这些回调和异步I/O（数据写入、读取）操作相关，可以看作是基于回调的异步I/O。只不过这种回调在nodejs中是有事件来驱动的9、什么是事件循环？事件循环Eventloop，倘若有大量的异步操作，一些I/O的耗时操作，甚至是一些定时器控制的延时操作，它们完成的时候都要调用相应的回调函数，而从完成一些密集的任务，而又不会阻塞整个程序执行的流程，此时需要一种机制来管理，这种机制叫做事件循环总而言之，管理大量异步操作的机制叫做事件循环 EventLoop：回调函数队列，当异步函数执行时回调函数会被压入这个队列；对于node.js来说，它有一个单线程不断查询队列是否有事件，当它读取到一个事件时候，将调用与这个事件关联的js函数。 事件的循环是一个先进先出的任务队列，回调按照他们加入队列的顺序来执行。 整个队列可以理解成是普通函数和回调函数构成的一个完整的队列。 12345678910111213141516var c=0;function printIt()&#123; console.log(c);&#125;function plus(callback)&#123; setTimeout(function()&#123; c+=1; callback();&#125;,1000)&#125; plus(printIt);//1 node.js 核心思想： 非阻塞 单线程 事件驱动]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[Canvas 绘制时钟]]></title>
-      <url>%2F2016%2F01%2F12%2FCanva%E7%BB%98%E5%88%B6%E6%97%B6%E9%92%9F%2F</url>
-      <content type="text"><![CDATA[Canvas 绘制时钟演示链接 主要知识点 canvas画图 rotate(),lineCap(),save(),store()等api 总体思路和教程慕课网 Canvas 绘制时钟]]></content>
     </entry>
 
     
