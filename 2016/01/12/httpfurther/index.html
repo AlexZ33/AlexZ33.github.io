@@ -104,7 +104,7 @@ Nodejs中http模块不解析请求的具体内容，只分离出请求头和请�
 <meta property="og:site_name" content="镜心的小树屋">
 <meta property="og:description" content="HTTP概念进阶
 Nodejs中http模块不解析请求的具体内容，只分离出请求头和请求体1、什么是回调函数？回调试异步编程时的基础，将后续逻辑封装成起始函数的参数，逐层嵌套2、什么事同步/异步？同步：发送方发送数据后，等待接收方发回响应以后才发下一个数据包的通讯方式异步：发送方发出数据后，不等接收方发回响应，接着发送下个数据包的通讯方式3、什么事I/O?磁盘的写入（in）磁盘的读取（out）4、什">
-<meta property="og:updated_time" content="2017-04-06T05:26:07.191Z">
+<meta property="og:updated_time" content="2017-04-06T05:29:54.950Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP概念进阶">
 <meta name="twitter:description" content="HTTP概念进阶
@@ -358,7 +358,7 @@ Nodejs中http模块不解析请求的具体内容，只分离出请求头和请�
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">740(字)</span> 
+           <span class="post-count">761(字)</span> 
          </span>
         
          
@@ -462,6 +462,7 @@ Nodejs中http模块不解析请求的具体内容，只分离出请求头和请�
 <p>EventLoop：<br>回调函数队列，当异步函数执行时回调函数会被压入这个队列；对于node.js来说，它有一个单线程不断查询队列是否有事件，当它读取到一个事件时候，将调用与这个事件关联的js函数。</p>
 <p>事件的循环是一个<code>先进先出</code>的任务队列，回调按照他们加入队列的顺序来执行。</p>
 <p>整个队列可以理解成是普通函数和回调函数构成的一个完整的队列。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var c=0;</div><div class="line">function printIt()&#123;</div><div class="line">	console.log(c);</div><div class="line">&#125;</div><div class="line"></div><div class="line">function plus(callback)&#123;</div><div class="line">	setTimeout(function()&#123;</div><div class="line">		c+=1;</div><div class="line">		callback();</div><div class="line">&#125;,1000)</div><div class="line">&#125;</div><div class="line">	</div><div class="line"></div><div class="line">plus(printIt);</div><div class="line"></div><div class="line">//1</div></pre></td></tr></table></figure>
 <p><strong>node.js 核心思想：</strong></p>
 <ul>
 <li>非阻塞</li>
