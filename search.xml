@@ -52,16 +52,16 @@
 
     
     <entry>
-      <title><![CDATA[js闭包]]></title>
-      <url>%2F2016%2F03%2F07%2Fjs%E9%97%AD%E5%8C%85%2F</url>
-      <content type="text"><![CDATA[js闭包 闭包（1）概念闭包是指有权访问另一个函数作用域中的变量的函数。（2）特性闭包只能取得包含函数中任何变量的最后一个值。（3）创建方式在一个函数内部创建另一个函数。（4）原理在一个函数内部中定义的函数会将包含函数（外部函数）的活动对象添加到其作用域中，直至解除对内部函数的应用，内部函数被销毁，外部函数的活动对象才会被销毁。（5）实例 12345678910111213141516function closure()&#123; var result=[]; for (var i = 0; i &lt; 4; i++) &#123; result[i]=function()&#123; console.log(i); return i; &#125; &#125;; return result;&#125;var result=closure();for (var i = 0; i &lt; 4; i++) &#123; result[i]();&#125;;//4 4 4 4]]></content>
+      <title><![CDATA[CSS实现简单图片展示]]></title>
+      <url>%2F2016%2F03%2F07%2Fcss%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E5%9B%BE%E7%89%87%E5%B1%95%E7%A4%BA%2F</url>
+      <content type="text"><![CDATA[CSS实现简单图片展示 效果： css部分123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051 div,ul,li,dl,dt,dd&#123; margin:0; padding:0;&#125;ul,li,dl,dt,dd&#123; list-style:none;&#125;.demo&#123; margin:0 auto; width:930px;&#125;.demo ul li&#123; float:left; width:300px; margin-right:6px; position:relative;&#125;.demo ul li img&#123; border:none; position:relative; z-index:22;&#125;.demo ul li a&#123; width:300px; display:block; border:2px solid #ccc;&#125;.demo ul li a:hover&#123; border:2px solid #C03;&#125;.demo ul li a span&#123; position:absolute; z-index:33; bottom:2px; left:2px; width:300px; height:40px; filter:alpha(Opacity=50); -moz-opacity:0.5; opacity: 0.5; background:#000; color:#fff; line-height:40px; text-align:left; display:none;&#125;.demo ul li a:hover span&#123; display:block;&#125; html部分 &lt;div class=&quot;demo&quot;&gt; &lt;ul&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;1.jpg&quot; /&gt; &lt;span&gt;keep moving&lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;2.jpg&quot; /&gt; &lt;span&gt;stay hungry &lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;3.jpg&quot; /&gt; &lt;span&gt;stay foolish&lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;/ul&gt; 参考慕课网 图片展示特效]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[CSS实现简单图片展示]]></title>
-      <url>%2F2016%2F03%2F07%2Fcss%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E5%9B%BE%E7%89%87%E5%B1%95%E7%A4%BA%2F</url>
-      <content type="text"><![CDATA[CSS实现简单图片展示 效果： css部分123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051 div,ul,li,dl,dt,dd&#123; margin:0; padding:0;&#125;ul,li,dl,dt,dd&#123; list-style:none;&#125;.demo&#123; margin:0 auto; width:930px;&#125;.demo ul li&#123; float:left; width:300px; margin-right:6px; position:relative;&#125;.demo ul li img&#123; border:none; position:relative; z-index:22;&#125;.demo ul li a&#123; width:300px; display:block; border:2px solid #ccc;&#125;.demo ul li a:hover&#123; border:2px solid #C03;&#125;.demo ul li a span&#123; position:absolute; z-index:33; bottom:2px; left:2px; width:300px; height:40px; filter:alpha(Opacity=50); -moz-opacity:0.5; opacity: 0.5; background:#000; color:#fff; line-height:40px; text-align:left; display:none;&#125;.demo ul li a:hover span&#123; display:block;&#125; html部分 &lt;div class=&quot;demo&quot;&gt; &lt;ul&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;1.jpg&quot; /&gt; &lt;span&gt;keep moving&lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;2.jpg&quot; /&gt; &lt;span&gt;stay hungry &lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;3.jpg&quot; /&gt; &lt;span&gt;stay foolish&lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;/ul&gt; 参考慕课网 图片展示特效]]></content>
+      <title><![CDATA[js闭包]]></title>
+      <url>%2F2016%2F03%2F07%2Fjs%E9%97%AD%E5%8C%85%2F</url>
+      <content type="text"><![CDATA[js闭包 闭包（1）概念闭包是指有权访问另一个函数作用域中的变量的函数。（2）特性闭包只能取得包含函数中任何变量的最后一个值。（3）创建方式在一个函数内部创建另一个函数。（4）原理在一个函数内部中定义的函数会将包含函数（外部函数）的活动对象添加到其作用域中，直至解除对内部函数的应用，内部函数被销毁，外部函数的活动对象才会被销毁。（5）实例 12345678910111213141516function closure()&#123; var result=[]; for (var i = 0; i &lt; 4; i++) &#123; result[i]=function()&#123; console.log(i); return i; &#125; &#125;; return result;&#125;var result=closure();for (var i = 0; i &lt; 4; i++) &#123; result[i]();&#125;;//4 4 4 4]]></content>
     </entry>
 
     
@@ -94,16 +94,23 @@
 
     
     <entry>
-      <title><![CDATA[Canvas 绘制时钟]]></title>
-      <url>%2F2016%2F01%2F12%2FCanva%E7%BB%98%E5%88%B6%E6%97%B6%E9%92%9F%2F</url>
-      <content type="text"><![CDATA[Canvas 绘制时钟演示链接 主要知识点 canvas画图 rotate(),lineCap(),save(),store()等api 总体思路和教程慕课网 Canvas 绘制时钟]]></content>
+      <title><![CDATA[在浏览器输入url到页面打开，都做了些什么？]]></title>
+      <url>%2F2016%2F01%2F12%2Fhttp%2F</url>
+      <content type="text"><![CDATA[在浏览器输入url到页面打开，都做了些什么？ 浏览器里输入网址 浏览器查找域名对应的IP地址 （这一步包括DNS具体的查找过程，包括：浏览器缓存-&gt;系统缓存-&gt;路由器缓存…） 浏览器搜索自身DNS缓存 搜索操作系统自身的DNS缓存（浏览器没有找到缓存或者缓存已失效） 读取本地host文件（未找到） 浏览器发起一个DNS的系统调用(向运营商DNS服务器发起域名解析请求) 宽带运营商服务器查看自身缓存 （未找到） 运营商服务器发起一个迭代DNS解析请求（找根域DNS服务器-&gt;com域DNS服务器…） 最后运营商服务器把结果返回给操作系统内核同时缓存起来 操作系统内核把结果返回给浏览器 浏览器获取域名对应的IP地址后，发起HTTP“三次握手” TCP/IP连接建立后，浏览器向web服务器发送一个HTTP请求 服务器的永久重定向响应（从http://example.com 到 http://www.example.com） 关于为什么要重定向。其中一个原因跟搜索引擎排名有关。如果一个页面有两个地址，就像http://example.com/和http://www.example.com/，搜索引擎会认为它们是两个网站，结果造成每一个的搜索链接都减少从而降低排名。所以要把带www的和不带www的地址归到同一个网站排名下。还有一个原因是用不同的地址会造成缓存友好性变差。 浏览器跟踪重定向地址，发起GET请求 服务器”处理”请求，向浏览器发回一个HTML响应 浏览器解析显示HTML 浏览器发送请求获取嵌入在 HTML 中的资源（如图片、音频、视频、CSS、JS等等） 浏览器发送异步请求（ajax请求等） 查看浏览器DNS缓存（以chrome为例）在chrome地址栏输入 chrome://net-internals/#dns TCP/IP三次握手 DOM文档加载步骤 解析HTML结构 加载外部脚本和样式表文件 解析并执行脚本代码 构造HTML DOM模型 //ready 加载图片等外部文件 页面加载完毕//load 这里有一个坑 我们在写脚本时候，以jQuery为例 123$(document).ready(function()&#123; //代码&#125;) 123$(document).load(function()&#123; //代码&#125;) 这两个是jQuery的文档加载方法，只是用ready就是在构建HTML DOM时候执行脚本 用load就是页面加载完毕执行更多内容可以看看jQuery源码的解析，这里顺带提一下参考 慕课网 node.js基础 HTTP知识慕课网 Linux网络基础]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[在浏览器输入url到页面打开，都做了些什么？]]></title>
-      <url>%2F2016%2F01%2F12%2Fhttp%2F</url>
-      <content type="text"><![CDATA[在浏览器输入url到页面打开，都做了些什么？ 浏览器里输入网址 浏览器查找域名对应的IP地址 （这一步包括DNS具体的查找过程，包括：浏览器缓存-&gt;系统缓存-&gt;路由器缓存…） 浏览器搜索自身DNS缓存 搜索操作系统自身的DNS缓存（浏览器没有找到缓存或者缓存已失效） 读取本地host文件（未找到） 浏览器发起一个DNS的系统调用(向运营商DNS服务器发起域名解析请求) 宽带运营商服务器查看自身缓存 （未找到） 运营商服务器发起一个迭代DNS解析请求（找根域DNS服务器-&gt;com域DNS服务器…） 最后运营商服务器把结果返回给操作系统内核同时缓存起来 操作系统内核把结果返回给浏览器 浏览器获取域名对应的IP地址后，发起HTTP“三次握手” TCP/IP连接建立后，浏览器向web服务器发送一个HTTP请求 服务器的永久重定向响应（从http://example.com 到 http://www.example.com） 关于为什么要重定向。其中一个原因跟搜索引擎排名有关。如果一个页面有两个地址，就像http://example.com/和http://www.example.com/，搜索引擎会认为它们是两个网站，结果造成每一个的搜索链接都减少从而降低排名。所以要把带www的和不带www的地址归到同一个网站排名下。还有一个原因是用不同的地址会造成缓存友好性变差。 浏览器跟踪重定向地址，发起GET请求 服务器”处理”请求，向浏览器发回一个HTML响应 浏览器解析显示HTML 浏览器发送请求获取嵌入在 HTML 中的资源（如图片、音频、视频、CSS、JS等等） 浏览器发送异步请求（ajax请求等） 查看浏览器DNS缓存（以chrome为例）在chrome地址栏输入 chrome://net-internals/#dns TCP/IP三次握手 DOM文档加载步骤 解析HTML结构 加载外部脚本和样式表文件 解析并执行脚本代码 构造HTML DOM模型 //ready 加载图片等外部文件 页面加载完毕//load 这里有一个坑 我们在写脚本时候，以jQuery为例 123$(document).ready(function()&#123; //代码&#125;) 123$(document).load(function()&#123; //代码&#125;) 这两个是jQuery的文档加载方法，只是用ready就是在构建HTML DOM时候执行脚本 用load就是页面加载完毕执行更多内容可以看看jQuery源码的解析，这里顺带提一下参考 慕课网 node.js基础 HTTP知识慕课网 Linux网络基础]]></content>
+      <title><![CDATA[HTTP概念进阶]]></title>
+      <url>%2F2016%2F01%2F12%2Fhttpfurther%2F</url>
+      <content type="text"><![CDATA[HTTP概念进阶 Nodejs中http模块不解析请求的具体内容，只分离出请求头和请求体1、什么是回调函数？回调试异步编程时的基础，将后续逻辑封装成起始函数的参数，逐层嵌套2、什么事同步/异步？同步：发送方发送数据后，等待接收方发回响应以后才发下一个数据包的通讯方式异步：发送方发出数据后，不等接收方发回响应，接着发送下个数据包的通讯方式3、什么事I/O?磁盘的写入（in）磁盘的读取（out）4、什么是单线程/多线程？一次只能执行一个程序叫做单线程一次能执行多个程序叫做多线程5、什么是阻塞/非阻塞？阻塞：前一个程序未执行完就得一直等待非阻塞：前一个程序未执行完时可以挂起，继续执行其他程序，等到使用时再执行6、什么是事件？一个触发动作（例如点击按钮）7、什么是事件驱动？一个触发动作引起的操作（例如点击按钮后弹出一个对话框）8、什么是基于事件驱动的回调？为了某个事件注册了回调函数，但是这个回调函数不是马上执行，只有当事件发生的时候，才会调用回掉函数，这种函数执行的方式叫做事件驱动~这种注册回掉就是基于事件驱动的回调，如果这些回调和异步I/O（数据写入、读取）操作相关，可以看作是基于回调的异步I/O。只不过这种回调在nodejs中是有事件来驱动的9、什么是事件循环？事件循环Eventloop，倘若有大量的异步操作，一些I/O的耗时操作，甚至是一些定时器控制的延时操作，它们完成的时候都要调用相应的回调函数，而从完成一些密集的任务，而又不会阻塞整个程序执行的流程，此时需要一种机制来管理，这种机制叫做事件循环总而言之，管理大量异步操作的机制叫做事件循环 EventLoop：回调函数队列，当异步函数执行时回调函数会被压入这个队列；对于node.js来说，它有一个单线程不断查询队列是否有事件，当它读取到一个事件时候，将调用与这个事件关联的js函数。 事件的循环是一个先进先出的任务队列，回调按照他们加入队列的顺序来执行。 整个队列可以理解成是普通函数和回调函数构成的一个完整的队列。 node.js 核心思想： 非阻塞 单线程 事件驱动]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Canvas 绘制时钟]]></title>
+      <url>%2F2016%2F01%2F12%2FCanva%E7%BB%98%E5%88%B6%E6%97%B6%E9%92%9F%2F</url>
+      <content type="text"><![CDATA[Canvas 绘制时钟演示链接 主要知识点 canvas画图 rotate(),lineCap(),save(),store()等api 总体思路和教程慕课网 Canvas 绘制时钟]]></content>
     </entry>
 
     

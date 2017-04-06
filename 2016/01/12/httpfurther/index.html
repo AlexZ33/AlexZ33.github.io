@@ -41,7 +41,7 @@ var _hmt = _hmt || [];
 
   
   
-  <link href="../../lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="../../../../lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -75,33 +75,40 @@ var _hmt = _hmt || [];
 
 
 
-<link href="../../lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="../../../../lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="../../css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<link href="../../../../css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="前端,日志,慕课网,http,node.js," />
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico?v=5.1.0" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=5.1.0" />
 
 
 
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="镜心的小树屋">
-<meta property="og:url" content="http://jxdxsw.com/categories/j��/index.html">
+<meta name="description" content="HTTP概念进阶
+Nodejs中http模块不解析请求的具体内容，只分离出请求头和请求体1、什么是回调函数？回调试异步编程时的基础，将后续逻辑封装成起始函数的参数，逐层嵌套2、什么事同步/异步？同步：发送方发送数据后，等待接收方发回响应以后才发下一个数据包的通讯方式异步：发送方发出数据后，不等接收方发回响应，接着发送下个数据包的通讯方式3、什么事I/O?磁盘的写入（in）磁盘的读取（out）4、什">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP概念进阶">
+<meta property="og:url" content="http://jxdxsw.com/2016/01/12/httpfurther/index.html">
 <meta property="og:site_name" content="镜心的小树屋">
+<meta property="og:description" content="HTTP概念进阶
+Nodejs中http模块不解析请求的具体内容，只分离出请求头和请求体1、什么是回调函数？回调试异步编程时的基础，将后续逻辑封装成起始函数的参数，逐层嵌套2、什么事同步/异步？同步：发送方发送数据后，等待接收方发回响应以后才发下一个数据包的通讯方式异步：发送方发出数据后，不等接收方发回响应，接着发送下个数据包的通讯方式3、什么事I/O?磁盘的写入（in）磁盘的读取（out）4、什">
+<meta property="og:updated_time" content="2017-04-06T05:26:07.191Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="镜心的小树屋">
+<meta name="twitter:title" content="HTTP概念进阶">
+<meta name="twitter:description" content="HTTP概念进阶
+Nodejs中http模块不解析请求的具体内容，只分离出请求头和请求体1、什么是回调函数？回调试异步编程时的基础，将后续逻辑封装成起始函数的参数，逐层嵌套2、什么事同步/异步？同步：发送方发送数据后，等待接收方发回响应以后才发下一个数据包的通讯方式异步：发送方发出数据后，不等接收方发回响应，接着发送下个数据包的通讯方式3、什么事I/O?磁盘的写入（in）磁盘的读取（out）4、什">
 
 
 
@@ -129,14 +136,14 @@ var _hmt = _hmt || [];
 
 
 
-  <link rel="canonical" href="http://jxdxsw.com/categories/j��/"/>
+  <link rel="canonical" href="http://jxdxsw.com/2016/01/12/httpfurther/"/>
 
 
 
 
 <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
 
-  <title> 分类: ǰ�� | 镜心的小树屋 </title>
+  <title> HTTP概念进阶 | 镜心的小树屋 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -161,7 +168,7 @@ var _hmt = _hmt || [];
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -323,47 +330,271 @@ var _hmt = _hmt || [];
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        ǰ��
-        <small>分类</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="../../2016/05/17/Cache Management in Front-End Engineering/" itemprop="url">
-              
-                <span itemprop="name">Front-End Engineering��Cache Management</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-17T12:32:12+08:00"
-              content="2016-05-17" >
-          05-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AlexZ33">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="镜心的小树屋">
+    </span>
+
+<span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">740(字)</span> 
+         </span>
+        
+         
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                HTTP概念进阶
+              
+            
+          </h1>
+        
+        
+
+        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-12T09:44:12+08:00">
+                2016-01-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../../../../categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="" class="leancloud_visitors" data-flag-title="HTTP概念进阶">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><b>HTTP概念进阶<b></b></b></p>
+<p>Nodejs中http模块不解析请求的具体内容，只分离出请求头和请求体<br>1、什么是回调函数？<br>回调试异步编程时的基础，将后续逻辑封装成起始函数的参数，逐层嵌套<br>2、什么事同步/异步？<br>同步：发送方发送数据后，等待接收方发回响应以后才发下一个数据包的通讯方式<br>异步：发送方发出数据后，不等接收方发回响应，接着发送下个数据包的通讯方式<br>3、什么事I/O?<br>磁盘的写入（in）磁盘的读取（out）<br>4、什么是单线程/多线程？<br>一次只能执行一个程序叫做单线程<br>一次能执行多个程序叫做多线程<br>5、什么是阻塞/非阻塞？<br>阻塞：前一个程序未执行完就得一直等待<br>非阻塞：前一个程序未执行完时可以挂起，继续执行其他程序，等到使用时再执行<br>6、什么是事件？<br>一个触发动作（例如点击按钮）<br>7、什么是事件驱动？<br>一个触发动作引起的操作（例如点击按钮后弹出一个对话框）<br>8、什么是基于事件驱动的回调？<br>为了某个事件注册了回调函数，但是这个回调函数不是马上执行，只有当事件发生的时候，才会调用回掉函数，这种函数执行的方式叫做事件驱动~这种注册回掉就是基于事件驱动的回调，如果这些回调和异步I/O（数据写入、读取）操作相关，可以看作是基于回调的异步I/O。只不过这种回调在nodejs中是有事件来驱动的<br>9、什么是事件循环？<br>事件循环Eventloop，倘若有大量的异步操作，一些I/O的耗时操作，甚至是一些定时器控制的延时操作，它们完成的时候都要调用相应的回调函数，而从完成一些密集的任务，而又不会阻塞整个程序执行的流程，此时需要一种机制来管理，这种机制叫做事件循环<br>总而言之，管理大量异步操作的机制叫做事件循环</p>
+<p>EventLoop：<br>回调函数队列，当异步函数执行时回调函数会被压入这个队列；对于node.js来说，它有一个单线程不断查询队列是否有事件，当它读取到一个事件时候，将调用与这个事件关联的js函数。</p>
+<p>事件的循环是一个<code>先进先出</code>的任务队列，回调按照他们加入队列的顺序来执行。</p>
+<p>整个队列可以理解成是普通函数和回调函数构成的一个完整的队列。</p>
+<p><strong>node.js 核心思想：</strong></p>
+<ul>
+<li>非阻塞</li>
+<li>单线程</li>
+<li>事件驱动</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="http://on891bjlf.bkt.clouddn.com/image/wechat微信公众号.jpg" alt="AlexZ33 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码订阅公众号</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>如果文章对您有用请随意打赏，谢谢支持！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://on891bjlf.bkt.clouddn.com/image/2code/wechatpay.jpg" alt="AlexZ33 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://on891bjlf.bkt.clouddn.com/image/2code/alipay.png" alt="AlexZ33 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      AlexZ33
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://jxdxsw.com/2016/01/12/httpfurther/" title="HTTP概念进阶">http://jxdxsw.com/2016/01/12/httpfurther/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="../../../../tags/前端/" rel="tag"># 前端</a>
+          
+            <a href="../../../../tags/日志/" rel="tag"># 日志</a>
+          
+            <a href="../../../../tags/慕课网/" rel="tag"># 慕课网</a>
+          
+            <a href="../../../../tags/http/" rel="tag"># http</a>
+          
+            <a href="../../../../tags/node-js/" rel="tag"># node.js</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="../Canva绘制时钟/" rel="next" title="Canvas 绘制时钟">
+                <i class="fa fa-chevron-left"></i> Canvas 绘制时钟
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="../http/" rel="prev" title="在浏览器输入url到页面打开，都做了些什么？">
+                在浏览器输入url到页面打开，都做了些什么？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+
+  </div>
 
 
           </div>
@@ -371,6 +602,12 @@ var _hmt = _hmt || [];
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
 
         </div>
         
@@ -405,7 +642,7 @@ var _hmt = _hmt || [];
 
           
             <div class="site-state-item site-state-posts">
-              <a href="../../index.html">
+              <a href="../../../../index.html">
                 <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">日志</span>
               </a>
@@ -416,7 +653,7 @@ var _hmt = _hmt || [];
             
             
             <div class="site-state-item site-state-categories">
-              <a href="../index.html">
+              <a href="../../../../categories/index.html">
                 <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -427,7 +664,7 @@ var _hmt = _hmt || [];
             
             
             <div class="site-state-item site-state-tags">
-              <a href="../../tags/index.html">
+              <a href="../../../../tags/index.html">
                 <span class="site-state-item-count">57</span>
                 <span class="site-state-item-name">标签</span>
               </a>
@@ -677,49 +914,53 @@ var _hmt = _hmt || [];
 
 
   
-  <script type="text/javascript" src="../../lib/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="../../../../lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="../../lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="../../../../lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
-  <script type="text/javascript" src="../../lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="../../../../lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
-  <script type="text/javascript" src="../../lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="../../../../lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="../../lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="../../../../lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="../../lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="../../js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="../../js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="../../js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="../../js/src/schemes/pisces.js?v=5.1.0"></script>
-
+  <script type="text/javascript" src="../../../../lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
 
+
+  <script type="text/javascript" src="../../../../js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="../../../../js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
   
 
 
-  <script type="text/javascript" src="../../js/src/bootstrap.js?v=5.1.0"></script>
+  <script type="text/javascript" src="../../../../js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="../../../../js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="../../../../js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="../../../../js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="../../../../js/src/bootstrap.js?v=5.1.0"></script>
 
 
 
@@ -747,6 +988,10 @@ var _hmt = _hmt || [];
   
     
 
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2128477"></script>
+      <!-- UY END -->
     
   
 
@@ -895,14 +1140,14 @@ var _hmt = _hmt || [];
   
   
   
-  <link rel="stylesheet" href="../../lib/algolia-instant-search/instantsearch.min.css">
+  <link rel="stylesheet" href="../../../../lib/algolia-instant-search/instantsearch.min.css">
 
   
   
-  <script src="../../lib/algolia-instant-search/instantsearch.min.js"></script>
+  <script src="../../../../lib/algolia-instant-search/instantsearch.min.js"></script>
   
 
-  <script src="../../js/src/algolia-search.js?v=5.1.0"></script>
+  <script src="../../../../js/src/algolia-search.js?v=5.1.0"></script>
 
 
 
