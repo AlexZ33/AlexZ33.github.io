@@ -80,7 +80,7 @@ var _hmt = _hmt || [];
 <link href="../../../../css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="css,js,网页常用特效,导航菜单,下拉菜单," />
+  <meta name="keywords" content="css,网页常用特效,导航菜单,下拉菜单,javascript,jQuery," />
 
 
 
@@ -102,7 +102,7 @@ var _hmt = _hmt || [];
 12345678910111213141516171819202122232425262728293031323334353637&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;	&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;	&amp;lt;title&amp;g">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网页常用特效-导航类">
-<meta property="og:url" content="http://jxdxsw.com/2016/04/04/css_nav/index.html">
+<meta property="og:url" content="http://jxdxsw.com/2016/04/04/nav/index.html">
 <meta property="og:site_name" content="镜心的小树屋">
 <meta property="og:description" content="网页常用特效-导航类
 简单头部导航
@@ -112,7 +112,7 @@ var _hmt = _hmt || [];
 <meta property="og:image" content="http://on891bjlf.bkt.clouddn.com/gif/banner/2.gif">
 <meta property="og:image" content="http://on891bjlf.bkt.clouddn.com/gif/3.gif">
 <meta property="og:image" content="http://on891bjlf.bkt.clouddn.com/4.gif">
-<meta property="og:updated_time" content="2017-04-07T03:46:06.093Z">
+<meta property="og:updated_time" content="2017-04-07T05:17:42.078Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网页常用特效-导航类">
 <meta name="twitter:description" content="网页常用特效-导航类
@@ -147,7 +147,7 @@ var _hmt = _hmt || [];
 
 
 
-  <link rel="canonical" href="http://jxdxsw.com/2016/04/04/css_nav/"/>
+  <link rel="canonical" href="http://jxdxsw.com/2016/04/04/nav/"/>
 
 
 
@@ -369,7 +369,7 @@ var _hmt = _hmt || [];
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">982(字)</span> 
+           <span class="post-count">1,297(字)</span> 
          </span>
         
          
@@ -486,6 +486,8 @@ var _hmt = _hmt || [];
 <p><img src="http://on891bjlf.bkt.clouddn.com/4.gif" alt=""></p>
 <p><strong>javascript实现</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;各种下拉菜单 | 镜心书社&lt;/title&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">		*&#123;margin: 0;padding:0;&#125;</div><div class="line">		#nav&#123;background-color: #eee;width: 800px;height: 40px;margin:  0 auto;&#125;</div><div class="line">		ul&#123; list-style: none;&#125;</div><div class="line">		ul li&#123;float: left;line-height: 40px;text-align: center;position: relative;&#125;</div><div class="line">		ul li a&#123;text-decoration: none;color:#000;display: block;padding: 0 20px;height: 40px;&#125;</div><div class="line">		ul li a:hover&#123;color: #fff;background-color:#666; &#125;</div><div class="line">		</div><div class="line">		ul li ul li&#123;float: none;background: #eee;margin-top:2px; &#125;</div><div class="line">		ul li ul&#123;position: absolute;left: 0px;top:40px;display: none;&#125;</div><div class="line">		ul li ul a&#123;width: 80px;&#125; </div><div class="line">		ul li ul li a:hover&#123;background-color:blue;</div><div class="line">		&#125;</div><div class="line">	</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;nav id=&quot;nav&quot;&gt;</div><div class="line">		&lt;ul&gt;</div><div class="line">			&lt;li&gt;&lt;a href=&quot;#&quot; title=&quot;&quot;&gt;首页&lt;/a&gt;&lt;/li&gt;</div><div class="line">			&lt;li&gt;&lt;a href=&quot;#&quot; title=&quot;&quot;&gt;书架&lt;/a&gt;&lt;/li&gt;</div><div class="line">			&lt;li onmouseover=&quot;showsubmenu(this)&quot; onmouseout=&quot;hidesubmenu(this)&quot;&gt;&lt;a href=&quot;#&quot; title=&quot;&quot;&gt;前端&lt;/a&gt;</div><div class="line">	&lt;!-- 下拉菜单			 --&gt;</div><div class="line">				&lt;ul&gt;</div><div class="line">					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Javascript&lt;/a&gt;&lt;/li&gt;</div><div class="line">					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;jQuery&lt;/a&gt;&lt;/li&gt;</div><div class="line">					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;HTML5&lt;/a&gt;&lt;/li&gt;</div><div class="line"></div><div class="line">				&lt;/ul&gt;</div><div class="line">			&lt;/li&gt;</div><div class="line">			&lt;li&gt;&lt;a href=&quot;#&quot; title=&quot;&quot;&gt;后端&lt;/a&gt;</div><div class="line">				&lt;ul&gt;</div><div class="line">					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;PHP&lt;/a&gt;&lt;/li&gt;</div><div class="line">					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Java&lt;/a&gt;&lt;/li&gt;</div><div class="line">					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Python&lt;/a&gt;&lt;/li&gt;</div><div class="line"></div><div class="line">				&lt;/ul&gt;				</div><div class="line">			&lt;/li&gt;</div><div class="line">			&lt;li&gt;&lt;a href=&quot;#&quot; title=&quot;&quot;&gt;移动&lt;/a&gt;</div><div class="line">				&lt;ul&gt;</div><div class="line">					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Android&lt;/a&gt;&lt;/li&gt;</div><div class="line">					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;IOS&lt;/a&gt;&lt;/li&gt;</div><div class="line">					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Unity 3D&lt;/a&gt;&lt;/li&gt;</div><div class="line"></div><div class="line">				&lt;/ul&gt;</div><div class="line">			&lt;/li&gt;				</div><div class="line">			&lt;li&gt;&lt;a href=&quot;#&quot; title=&quot;&quot;&gt;数据库&lt;/a&gt;&lt;/li&gt;</div><div class="line">			&lt;li&gt;&lt;a href=&quot;#&quot; title=&quot;&quot;&gt;云计算&amp;大数据&lt;/a&gt;&lt;/li&gt;</div><div class="line">			&lt;li&gt;&lt;a href=&quot;#&quot; title=&quot;&quot;&gt;运维&amp;测试&lt;/a&gt;&lt;/li&gt;</div><div class="line">			&lt;li&gt;&lt;a href=&quot;#&quot; title=&quot;&quot;&gt;UI设计&lt;/a&gt;&lt;/li&gt;</div><div class="line">			</div><div class="line">		&lt;/ul&gt;</div><div class="line">	&lt;/nav&gt;</div><div class="line"></div><div class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">		function showsubmenu(li)&#123;</div><div class="line">			var submenu=li.getElementsByTagName(&quot;ul&quot;)[0];</div><div class="line">			submenu.style.display=&quot;block&quot;;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		function hidesubmenu(li)&#123;</div><div class="line">			var submenu = li.getElementsByTagName(&quot;ul&quot;)[0];</div><div class="line">			submenu.style.display=&quot;none&quot;;</div><div class="line">		&#125;</div><div class="line">	&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p><strong>jQuery实现</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;各种下拉菜单 | 镜心书社&lt;/title&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">		*&#123;margin: 0;padding:0;&#125;</div><div class="line">		#nav&#123;background-color: #eee;width: 800px;height: 40px;margin:  0 auto;&#125;</div><div class="line">		ul&#123; list-style: none;&#125;</div><div class="line">		ul li&#123;float: left;line-height: 40px;text-align: center;position: relative;&#125;</div><div class="line">		ul li a&#123;text-decoration: none;color:#000;display: block;padding: 0 20px;height: 40px;&#125;</div><div class="line">		ul li a:hover&#123;color: #fff;background-color:#666; &#125;</div><div class="line">		</div><div class="line">		ul li ul li&#123;float: none;background: #eee;margin-top:2px; &#125;</div><div class="line">		ul li ul&#123;position: absolute;left: 0px;top:40px;display: none&#125;</div><div class="line">		ul li ul a&#123;width: 80px;&#125; </div><div class="line">		ul li ul li a:hover&#123;background-color:blue;</div><div class="line">		&#125;</div><div class="line">	   </div><div class="line">	&lt;/style&gt;</div><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line">	&lt;nav id=&quot;nav&quot;&gt;</div><div class="line">		&lt;ul&gt;</div><div class="line">			&lt;li&gt;&lt;a href=&quot;#&quot; title=&quot;&quot;&gt;首页&lt;/a&gt;&lt;/li&gt;</div><div class="line">			&lt;li&gt;&lt;a href=&quot;#&quot; title=&quot;&quot;&gt;书架&lt;/a&gt;&lt;/li&gt;</div><div class="line">			&lt;li class=&quot;navmenu&quot;&gt;&lt;a href=&quot;#&quot; title=&quot;&quot;&gt;前端&lt;/a&gt;</div><div class="line">	&lt;!-- 下拉菜单			 --&gt;</div><div class="line">				&lt;ul&gt;</div><div class="line">					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Javascript&lt;/a&gt;&lt;/li&gt;</div><div class="line">					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;jQuery&lt;/a&gt;&lt;/li&gt;</div><div class="line">					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;HTML5&lt;/a&gt;&lt;/li&gt;</div><div class="line"></div><div class="line">				&lt;/ul&gt;</div><div class="line">			&lt;/li&gt;</div><div class="line">			&lt;li class=&quot;navmenu&quot;&gt;&lt;a href=&quot;#&quot; title=&quot;&quot;&gt;后端&lt;/a&gt;</div><div class="line">				&lt;ul&gt;</div><div class="line">					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;PHP&lt;/a&gt;&lt;/li&gt;</div><div class="line">					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Java&lt;/a&gt;&lt;/li&gt;</div><div class="line">					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Python&lt;/a&gt;&lt;/li&gt;</div><div class="line"></div><div class="line">				&lt;/ul&gt;				</div><div class="line">			&lt;/li&gt;</div><div class="line">			&lt;li class=&quot;navmenu&quot;&gt;&lt;a href=&quot;#&quot; title=&quot;&quot;&gt;移动&lt;/a&gt;</div><div class="line">				&lt;ul&gt;</div><div class="line">					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Android&lt;/a&gt;&lt;/li&gt;</div><div class="line">					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;IOS&lt;/a&gt;&lt;/li&gt;</div><div class="line">					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Unity 3D&lt;/a&gt;&lt;/li&gt;</div><div class="line"></div><div class="line">				&lt;/ul&gt;</div><div class="line">			&lt;/li&gt;				</div><div class="line">			&lt;li&gt;&lt;a href=&quot;#&quot; title=&quot;&quot;&gt;数据库&lt;/a&gt;&lt;/li&gt;</div><div class="line">			&lt;li&gt;&lt;a href=&quot;#&quot; title=&quot;&quot;&gt;云计算&amp;大数据&lt;/a&gt;&lt;/li&gt;</div><div class="line">			&lt;li&gt;&lt;a href=&quot;#&quot; title=&quot;&quot;&gt;运维&amp;测试&lt;/a&gt;&lt;/li&gt;</div><div class="line">			&lt;li&gt;&lt;a href=&quot;#&quot; title=&quot;&quot;&gt;UI设计&lt;/a&gt;&lt;/li&gt;</div><div class="line">			</div><div class="line">		&lt;/ul&gt;</div><div class="line">	&lt;/nav&gt;</div><div class="line">	</div><div class="line"></div><div class="line">	&lt;script src=&quot;https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js&quot;&gt;&lt;/script&gt;</div><div class="line"></div><div class="line"></div><div class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">		</div><div class="line">		$(function()&#123;</div><div class="line">			$(&quot;.navmenu&quot;).mouseover(function()&#123;</div><div class="line">				$(this).children(&quot;ul&quot;).show();</div><div class="line">			&#125;)</div><div class="line"></div><div class="line">			$(&quot;.navmenu&quot;).mouseout(function()&#123;</div><div class="line">				$(this).children(&quot;ul&quot;).hide();</div><div class="line">			&#125;)</div><div class="line">		&#125;)</div><div class="line">	&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -539,7 +541,7 @@ var _hmt = _hmt || [];
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://jxdxsw.com/2016/04/04/css_nav/" title="网页常用特效-导航类">http://jxdxsw.com/2016/04/04/css_nav/</a>
+      <a href="http://jxdxsw.com/2016/04/04/nav/" title="网页常用特效-导航类">http://jxdxsw.com/2016/04/04/nav/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -557,13 +559,15 @@ var _hmt = _hmt || [];
           
             <a href="../../../../tags/css/" rel="tag"># css</a>
           
-            <a href="../../../../tags/js/" rel="tag"># js</a>
-          
             <a href="../../../../tags/网页常用特效/" rel="tag"># 网页常用特效</a>
           
             <a href="../../../../tags/导航菜单/" rel="tag"># 导航菜单</a>
           
             <a href="../../../../tags/下拉菜单/" rel="tag"># 下拉菜单</a>
+          
+            <a href="../../../../tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="../../../../tags/jQuery/" rel="tag"># jQuery</a>
           
         </div>
       
@@ -682,7 +686,7 @@ var _hmt = _hmt || [];
             
             <div class="site-state-item site-state-tags">
               <a href="../../../../tags/index.html">
-                <span class="site-state-item-count">68</span>
+                <span class="site-state-item-count">69</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
