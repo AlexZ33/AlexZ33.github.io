@@ -1,0 +1,1325 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1fa710bfbea0f2b7099cc3f6715b8b60";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="../../../../lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="../../../../lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="../../../../css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端,CSS3,日志,HTML5,transform,css3新特性,导航页动画,Font Awesome字体库,气泡特效,ToolTips,悬停消息提示框," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="css3实现鼠标悬停消息提示框
+效果
+技术点：
+
+Font Awesome字体库
+SVG类型icon使用
+:before 与:after生成内容
+transition实现过渡动画
+transform
+-webkit-box-sizing: border-box;
+
+代码
+1234567891011121314151617181920212223242526272829303132333435363">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css3实现鼠标悬停消息提示框">
+<meta property="og:url" content="http://jxdxsw.com/2016/08/08/css3_ToolTips/index.html">
+<meta property="og:site_name" content="镜心的小树屋">
+<meta property="og:description" content="css3实现鼠标悬停消息提示框
+效果
+技术点：
+
+Font Awesome字体库
+SVG类型icon使用
+:before 与:after生成内容
+transition实现过渡动画
+transform
+-webkit-box-sizing: border-box;
+
+代码
+1234567891011121314151617181920212223242526272829303132333435363">
+<meta property="og:image" content="http://on891bjlf.bkt.clouddn.com/git/tooltips.gif">
+<meta property="og:updated_time" content="2017-04-10T07:15:41.123Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css3实现鼠标悬停消息提示框">
+<meta name="twitter:description" content="css3实现鼠标悬停消息提示框
+效果
+技术点：
+
+Font Awesome字体库
+SVG类型icon使用
+:before 与:after生成内容
+transition实现过渡动画
+transform
+-webkit-box-sizing: border-box;
+
+代码
+1234567891011121314151617181920212223242526272829303132333435363">
+<meta name="twitter:image" content="http://on891bjlf.bkt.clouddn.com/git/tooltips.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'CRQ1NMRICU',
+      apiKey: '3fec292202ffbceaa6c0059c7a9ffdca',
+      indexName: 'getstarted_actors',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索","hits_empty":"未找到关键字: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://jxdxsw.com/2016/08/08/css3_ToolTips/"/>
+
+
+
+
+<link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
+
+  <title> css3实现鼠标悬停消息提示框 | 镜心的小树屋 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">镜心的小树屋</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">白鲸鱼</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-book">
+          <a href="" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            书架
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-laboratory">
+          <a href="" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            实验室
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-code">
+          <a href="" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-code"></i> <br />
+            
+            前端
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AlexZ33">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="镜心的小树屋">
+    </span>
+
+<span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">795(字)</span> 
+         </span>
+        
+         
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                css3实现鼠标悬停消息提示框
+              
+            
+          </h1>
+        
+        
+
+        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-08T10:20:29+08:00">
+                2016-08-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../../../../categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="" class="leancloud_visitors" data-flag-title="css3实现鼠标悬停消息提示框">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>css3实现鼠标悬停消息提示框</strong></p>
+<p><strong>效果</strong><br><img src="http://on891bjlf.bkt.clouddn.com/git/tooltips.gif" alt=""></p>
+<p>技术点：</p>
+<ul>
+<li>Font Awesome字体库</li>
+<li>SVG类型icon使用</li>
+<li>:before 与:after生成内容</li>
+<li>transition实现过渡动画</li>
+<li>transform</li>
+<li><a href="http://www.w3school.com.cn/css3/css3_user_interface.asp" target="_blank" rel="external">-webkit-box-sizing: border-box;</a></li>
+</ul>
+<p><strong>代码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;css3实现鼠标悬停消息提示框&lt;/title&gt;</div><div class="line">	&lt;meta http-equiv=&quot;X-UA-compatible&quot; content=&quot;IE=edge&quot;&gt;</div><div class="line">	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;  initial-scale=&quot;1&quot;&gt;</div><div class="line">	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style/font-awesome.min.css&quot;&gt;</div><div class="line">	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style/prettyToolTips.css&quot;&gt;</div><div class="line"></div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=&quot;nav&quot;&gt;</div><div class="line">		&lt;ul&gt;</div><div class="line">			&lt;li&gt;</div><div class="line">				&lt;a href=&quot;#&quot; title=&quot;&quot; class=&quot;tooltip tooltip-effect-1&quot;&gt;Home</div><div class="line">					&lt;span class=&quot;tooltip-content&quot;&gt;</div><div class="line">					&lt;i class=&quot;fa fa-home fa-fw&quot;&gt;&lt;/i&gt;&lt;/span&gt;</div><div class="line">				&lt;/a&gt;</div><div class="line">			&lt;/li&gt;</div><div class="line">			&lt;li&gt;</div><div class="line">				&lt;a href=&quot;#&quot; title=&quot;&quot; class=&quot;tooltip tooltip-effect-2&quot;&gt;About me</div><div class="line">					&lt;span class=&quot;tooltip-content&quot;&gt;</div><div class="line">					&lt;i class=&quot;fa fa-user fa-fw&quot;&gt;&lt;/i&gt;&lt;/span&gt;</div><div class="line">				&lt;/a&gt;</div><div class="line">			&lt;/li&gt;</div><div class="line">			&lt;li&gt;</div><div class="line">				&lt;a href=&quot;#&quot; title=&quot;&quot; class=&quot;tooltip tooltip-effect-3&quot;&gt;Photography</div><div class="line">					&lt;span class=&quot;tooltip-content&quot;&gt;</div><div class="line">					&lt;i class=&quot;fa fa-camera fa-fw&quot;&gt;&lt;/i&gt;&lt;/span&gt;</div><div class="line">				&lt;/a&gt;</div><div class="line">			&lt;/li&gt;</div><div class="line">			&lt;li&gt;</div><div class="line">				&lt;a href=&quot;#&quot; title=&quot;&quot; class=&quot;tooltip tooltip-effect-4&quot;&gt;Work</div><div class="line">					&lt;span class=&quot;tooltip-content&quot;&gt;</div><div class="line">					&lt;i class=&quot;fa fa-briefcase fa-fw&quot; &gt;&lt;/i&gt;&lt;/span&gt;</div><div class="line">				&lt;/a&gt;</div><div class="line">			&lt;/li&gt;</div><div class="line">			&lt;li&gt;</div><div class="line">				&lt;a href=&quot;#&quot; title=&quot;&quot; class=&quot;tooltip tooltip-effect-5&quot;&gt;Contact</div><div class="line">					&lt;span class=&quot;tooltip-content&quot;&gt;</div><div class="line">					&lt;i class=&quot;fa fa-envelope fa-fw&quot;&gt;&lt;/i&gt;&lt;/span&gt;</div><div class="line">				&lt;/a&gt;</div><div class="line">			&lt;/li&gt;</div><div class="line">		&lt;/ul&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div></pre></td><td class="code"><pre><div class="line">/* Global */</div><div class="line"></div><div class="line">html&#123;</div><div class="line">	width: 100%;</div><div class="line">	height: 100%;</div><div class="line">	-webkit-text-size-adjust:none;</div><div class="line">	-moz-text-size-adjust:none;</div><div class="line">	-o-text-size-adjust:none;</div><div class="line">	-ms-text-size-adjust:none;</div><div class="line">	text-size-adjust:none;</div><div class="line">&#125;</div><div class="line"></div><div class="line">body&#123;</div><div class="line">	margin: 0;</div><div class="line">	padding: 0;</div><div class="line">	width: 100%;</div><div class="line">	height: 100%;</div><div class="line">	background-color: #47c9af;</div><div class="line">	color: #74777b;</div><div class="line">	font-weight: 300;</div><div class="line">	font-size: 1.5em;</div><div class="line">	font-family: &quot;Raleway&quot;,&quot;Arail&quot;;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">ul&#123;</div><div class="line">	list-style: none;</div><div class="line">	padding: 0;</div><div class="line">	margin: 0;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">a:link,a:visited,a:focus&#123;text-decoration: none;outline: none;&#125;</div><div class="line"></div><div class="line">*,*:after,*:before&#123;</div><div class="line">	-webkit-box-sizing: border-box;</div><div class="line">	-o-box-sizing: border-box;</div><div class="line">	-ms-box-sizing: border-box;</div><div class="line">	-moz-box-sizing: border-box;</div><div class="line">	box-sizing: border-box;</div><div class="line">&#125;</div><div class="line"></div><div class="line">*:after,*:before&#123;</div><div class="line">	display: block;</div><div class="line">	content: &quot;&quot;;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">*:after&#123;clear:both;&#125;</div><div class="line"></div><div class="line">/* Navigator */</div><div class="line"></div><div class="line">.nav&#123;</div><div class="line">	width: 800px;</div><div class="line">	height: 300px;</div><div class="line">	margin:200px auto;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.nav li&#123;</div><div class="line">	display: inline-block;</div><div class="line">	margin:0 1em;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.tooltip&#123;</div><div class="line">	display: inline-block;</div><div class="line">	font-weight: 700;</div><div class="line">	color: rgba(0,0,0,0.4);</div><div class="line">	padding: 0.15em 0.25em 0;</div><div class="line">	position: relative;</div><div class="line">	z-index: 999;</div><div class="line">	-webkit-transition:color 0.6s;</div><div class="line">	transition:color 0.6s;</div><div class="line"></div><div class="line">&#125;</div><div class="line">.tooltip:hover&#123;color:rgba(255,255,255,1);&#125;</div><div class="line"></div><div class="line">.tooltip-content&#123;</div><div class="line">	position: absolute;</div><div class="line"></div><div class="line">	z-index: 9999;</div><div class="line">	width: 80px;</div><div class="line">	height: 80px;</div><div class="line">	border-radius: 50%;</div><div class="line">	background: #fff;</div><div class="line">	left: 50%;</div><div class="line">	margin-left: -40px;</div><div class="line">	bottom:100%;</div><div class="line">	margin-bottom: 20px;</div><div class="line">	text-align: center;</div><div class="line">	padding-top: 25px;</div><div class="line">	color: #47c9af;</div><div class="line">	opacity: 0;</div><div class="line">	-webkit-transition:all 0.5s;</div><div class="line">	transition:all 0.5s;</div><div class="line"></div><div class="line">&#125;</div><div class="line">.tooltip .tooltip-content i&#123;</div><div class="line">	opacity: 0;</div><div class="line">	-webkit-transition:opacity 0.6s;</div><div class="line">	transition:opacity 0.6s;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">.tooltip-content::after&#123;</div><div class="line">	display: block;</div><div class="line">	content: &quot;&quot;;</div><div class="line">	width: 30px;</div><div class="line">	height: 20px;</div><div class="line">	background:url(../images/tooltip1.svg) no-repeat center;</div><div class="line">	background-size: 100%;</div><div class="line">	position: absolute;</div><div class="line">	top:100%;</div><div class="line">	left: 50%;</div><div class="line">	margin:-6px 0 0 -15px;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">.tooltip-effect-1 .tooltip-content&#123;</div><div class="line">	-webkit-transform:translate3d(0,10px,0) rotate3d(1,1,1,45deg);</div><div class="line">	transform:translate3d(0,10px,0) rotate3d(1,1,1,45deg);</div><div class="line">	-webkit-transform-origin:50% 100%;</div><div class="line">	transform-origin:50% 100%;</div><div class="line"></div><div class="line">&#125; </div><div class="line"></div><div class="line">.tooltip-effect-1 .tooltip-content i&#123;</div><div class="line">	-webkit-transform:scale3d(0.5,0.5,0.5);</div><div class="line">	transform:scale3d(0.5,0.5,0.5);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.tooltip-effect-2 .tooltip-content&#123;</div><div class="line">	-webkit-transform:translate3d(0,20px,0);</div><div class="line">	transform:translate3d(0,20px,0);</div><div class="line">	</div><div class="line"></div><div class="line">&#125; </div><div class="line"></div><div class="line">.tooltip-effect-2 .tooltip-content i&#123;</div><div class="line">	-webkit-transform:translate3d(0,15px,0);</div><div class="line">	transform:translate3d(0,15px,0);</div><div class="line">	</div><div class="line">	</div><div class="line">&#125;</div><div class="line"></div><div class="line">.tooltip-effect-3 .tooltip-content&#123;</div><div class="line">	-webkit-transform:translate3d(0,10px,0) rotate3d(0,1,0,90deg);</div><div class="line">	transform:translate3d(0,10px,0) rotate3d(0,1,0,90deg);</div><div class="line">	-webkit-transform-origin:50% 100%;</div><div class="line">	transform-origin:50% 100%;</div><div class="line">	</div><div class="line">	</div><div class="line"></div><div class="line">&#125; </div><div class="line"></div><div class="line">.tooltip-effect-3 .tooltip-content i&#123;</div><div class="line">	-webkit-transform:scale3d(0,0,1);</div><div class="line">	transform:scale3d(0,0,1);</div><div class="line"></div><div class="line">	</div><div class="line">&#125;</div><div class="line"></div><div class="line">.tooltip-effect-4 .tooltip-content&#123;</div><div class="line">	-webkit-transform:translate3d(0,-20px,0) ;</div><div class="line">	transform:translate3d(0,-20px,0) ;</div><div class="line">	</div><div class="line">	</div><div class="line">	</div><div class="line"></div><div class="line">&#125; </div><div class="line"></div><div class="line">.tooltip-effect-4 .tooltip-content i&#123;</div><div class="line">	-webkit-transform:translate3d(0,20px,0);</div><div class="line">	transform:translate3d(0,20px,0);</div><div class="line">	</div><div class="line">&#125;</div><div class="line"></div><div class="line">.tooltip-effect-5 .tooltip-content&#123;</div><div class="line">	-webkit-transform:scale3d(0.5,.5,0.5);</div><div class="line">	transform:scale3d(0.5,0.5,0.5);</div><div class="line">	-webkit-transform-origin:50% 100%;</div><div class="line">	transform-origin:50% 100%;</div><div class="line"></div><div class="line">	</div><div class="line">	</div><div class="line"></div><div class="line">&#125; </div><div class="line"></div><div class="line">.tooltip-effect-5 .tooltip-content i&#123;</div><div class="line">	-webkit-transform:translate3d(0,20px,0);</div><div class="line">	transform:translate3d(0,20px,0);</div><div class="line">	</div><div class="line">&#125;</div><div class="line"></div><div class="line">.tooltip:hover .tooltip-content,</div><div class="line">.tooltip:hover .tooltip-content i&#123;</div><div class="line">	opacity: 1;</div><div class="line">	-webkit-transform:translate3d(0,0,0) rotate3d(1,1,1,0) scale3d(1,1,1);</div><div class="line">	transform:translate3d(0,0,0) rotate3d(1,1,1,0) scale3d(1,1,1);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>参考</strong></p>
+<blockquote>
+<p><a href="http://www.w3school.com.cn/css3/css3_user_interface.asp" target="_blank" rel="external">CSS3 用户界面</a><br><a href="http://www.imooc.com/learn/331" target="_blank" rel="external">慕课网  CSS3实现漂亮ToolTips效果</a><br><a href="http://fontawesome.io/" target="_blank" rel="external">Font Awesome 官网</a></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="http://on891bjlf.bkt.clouddn.com/image/wechat微信公众号.jpg" alt="AlexZ33 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫码订阅公众号</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>如果文章对您有用请随意打赏，谢谢支持！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://on891bjlf.bkt.clouddn.com/image/2code/wechatpay.jpg" alt="AlexZ33 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://on891bjlf.bkt.clouddn.com/image/2code/alipay.png" alt="AlexZ33 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      AlexZ33
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://jxdxsw.com/2016/08/08/css3_ToolTips/" title="css3实现鼠标悬停消息提示框">http://jxdxsw.com/2016/08/08/css3_ToolTips/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="../../../../tags/前端/" rel="tag"># 前端</a>
+          
+            <a href="../../../../tags/CSS3/" rel="tag"># CSS3</a>
+          
+            <a href="../../../../tags/日志/" rel="tag"># 日志</a>
+          
+            <a href="../../../../tags/HTML5/" rel="tag"># HTML5</a>
+          
+            <a href="../../../../tags/transform/" rel="tag"># transform</a>
+          
+            <a href="../../../../tags/css3新特性/" rel="tag"># css3新特性</a>
+          
+            <a href="../../../../tags/导航页动画/" rel="tag"># 导航页动画</a>
+          
+            <a href="../../../../tags/Font-Awesome字体库/" rel="tag"># Font Awesome字体库</a>
+          
+            <a href="../../../../tags/气泡特效/" rel="tag"># 气泡特效</a>
+          
+            <a href="../../../../tags/ToolTips/" rel="tag"># ToolTips</a>
+          
+            <a href="../../../../tags/悬停消息提示框/" rel="tag"># 悬停消息提示框</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="../../03/css3_animation/" rel="next" title="CSS3实现网页平滑过渡效果">
+                <i class="fa fa-chevron-left"></i> CSS3实现网页平滑过渡效果
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="../../26/李清照有多伟大？/" rel="prev" title="李清照有多伟大">
+                李清照有多伟大 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg"
+               alt="AlexZ33" />
+          <p class="site-author-name" itemprop="name">AlexZ33</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="../../../../index.html">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="../../../../categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="../../../../tags/index.html">
+                <span class="site-state-item-count">87</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/AlexZ33" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://segmentfault.com/u/alexz33" target="_blank" title="Segmentfault">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Segmentfault
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2286550401/profile?topnav=1&wvr=6" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/zhao-kang-95-57/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.quora.com/profile/Alex-Zhao-20" target="_blank" title="Quora">
+                  
+                    <i class="fa fa-fw fa-quora"></i>
+                  
+                  Quora
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://on891bjlf.bkt.clouddn.com/image/wechat微信公众号.jpg" target="_blank" title="微信公众号">
+                  
+                    <i class="fa fa-fw fa-wechat"></i>
+                  
+                  微信公众号
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://music.163.com/#/user/home?id=258699758" target="_blank" title="网易云音乐">
+                  
+                    <i class="fa fa-fw fa-music"></i>
+                  
+                  网易云音乐
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-link"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ruanyifeng.com/home.html" title="阮一峰" target="_blank">阮一峰</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.liaoxuefeng.com/" title="缪雪峰" target="_blank">缪雪峰</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://liuyubobobo.com/" title="刘宇波" target="_blank">刘宇波</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/youngwind/blog" title="梁少锋" target="_blank">梁少锋</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://barretlee.com/" title="李靖" target="_blank">李靖</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/shinggang/" title="唐岗" target="_blank">唐岗</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://hello13.net/" title="有田十三" target="_blank">有田十三</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://yincheng.site/category/code/前端/effective前端" title="会编程的银猪" target="_blank">会编程的银猪</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.css88.com/" title="WEB前端开发" target="_blank">WEB前端开发</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/" title="AlloyTeam" target="_blank">AlloyTeam</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://75team.com/" title="奇舞团博客" target="_blank">奇舞团博客</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://csswizardry.com/" title="Css Wizardry" target="_blank">Css Wizardry</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://css-tricks.com/" title="Css Tricks" target="_blank">Css Tricks</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.filamentgroup.com/lab/" title="Filament Group Lab" target="_blank">Filament Group Lab</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+        
+      </div>
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+本站总访问量 <span id="busuanzi_value_site_pv"></span> &nbsp&nbsp&nbsp
+您是第<span id="busuanzi_value_site_uv"></span>个来到的小伙伴
+
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AlexZ33</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+    
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="../../../../lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="../../../../lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="../../../../lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="../../../../lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="../../../../lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="../../../../lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="../../../../js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="../../../../js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="../../../../js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="../../../../js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="../../../../js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="../../../../js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="../../../../js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2128477"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="../../../../lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="../../../../lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="../../../../js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("", "");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

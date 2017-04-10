@@ -335,6 +335,218 @@ var _hmt = _hmt || [];
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/04/15/js 几种类型的事件处理程序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AlexZ33">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="镜心的小树屋">
+    </span>
+
+<span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">1,563(字)</span> 
+         </span>
+        
+         
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="../../2016/04/15/js 几种类型的事件处理程序/" itemprop="url">
+                  js几种事件处理程序
+                </a>
+              
+            
+          </h1>
+        
+        
+
+        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-15T18:44:12+08:00">
+                2016-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../../categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="../../2016/04/15/js 几种类型的事件处理程序/" class="leancloud_visitors" data-flag-title="js几种事件处理程序">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><b>js几种事件处理程序<b></b></b></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzI1MjA2NzQ3Ng==&amp;mid=2457137471&amp;idx=3&amp;sn=5697c46c041a8497b554be2aee42f829&amp;chksm=fe693ac4c91eb3d25ebbd7f339d15142782bcc17fc63857d30f8528169a62e070e1b14c927cc#rd" target="_blank" rel="external">微信公众号阅读</a></p>
+<p>事件就是用户或浏览器自身执行的某种动作，如click,laod,mouseover都是事件的名称。</p>
+<p>事件流描述的是从页面中接收事件的顺序。</p>
+<p>事件处理程序就是对事件作出响应的函数。事件处理程序的名字以“on”开头，如click事件对应的事件处理程序的名称为onclick。</p>
+<p>为事件指定处理程序的方式有多种，如：<strong>HTML事件处理程序、DMO0级事件处理程序、DOM2级事件处理程序、IE事件处理程序、跨浏览器事件处理程序。</strong></p>
+<p><strong>（1）html事件处理程序</strong></p>
+<p>即：将事件处理程序，写在相应的html标签中。<br>eg:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;button&quot; value=&quot;click me&quot; onclick=&quot;alert(&quot;hello&quot;)&quot; /&gt;</div></pre></td></tr></table></figure>
+<p>缺点：①存在一个时间差，当用户在html元素一出现在页面上就去触发相应的事件时，事件的处理程序可能还不具备执行条件（比如说调用的函数还木有被解析），就会引发错误。<br>eg:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;button&quot; value=&quot;click me&quot; onclick=&quot;message()&quot; /&gt;</div><div class="line">&lt;script type=&quot;text/JavaScript&quot;&gt;</div></pre></td></tr></table></figure>
+<pre><code>function message(){ 
+        alert(&quot;hello world&quot;);
+}
+</code></pre><p></p>
+<p>因为调用的函数处于按钮的下方，如果在message函数被加载之前就点击了按钮就会引发错误。<br>②html和js代码耦合度太高，如果要改变事件处理程序，就要改动两个地方：html代码和javascript代码。</p>
+<p><strong>（2）DMO0级事件处理程序</strong><br>eg:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var btn=document.getElementById(&quot;myBtn&quot;);</div><div class="line"> btn.onclick=function()&#123;</div><div class="line">            alert(this.id)</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>注意：如果这段代码位于按钮之后，就有可能在一点时间内怎么点击都木有反应，因为在这段代码运行以前不会指定事件处理程序。</p>
+<p>DMO0级事件处理程序被认为是元素的方法，换句话说，DMO0级事件处理程序是在元素的作用域中运行的，所以程序中的this引用当前元素。可以在事件处理程序中通过this访问元素的任何属性和方法。<br>以这种方式添加的事件处理程序会在事件流的冒泡阶段被处理。</p>
+<p>也可删除指定的事件处理程序，只要将事件处理程序的属性设置为null就Ok了。<br>eg:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">btn.onclick=null;</div></pre></td></tr></table></figure>
+<p>将处理程序设置为null以后，再点击按钮不会发生任何动作。</p>
+<p><strong>（3）DOM2级事件处理程序</strong></p>
+<p>DOM2级事件定义了两个方法，用于指定和删除事件处理程序。这两个操作分别为：addEventListener()和removeEventListner().所有的DOM节点都包含这两个方法。他们要接受3个参数，分别为：要处理的事件名，处理函数，布尔值。最后的布尔值参数如果为ture,表示在捕获阶段处理程序，如果为false，表示在冒泡阶段调用事件处理程序。</p>
+<p><img src="http://on891bjlf.bkt.clouddn.com/image/640.jpg" alt=""></p>
+<p>例如在按钮上为click添加事件处理程序，可以用下面的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var btn=document.getElementById(&quot;myBtn&quot;);</div><div class="line">btn.addEventListner(&quot;onclick&quot;,function()&#123;</div><div class="line">alert(&quot;hello world&quot;);false</div><div class="line">&#125;);</div><div class="line">//这里添加的事件处理程序也是依附于元素的的作用域</div></pre></td></tr></table></figure>
+<p>使用DOM2事件处理程序的优点是：可以为同一个元素添加多个事件处理程序。<br>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var btn=getElementById(&quot;myBtn&quot;);</div><div class="line">	btn.addEventListner(&quot;click&quot;,function()&#123;alert(this.id);&#125;,flase);</div><div class="line">	btn.addEventListner(&quot;click&quot;,function()&#123;alert(&quot;hello world&quot;);&#125;,flase);</div></pre></td></tr></table></figure>
+<p>结果：先显示id，后显示hello world。<br>通过addEventListner()添加的事件处理程序只能通过removeEventListner来删除。移除时使用的参数与添加事件处理程序的参数相同。另：通过addEventListner添加的匿名函数无法删除。</p>
+<p><strong>（4）IE事件处理程序。</strong></p>
+<p>IE添加和删除事件处理程序的函数分别为：attachEvent()和detachEvent();<br>这两个函数接收相同的两个参数：事件处理程序名与事件处理函数。由于IE只支持事件冒泡，所以通过attachEvent添加的事件处理程序都会添加到冒泡阶段。<br>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var btn=document.getElementById(&quot;myBtn&quot;);</div><div class="line">btn.attachEvent(&quot;onclick&quot;,function()&#123;alert(&quot;hello world&quot;);&#125;);</div></pre></td></tr></table></figure>
+<p>IE在使用attachEvent方法的情况下，事件处理程序的作用域为全局作用域，因此this等于window。（在编写跨浏览器的代码时，记住这一点非常重要）。<br>与addEventListner类似，attachEvent()方法也可以用来为一个元素添加多个事件处理程序；<br>eg:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var btn=document.getElementById(&quot;myBtn&quot;);</div><div class="line">btn.attachEvent(&quot;onclick&quot;,function()&#123;alert(&quot;clicked&quot;);&#125;);</div><div class="line">btn.attachEvent(&quot;onclick&quot;,function()&#123;alert(&quot;hello world&quot;);&#125;);</div></pre></td></tr></table></figure>
+<p>值得注意的是：这些事件的处理程序是按逆序触发的，也就是说，先弹出hello world 再弹出clicked。<br>detach()使用方法略。</p>
+<p><strong>（5）跨浏览器的事件处理程序</strong></p>
+<p>为了以跨浏览器的方式处理事件，主要可以使用两个方法：<br>①使用能隔离浏览器差异的js库。<br>②自己编写最适合的事件处理方法。这里要用到能力检测，即：识别浏览器的能力。要保证代码能在大多数浏览器下一致的运行，只须关注冒泡阶段。</p>
+<p>代码步骤如下：</p>
+<p>首先要创建的方法是addHandler(用于处理跨浏览器的兼容性问题，这里没有给出具体代码),它的职责是视情况判定使用DOM0级方法，DOM2级方法，IE方法来添加事件。addHandler接收3个参数：要操作的元素、事件名称、事件处理程序函数。这个方法属于一个名叫EventUtil的对象。这里使用这个对象来处理浏览器之间的差异。<br>与addHandler对应的方法是removeHandler(),它也接受相同的参数。这个事件的职责是移除之前添加的事件处理程序。不论事件是以什么方式添加到对象中的，如果其他方法程序无效，则默认使用DOM0级方法。<br>使用EventUtil的方法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var btn=document.getElementById(&quot;myBtn&quot;);</div><div class="line">var handler=function()&#123;alert(&quot;hello&quot;)&#125;;//事件处理程序</div><div class="line">EventUtil.addHandler(btn,&quot;onclick&quot;,handler);</div><div class="line"></div><div class="line">//其他代码</div><div class="line">EventUtil.removeHandler(btn,&quot;onclick&quot;,handler);</div><div class="line">addHandler()和removeHandler()</div></pre></td></tr></table></figure>
+<p>没有考虑到所有的浏览器问题，例如IE中作用域的问题，但是使用它们添加和移除事件处理程序还是足够了。</p>
+<p><strong>参考：</strong></p>
+<blockquote>
+<p>《javascript高级程序设计》13章</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/04/04/nav_menu/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1948,223 +2160,6 @@ var _hmt = _hmt || [];
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/01/12/http/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AlexZ33">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="镜心的小树屋">
-    </span>
-
-<span class="post-time">
-	   &nbsp; | &nbsp;
-           <span class="post-meta-item-icon">
-             <i class="fa fa-calendar-o"></i>
-           </span>
-           <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">698(字)</span> 
-         </span>
-        
-         
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="../../2016/01/12/http/" itemprop="url">
-                  在浏览器输入url到页面打开，都做了些什么？
-                </a>
-              
-            
-          </h1>
-        
-        
-
-        
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-12T09:44:12+08:00">
-                2016-01-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="../../categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="../../2016/01/12/http/" class="leancloud_visitors" data-flag-title="在浏览器输入url到页面打开，都做了些什么？">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><b>在浏览器输入url到页面打开，都做了些什么？<b></b></b></p>
-<ul>
-<li>浏览器里输入网址</li>
-<li><p>浏览器查找域名对应的IP地址</p>
-<ul>
-<li>（<code>这一步包括DNS具体的查找过程，包括：浏览器缓存-&gt;系统缓存-&gt;路由器缓存…</code>）<ul>
-<li>浏览器搜索自身<code>DNS缓存</code></li>
-<li>搜索操作系统自身的DNS缓存（浏览器没有找到缓存或者缓存已失效）</li>
-<li>读取本地host文件（未找到）</li>
-<li>浏览器发起一个DNS的系统调用(向运营商DNS服务器发起域名解析请求)<ul>
-<li>宽带运营商服务器查看自身缓存 （未找到）</li>
-<li>运营商服务器发起一个迭代DNS解析请求（找根域DNS服务器-&gt;com域DNS服务器…）</li>
-<li>最后运营商服务器把结果返回给操作系统内核同时缓存起来</li>
-<li>操作系统内核把结果返回给浏览器</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>浏览器获取域名对应的IP地址后，发起HTTP“三次握手”        </p>
-</li>
-<li>TCP/IP连接建立后，浏览器向web服务器发送一个HTTP请求</li>
-<li>服务器的永久重定向响应（从<a href="http://example.com" target="_blank" rel="external">http://example.com</a> 到 <a href="http://www.example.com）" target="_blank" rel="external">http://www.example.com）</a><ul>
-<li>关于为什么要重定向。其中一个原因跟<code>搜索引擎</code>排名有关。如果一个页面有两个地址，就像<code>http://example.com/</code>和<code>http://www.example.com/</code>，搜索引擎会认为它们是两个网站，结果造成每一个的搜索链接都减少从而降低排名。所以要把带www的和不带www的地址归到同一个网站排名下。还有一个原因是用不同的地址会造成缓存友好性变差。</li>
-</ul>
-</li>
-<li>浏览器跟踪重定向地址，发起GET请求</li>
-<li>服务器”处理”请求，向浏览器发回一个HTML响应</li>
-<li>浏览器解析显示HTML</li>
-<li>浏览器发送请求获取嵌入在 HTML 中的资源（如图片、音频、视频、CSS、JS等等）</li>
-<li>浏览器发送异步请求（ajax请求等）</li>
-</ul>
-<p><strong>查看浏览器DNS缓存（以chrome为例）</strong><br>在chrome地址栏输入 <code>chrome://net-internals/#dns</code><br><img src="http://on891bjlf.bkt.clouddn.com/image/dns%E7%BC%93%E5%AD%98.png" alt=""></p>
-<p><strong>TCP/IP三次握手</strong></p>
-<p><img src="http://on891bjlf.bkt.clouddn.com/1491446302174.jpg" alt=""></p>
-<p><strong>DOM文档加载步骤</strong></p>
-<ul>
-<li>解析HTML结构</li>
-<li>加载外部脚本和样式表文件</li>
-<li>解析并执行脚本代码</li>
-<li>构造HTML DOM模型 <code>//ready</code></li>
-<li>加载图片等外部文件</li>
-<li>页面加载完毕<code>//load</code></li>
-</ul>
-<p>这里有一个坑 我们在写脚本时候，以jQuery为例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(document).ready(function()&#123;</div><div class="line">	//代码</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(document).load(function()&#123;</div><div class="line">	//代码</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>这两个是jQuery的文档加载方法，只是用ready就是在构建HTML DOM时候执行脚本  用load就是页面加载完毕执行<br>更多内容可以看看jQuery源码的解析，这里顺带提一下<br><strong>参考</strong></p>
-<blockquote>
-<p><a href="http://www.imooc.com/video/6712" target="_blank" rel="external">慕课网 node.js基础  HTTP知识</a><br><a href="http://www.imooc.com/learn/258" target="_blank" rel="external">慕课网 Linux网络基础</a></p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2214,7 +2209,7 @@ var _hmt = _hmt || [];
           
             <div class="site-state-item site-state-posts">
               <a href="../../index.html">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">28</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2236,7 +2231,7 @@ var _hmt = _hmt || [];
             
             <div class="site-state-item site-state-tags">
               <a href="../../tags/index.html">
-                <span class="site-state-item-count">83</span>
+                <span class="site-state-item-count">87</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
