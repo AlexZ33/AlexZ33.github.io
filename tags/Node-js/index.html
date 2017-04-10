@@ -427,7 +427,7 @@ var _hmt = _hmt || [];
             
             <div class="site-state-item site-state-tags">
               <a href="../index.html">
-                <span class="site-state-item-count">83</span>
+                <span class="site-state-item-count">86</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -989,6 +989,41 @@ var _hmt = _hmt || [];
               success: function(newcounter) {
                 var $element = $(document.getElementById(url));
                 $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
+ind('.leancloud-visitors-count').text(newcounter.get('time'));
               },
               error: function(newcounter, error) {
                 console.log('Failed to create');
