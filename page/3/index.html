@@ -335,7 +335,7 @@ var _hmt = _hmt || [];
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/01/12/http/">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/01/12/Canva绘制时钟/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AlexZ33">
@@ -353,7 +353,7 @@ var _hmt = _hmt || [];
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">698(字)</span> 
+           <span class="post-count">38(字)</span> 
          </span>
         
          
@@ -367,8 +367,8 @@ var _hmt = _hmt || [];
             
               
                 
-                <a class="post-title-link" href="../../2016/01/12/http/" itemprop="url">
-                  在浏览器输入url到页面打开，都做了些什么？
+                <a class="post-title-link" href="../../2016/01/12/Canva绘制时钟/" itemprop="url">
+                  Canvas 绘制时钟
                 </a>
               
             
@@ -426,7 +426,7 @@ var _hmt = _hmt || [];
 
           
           
-             <span id="../../2016/01/12/http/" class="leancloud_visitors" data-flag-title="在浏览器输入url到页面打开，都做了些什么？">
+             <span id="../../2016/01/12/Canva绘制时钟/" class="leancloud_visitors" data-flag-title="Canvas 绘制时钟">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -457,58 +457,12 @@ var _hmt = _hmt || [];
       
         
           
-            <p><b>在浏览器输入url到页面打开，都做了些什么？<b></b></b></p>
+            <h2 id="Canvas-绘制时钟"><a href="#Canvas-绘制时钟" class="headerlink" title="Canvas 绘制时钟"></a><b>Canvas 绘制时钟<b></b></b></h2><h2 id="演示链接"><a href="#演示链接" class="headerlink" title="演示链接  "></a><a href="http://jxdxsw.com/canvas_demo/clock.html">演示链接</a>  </h2><p><img src="http://on891bjlf.bkt.clouddn.com/gif/GIF.gif" alt="显示效果"><br>主要知识点</p>
 <ul>
-<li>浏览器里输入网址</li>
-<li><p>浏览器查找域名对应的IP地址</p>
-<ul>
-<li>（<code>这一步包括DNS具体的查找过程，包括：浏览器缓存-&gt;系统缓存-&gt;路由器缓存…</code>）<ul>
-<li>浏览器搜索自身<code>DNS缓存</code></li>
-<li>搜索操作系统自身的DNS缓存（浏览器没有找到缓存或者缓存已失效）</li>
-<li>读取本地host文件（未找到）</li>
-<li>浏览器发起一个DNS的系统调用(向运营商DNS服务器发起域名解析请求)<ul>
-<li>宽带运营商服务器查看自身缓存 （未找到）</li>
-<li>运营商服务器发起一个迭代DNS解析请求（找根域DNS服务器-&gt;com域DNS服务器…）</li>
-<li>最后运营商服务器把结果返回给操作系统内核同时缓存起来</li>
-<li>操作系统内核把结果返回给浏览器</li>
+<li>canvas画图</li>
+<li>rotate(),lineCap(),save(),store()等api</li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>浏览器获取域名对应的IP地址后，发起HTTP“三次握手”        </p>
-</li>
-<li>TCP/IP连接建立后，浏览器向web服务器发送一个HTTP请求</li>
-<li>服务器的永久重定向响应（从<a href="http://example.com" target="_blank" rel="external">http://example.com</a> 到 <a href="http://www.example.com）" target="_blank" rel="external">http://www.example.com）</a><ul>
-<li>关于为什么要重定向。其中一个原因跟<code>搜索引擎</code>排名有关。如果一个页面有两个地址，就像<code>http://example.com/</code>和<code>http://www.example.com/</code>，搜索引擎会认为它们是两个网站，结果造成每一个的搜索链接都减少从而降低排名。所以要把带www的和不带www的地址归到同一个网站排名下。还有一个原因是用不同的地址会造成缓存友好性变差。</li>
-</ul>
-</li>
-<li>浏览器跟踪重定向地址，发起GET请求</li>
-<li>服务器”处理”请求，向浏览器发回一个HTML响应</li>
-<li>浏览器解析显示HTML</li>
-<li>浏览器发送请求获取嵌入在 HTML 中的资源（如图片、音频、视频、CSS、JS等等）</li>
-<li>浏览器发送异步请求（ajax请求等）</li>
-</ul>
-<p><strong>查看浏览器DNS缓存（以chrome为例）</strong><br>在chrome地址栏输入 <code>chrome://net-internals/#dns</code><br><img src="http://on891bjlf.bkt.clouddn.com/image/dns%E7%BC%93%E5%AD%98.png" alt=""></p>
-<p><strong>TCP/IP三次握手</strong></p>
-<p><img src="http://on891bjlf.bkt.clouddn.com/1491446302174.jpg" alt=""></p>
-<p><strong>DOM文档加载步骤</strong></p>
-<ul>
-<li>解析HTML结构</li>
-<li>加载外部脚本和样式表文件</li>
-<li>解析并执行脚本代码</li>
-<li>构造HTML DOM模型 <code>//ready</code></li>
-<li>加载图片等外部文件</li>
-<li>页面加载完毕<code>//load</code></li>
-</ul>
-<p>这里有一个坑 我们在写脚本时候，以jQuery为例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(document).ready(function()&#123;</div><div class="line">	//代码</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(document).load(function()&#123;</div><div class="line">	//代码</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>这两个是jQuery的文档加载方法，只是用ready就是在构建HTML DOM时候执行脚本  用load就是页面加载完毕执行<br>更多内容可以看看jQuery源码的解析，这里顺带提一下<br><strong>参考</strong></p>
-<blockquote>
-<p><a href="http://www.imooc.com/video/6712" target="_blank" rel="external">慕课网 node.js基础  HTTP知识</a><br><a href="http://www.imooc.com/learn/258" target="_blank" rel="external">慕课网 Linux网络基础</a></p>
-</blockquote>
+<h2 id="总体思路和教程"><a href="#总体思路和教程" class="headerlink" title="总体思路和教程"></a>总体思路和教程</h2><p><a href="http://www.imooc.com/learn/612" target="_blank" rel="external">慕课网 Canvas 绘制时钟</a></p>
 
           
         
@@ -699,6 +653,174 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>参考：<br><a href="https://segmentfault.com/a/1190000000479199" target="_blank" rel="external">CSS3实现气泡效果</a><br><a href="https://segmentfault.com/a/1190000007159738" target="_blank" rel="external">CSS3 巧妙实现聊天气泡</a><br><a href="https://segmentfault.com/a/1190000006023203" target="_blank" rel="external">CSS3 聊天气泡框以及 inherit、currentColor 关键字</a></p>
 </blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2015/12/30/前端面试题汇总/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AlexZ33">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="镜心的小树屋">
+    </span>
+
+<span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">38(字)</span> 
+         </span>
+        
+         
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="../../2015/12/30/前端面试题汇总/" itemprop="url">
+                  前端面试题汇总
+                </a>
+              
+            
+          </h1>
+        
+        
+
+        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-30T13:44:12+08:00">
+                2015-12-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../../categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="../../2015/12/30/前端面试题汇总/" class="leancloud_visitors" data-flag-title="前端面试题汇总">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><b>前端面试题汇总<b></b></b></p>
+<p>罗列一些面试常见问题<br><a href="https://mp.weixin.qq.com/s?__biz=MzI1MjA2NzQ3Ng==&amp;mid=2457137484&amp;idx=2&amp;sn=2ff6dd662bf4f6cd588440600ff42991&amp;chksm=fe693ab7c91eb3a1022630b5b83a55182b49720e709f02397bdb86fb0f5e77ab4291a3ad878b&amp;scene=21#wechat_redirect" target="_blank" rel="external">前端面试（一）</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzI1MjA2NzQ3Ng==&amp;mid=2457137505&amp;idx=3&amp;sn=6c3bc0d6d4272f0c4ecf7ed6586fae2f&amp;chksm=fe693a9ac91eb38cf2e1a7e09720f6b0b3f2a3fd9d80be047b4df8c6b5385c9db23103b6a762#rd" target="_blank" rel="external">前端面试（二）</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzI1MjA2NzQ3Ng==&amp;mid=2457137515&amp;idx=2&amp;sn=5133566e2e32b59e34ec486157b6e01f&amp;chksm=fe693a90c91eb3865513aecf4bab3731d5dfebf90a65fa6e221b4c079243ddaa1e588a0c80d9&amp;scene=21#wechat_redirect" target="_blank" rel="external">前端面试（三）</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzI1MjA2NzQ3Ng==&amp;mid=2457137527&amp;idx=2&amp;sn=d297de8fd18884836d86092d3a3f723e&amp;chksm=fe693a8cc91eb39ae8dcb81a3cb2fc56e1d4d6d203b9bc42a22e39fae973fe081390c429d8e2#rd" target="_blank" rel="external">前端面试（四）</a></p>
+<p><center><strong>·END·</strong><center></center></center></p>
 
           
         
@@ -1062,174 +1184,6 @@ var _hmt = _hmt || [];
 <p>批评历史常有的两种方式：<br>在我们读完并完全了解书中的意义之后批评。如批评 书不够逼真  误解了史实 判断失真  无法掌握任性  对老一辈史书缺少经济事务的批评   对那些高大形象 描述的大公无私高贵情操人物的怀疑 一个好的历史学家要能兼具说故事的人与科学家的能力。他必须像某些目击者或作家说一些事情确实发生过一样，知道一些事情就是可能发生过。即：能够消除读者的疑虑<br>（某方面某领域有研究的人）会认为作者误用了资料 或者作者自己的判断就是错的。<br>我们希望历史学家具备完备的知识。</p>
 <p>历史与我何干？<br>这个世界已经变得很渺小又危机四伏，每个人都该开始把历史读好才行。<br>一切历史都是当代史。</p>
 <p>·END·</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2015/12/30/前端面试题汇总/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AlexZ33">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="镜心的小树屋">
-    </span>
-
-<span class="post-time">
-	   &nbsp; | &nbsp;
-           <span class="post-meta-item-icon">
-             <i class="fa fa-calendar-o"></i>
-           </span>
-           <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">38(字)</span> 
-         </span>
-        
-         
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="../../2015/12/30/前端面试题汇总/" itemprop="url">
-                  前端面试题汇总
-                </a>
-              
-            
-          </h1>
-        
-        
-
-        
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-30T13:44:12+08:00">
-                2015-12-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="../../categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="../../2015/12/30/前端面试题汇总/" class="leancloud_visitors" data-flag-title="前端面试题汇总">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><b>前端面试题汇总<b></b></b></p>
-<p>罗列一些面试常见问题<br><a href="https://mp.weixin.qq.com/s?__biz=MzI1MjA2NzQ3Ng==&amp;mid=2457137484&amp;idx=2&amp;sn=2ff6dd662bf4f6cd588440600ff42991&amp;chksm=fe693ab7c91eb3a1022630b5b83a55182b49720e709f02397bdb86fb0f5e77ab4291a3ad878b&amp;scene=21#wechat_redirect" target="_blank" rel="external">前端面试（一）</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzI1MjA2NzQ3Ng==&amp;mid=2457137505&amp;idx=3&amp;sn=6c3bc0d6d4272f0c4ecf7ed6586fae2f&amp;chksm=fe693a9ac91eb38cf2e1a7e09720f6b0b3f2a3fd9d80be047b4df8c6b5385c9db23103b6a762#rd" target="_blank" rel="external">前端面试（二）</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzI1MjA2NzQ3Ng==&amp;mid=2457137515&amp;idx=2&amp;sn=5133566e2e32b59e34ec486157b6e01f&amp;chksm=fe693a90c91eb3865513aecf4bab3731d5dfebf90a65fa6e221b4c079243ddaa1e588a0c80d9&amp;scene=21#wechat_redirect" target="_blank" rel="external">前端面试（三）</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzI1MjA2NzQ3Ng==&amp;mid=2457137527&amp;idx=2&amp;sn=d297de8fd18884836d86092d3a3f723e&amp;chksm=fe693a8cc91eb39ae8dcb81a3cb2fc56e1d4d6d203b9bc42a22e39fae973fe081390c429d8e2#rd" target="_blank" rel="external">前端面试（四）</a></p>
-<p><center><strong>·END·</strong><center></center></center></p>
 
           
         

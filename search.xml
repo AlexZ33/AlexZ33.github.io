@@ -87,16 +87,16 @@
 
     
     <entry>
-      <title><![CDATA[js闭包]]></title>
-      <url>%2F2016%2F03%2F07%2Fjs%E9%97%AD%E5%8C%85%2F</url>
-      <content type="text"><![CDATA[js闭包 闭包（1）概念闭包是指有权访问另一个函数作用域中的变量的函数。（2）特性闭包只能取得包含函数中任何变量的最后一个值。（3）创建方式在一个函数内部创建另一个函数。（4）原理在一个函数内部中定义的函数会将包含函数（外部函数）的活动对象添加到其作用域中，直至解除对内部函数的应用，内部函数被销毁，外部函数的活动对象才会被销毁。（5）实例 12345678910111213141516function closure()&#123; var result=[]; for (var i = 0; i &lt; 4; i++) &#123; result[i]=function()&#123; console.log(i); return i; &#125; &#125;; return result;&#125;var result=closure();for (var i = 0; i &lt; 4; i++) &#123; result[i]();&#125;;//4 4 4 4]]></content>
+      <title><![CDATA[CSS实现简单图片展示]]></title>
+      <url>%2F2016%2F03%2F07%2Fcss%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E5%9B%BE%E7%89%87%E5%B1%95%E7%A4%BA%2F</url>
+      <content type="text"><![CDATA[CSS实现简单图片展示 效果： css部分123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051 div,ul,li,dl,dt,dd&#123; margin:0; padding:0;&#125;ul,li,dl,dt,dd&#123; list-style:none;&#125;.demo&#123; margin:0 auto; width:930px;&#125;.demo ul li&#123; float:left; width:300px; margin-right:6px; position:relative;&#125;.demo ul li img&#123; border:none; position:relative; z-index:22;&#125;.demo ul li a&#123; width:300px; display:block; border:2px solid #ccc;&#125;.demo ul li a:hover&#123; border:2px solid #C03;&#125;.demo ul li a span&#123; position:absolute; z-index:33; bottom:2px; left:2px; width:300px; height:40px; filter:alpha(Opacity=50); -moz-opacity:0.5; opacity: 0.5; background:#000; color:#fff; line-height:40px; text-align:left; display:none;&#125;.demo ul li a:hover span&#123; display:block;&#125; html部分 &lt;div class=&quot;demo&quot;&gt; &lt;ul&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;1.jpg&quot; /&gt; &lt;span&gt;keep moving&lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;2.jpg&quot; /&gt; &lt;span&gt;stay hungry &lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;3.jpg&quot; /&gt; &lt;span&gt;stay foolish&lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;/ul&gt; 参考慕课网 图片展示特效]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[CSS实现简单图片展示]]></title>
-      <url>%2F2016%2F03%2F07%2Fcss%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E5%9B%BE%E7%89%87%E5%B1%95%E7%A4%BA%2F</url>
-      <content type="text"><![CDATA[CSS实现简单图片展示 效果： css部分123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051 div,ul,li,dl,dt,dd&#123; margin:0; padding:0;&#125;ul,li,dl,dt,dd&#123; list-style:none;&#125;.demo&#123; margin:0 auto; width:930px;&#125;.demo ul li&#123; float:left; width:300px; margin-right:6px; position:relative;&#125;.demo ul li img&#123; border:none; position:relative; z-index:22;&#125;.demo ul li a&#123; width:300px; display:block; border:2px solid #ccc;&#125;.demo ul li a:hover&#123; border:2px solid #C03;&#125;.demo ul li a span&#123; position:absolute; z-index:33; bottom:2px; left:2px; width:300px; height:40px; filter:alpha(Opacity=50); -moz-opacity:0.5; opacity: 0.5; background:#000; color:#fff; line-height:40px; text-align:left; display:none;&#125;.demo ul li a:hover span&#123; display:block;&#125; html部分 &lt;div class=&quot;demo&quot;&gt; &lt;ul&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;1.jpg&quot; /&gt; &lt;span&gt;keep moving&lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;2.jpg&quot; /&gt; &lt;span&gt;stay hungry &lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a&gt; &lt;img src=&quot;3.jpg&quot; /&gt; &lt;span&gt;stay foolish&lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;/ul&gt; 参考慕课网 图片展示特效]]></content>
+      <title><![CDATA[js闭包]]></title>
+      <url>%2F2016%2F03%2F07%2Fjs%E9%97%AD%E5%8C%85%2F</url>
+      <content type="text"><![CDATA[js闭包 闭包（1）概念闭包是指有权访问另一个函数作用域中的变量的函数。（2）特性闭包只能取得包含函数中任何变量的最后一个值。（3）创建方式在一个函数内部创建另一个函数。（4）原理在一个函数内部中定义的函数会将包含函数（外部函数）的活动对象添加到其作用域中，直至解除对内部函数的应用，内部函数被销毁，外部函数的活动对象才会被销毁。（5）实例 12345678910111213141516function closure()&#123; var result=[]; for (var i = 0; i &lt; 4; i++) &#123; result[i]=function()&#123; console.log(i); return i; &#125; &#125;; return result;&#125;var result=closure();for (var i = 0; i &lt; 4; i++) &#123; result[i]();&#125;;//4 4 4 4]]></content>
     </entry>
 
     
@@ -129,13 +129,6 @@
 
     
     <entry>
-      <title><![CDATA[Canvas 绘制时钟]]></title>
-      <url>%2F2016%2F01%2F12%2FCanva%E7%BB%98%E5%88%B6%E6%97%B6%E9%92%9F%2F</url>
-      <content type="text"><![CDATA[Canvas 绘制时钟演示链接 主要知识点 canvas画图 rotate(),lineCap(),save(),store()等api 总体思路和教程慕课网 Canvas 绘制时钟]]></content>
-    </entry>
-
-    
-    <entry>
       <title><![CDATA[HTTP概念进阶]]></title>
       <url>%2F2016%2F01%2F12%2Fhttpfurther%2F</url>
       <content type="text"><![CDATA[HTTP概念进阶 Nodejs中http模块不解析请求的具体内容，只分离出请求头和请求体1、什么是回调函数？回调试异步编程时的基础，将后续逻辑封装成起始函数的参数，逐层嵌套2、什么事同步/异步？同步：发送方发送数据后，等待接收方发回响应以后才发下一个数据包的通讯方式异步：发送方发出数据后，不等接收方发回响应，接着发送下个数据包的通讯方式3、什么事I/O?磁盘的写入（in）磁盘的读取（out）4、什么是单线程/多线程？一次只能执行一个程序叫做单线程一次能执行多个程序叫做多线程5、什么是阻塞/非阻塞？阻塞：前一个程序未执行完就得一直等待非阻塞：前一个程序未执行完时可以挂起，继续执行其他程序，等到使用时再执行6、什么是事件？一个触发动作（例如点击按钮）7、什么是事件驱动？一个触发动作引起的操作（例如点击按钮后弹出一个对话框）8、什么是基于事件驱动的回调？为了某个事件注册了回调函数，但是这个回调函数不是马上执行，只有当事件发生的时候，才会调用回掉函数，这种函数执行的方式叫做事件驱动~这种注册回掉就是基于事件驱动的回调，如果这些回调和异步I/O（数据写入、读取）操作相关，可以看作是基于回调的异步I/O。只不过这种回调在nodejs中是有事件来驱动的9、什么是事件循环？事件循环Eventloop，倘若有大量的异步操作，一些I/O的耗时操作，甚至是一些定时器控制的延时操作，它们完成的时候都要调用相应的回调函数，而从完成一些密集的任务，而又不会阻塞整个程序执行的流程，此时需要一种机制来管理，这种机制叫做事件循环总而言之，管理大量异步操作的机制叫做事件循环 EventLoop：回调函数队列，当异步函数执行时回调函数会被压入这个队列；对于node.js来说，它有一个单线程不断查询队列是否有事件，当它读取到一个事件时候，将调用与这个事件关联的js函数。 事件的循环是一个先进先出的任务队列，回调按照他们加入队列的顺序来执行。 整个队列可以理解成是普通函数和回调函数构成的一个完整的队列。 12345678910111213141516var c=0;function printIt()&#123; console.log(c);&#125;function plus(callback)&#123; setTimeout(function()&#123; c+=1; callback();&#125;,1000)&#125; plus(printIt);//1 node.js 核心思想： 非阻塞 单线程 事件驱动]]></content>
@@ -150,9 +143,23 @@
 
     
     <entry>
+      <title><![CDATA[Canvas 绘制时钟]]></title>
+      <url>%2F2016%2F01%2F12%2FCanva%E7%BB%98%E5%88%B6%E6%97%B6%E9%92%9F%2F</url>
+      <content type="text"><![CDATA[Canvas 绘制时钟演示链接 主要知识点 canvas画图 rotate(),lineCap(),save(),store()等api 总体思路和教程慕课网 Canvas 绘制时钟]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[CSS3实现三角形和气泡效果]]></title>
       <url>%2F2016%2F01%2F07%2FCSS3%E5%AE%9E%E7%8E%B0%E4%B8%89%E8%A7%92%E5%BD%A2%E5%92%8C%E6%B0%94%E6%B3%A1%E6%95%88%E6%9E%9C%2F</url>
       <content type="text"><![CDATA[三角形的实现 html结构123&lt;body&gt; &lt;div&gt;&lt;/div&gt;&lt;/body&gt; css样式12345678 div&#123; height: 0; width: 0; border-top: 40px solid #000; border-right: 40px solid #ff0000; border-left: 40px solid #ff0000; border-bottom: 40px solid #000;&#125; 显示效果用css画三角形很简单，就是将一个块元素宽高设置为0，然后给某一边设一个比较厚的宽度利用盒子的均分原理，盒子都是矩形或者正方形，从形状的中心，向4个上下左右划分4个部分。保证元素是块级元素，设置元素的边框，不需要显示的边框使用透明色transparent。 所以，如果你要一个向上或者向下的三角:border-left和border-right就是transparent，而border-bottom可见则三角向上，border-top可见则三角向下12345678 div&#123; height: 0; width: 0; border-top: 40px solid transparent; border-right: 40px solid transparent; border-left: 40px solid transparent; border-bottom: 40px solid #000;&#125; 如果你要一个向左或者向右的三角:border-top和border-bottom就是transparent，而设置border-left则三角向右，设置border-right则三角向左12345678 div&#123; height: 0; width: 0; border-top: 40px solid transparent; border-right: 40px solid transparent; border-left: 40px solid #000; border-bottom: 40px solid transparent;&#125; 如果它的上是有的，但是右是透明的，就会是下面的效果border-top: 100px solid red;border-right: 100px solid transparent; 1234567 div&#123; height: 0; width: 0; border-top: 40px solid #000; border-right: 40px solid transparent; &#125; 当然还有这样的：123456789 div&#123; height: 0; width: 0; border-top: 40px solid #000; border-right: 30px solid #ff0000; border-left: 50px solid #ff0000; border-bottom: 25px solid #000; &#125; 很明显的左三角和下三角的比例是2:1，在下三角可以明显的看出来，下三角的底边，左右2:1；同理，根据上面的上下左右布局，应该没有什么三角是画不出来的 示例 如下图的时光轴旁边的小三角 就可以用以上的方法实现12345678910 .content_item_icon_arrow&#123; position: absolute; left: -10px; top: 20px; height: 0px; border-color:transparent #e2e2e2 transparent transparent; border-width: 10px 10px 10px 0px; border-style: dashed solid dashed dashed;&#125; 气泡效果实现 以前我们要实现对话气泡效果很麻烦，基本上是用切图的方法。现在有了CSS3就变得简单多了。一个HTML元素，一些CSS3代码，不需要图片，也不需要JavaScript。如下图： 12345678910111213141516171819202122232425262728293031 &lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;title&gt; css3实现气泡&lt;/title&gt; &lt;style&gt; .box&#123; width: 200px;height: 100px; border: 5px solid #eee;margin-left: 10px;position: relative; &#125; .box .arrow&#123; position: absolute;top: 100px;left: 30px;width: 50px;height: 50px; &#125; .a1&#123; border: 30px solid #f00;display: block;border-color: #eee transparent transparent transparent; &#125; .a2&#123;position: absolute;left: 0;top: -8px;border: 30px solid #f00;display: block;border-color: #fff transparent transparent transparent &#125; &lt;/style&gt;&lt;/head&gt;&lt;body&gt; &lt;div class="box"&gt; &lt;div class="arrow"&gt; &lt;span class="a1"&gt;&lt;/span&gt; &lt;span class="a2"&gt;&lt;/span&gt; &lt;/div&gt; &lt;p&gt; css3实现气泡 &lt;/p&gt; &lt;/div&gt;&lt;/body&gt;&lt;/html&gt; 效果 1234567891011121314151617181920212223242526272829303132333435363738394041424344&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;/head&gt;&lt;style type="text/css"&gt;#demo&#123; position: relative; width: 200px; height: 100px; background-color: #fff; border: 8px solid #666; -webkit-border-radius: 30px; -moz-border-radius: 30px; border-radius: 30px; -webkit-box-shadow: 2px 2px 4px #888; -moz-box-shadow: 2px 2px 4px #888; box-shadow: 2px 2px 4px #888;&#125;#demo:before&#123; content: ' '; position: absolute; width: 0; height: 0; left: 30px; top: 100px; border: 25px solid; border-color: #666 transparent transparent #666;&#125;#demo:after&#123; content: ' '; position: absolute; width: 0; height: 0; left: 38px; top: 100px; border: 15px solid; border-color: #fff transparent transparent #fff;&#125;&lt;/style&gt;&lt;body&gt; &lt;div id="demo"&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt; 效果： 参考：CSS3实现气泡效果CSS3 巧妙实现聊天气泡CSS3 聊天气泡框以及 inherit、currentColor 关键字]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[前端面试题汇总]]></title>
+      <url>%2F2015%2F12%2F30%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB%2F</url>
+      <content type="text"><![CDATA[前端面试题汇总 罗列一些面试常见问题前端面试（一）前端面试（二）前端面试（三）前端面试（四） ·END·]]></content>
     </entry>
 
     
@@ -167,13 +174,6 @@
       <title><![CDATA[读书笔记 | 如何读历史？]]></title>
       <url>%2F2015%2F12%2F30%2F%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E5%8E%86%E5%8F%B2%2F</url>
       <content type="text"><![CDATA[如何阅读历史 一切历史都是当代史 历史更偏向于故事，而不是科学。对于历史不那么感兴趣的人可能认为，历史书是一种客观严肃的读物，事实上就像广泛流传的那句话一样：历史是由胜利者书写的，历史是任人打扮的小姑娘–《如何阅读一本书》房龙的宽容：这样的事情发生在过去，也发生在现在不过将来，我们希望，这样的事情不再发生了。 托尔斯泰认为，造成人类行为的原因太多，又太复杂，而且动机又深深隐藏在潜意识里，因此我们无法知道为什么会发生某些事。 亚里士多德说：“诗比历史更有哲学性。”他的意思是诗更具一般性，更有普遍影响力。一首好诗不只在当时当地是一首好诗，也在任何时间任何地点都是好诗。这样的诗对所有人类来说都有意义与力量。历史不像诗那样有普遍性。历史与事件有关，诗却不必如此。但是一本好的历史书仍然是有普遍性的。修昔底德说过，他写历史的原因是：希望经由他所观察到的错误，以及他个人受到的灾难与国家所受到的苦楚，将来的人们不会重蹈覆辙。他所描述的人们犯下的错误，不只对他个人或希腊有意义，对整个人类来说更有意义。在二千五百年以前，雅典人与斯巴达人所犯的错误，今天人们仍然同样在犯—或至少是非常接近的错误—修昔底德以降，这样的戏码一再上演。 总之，阅读历史的两个要点是：第一，对你感兴趣的事件或时期，尽可能阅读一种以上的历史书。第二，阅读历史时，不只要关心在过去某个时间、地点真正发生了什么事，还要读懂在任何时空之中，尤其是现在，人们为什么会有如此这般行动的原因。 阅读历史书要提出的问题：尽管历史书更接近小说，而非科学，但仍然能像阅读论说性作品一样来阅读，也应该如此阅读。因此，在阅读历史时，我们也要像阅读论说性作品一样，提出基本的问题。因为历史的特性，我们要提出的问题有点不同，所期待的答案也稍微不同。每一本历史书都有一个特殊而且有限定范围的主题。因此，如果我们要把历史读好，我们就要弄清楚这本书在谈什么，没有谈到的又是什么。当然，如果我们要批评这本书，我们一定要知道它没谈到的是什么。一位作者不该因为他没有做到他根本就没想做的事情而受到指责。我们一定要知道这位作者是用什么方法来说故事的。他将整本书依照年代、时期或世代区分为不同的章节？还是按照其他的规则定出章节？他是不是在这一章中谈那个时期的经济历史，而在别章中谈战争、宗教运动与文学作品的产生？其中哪一个对他来说最重要？如果我们能找出这些，如果我们能从他的故事章节中发现他最重视的部分，我们就能更了解他。我们可能不同意他对这件事的观点，但我们仍然能从他身上学到东西。 批评历史常有的两种方式：在我们读完并完全了解书中的意义之后批评。如批评 书不够逼真 误解了史实 判断失真 无法掌握任性 对老一辈史书缺少经济事务的批评 对那些高大形象 描述的大公无私高贵情操人物的怀疑 一个好的历史学家要能兼具说故事的人与科学家的能力。他必须像某些目击者或作家说一些事情确实发生过一样，知道一些事情就是可能发生过。即：能够消除读者的疑虑（某方面某领域有研究的人）会认为作者误用了资料 或者作者自己的判断就是错的。我们希望历史学家具备完备的知识。 历史与我何干？这个世界已经变得很渺小又危机四伏，每个人都该开始把历史读好才行。一切历史都是当代史。 ·END·]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[前端面试题汇总]]></title>
-      <url>%2F2015%2F12%2F30%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB%2F</url>
-      <content type="text"><![CDATA[前端面试题汇总 罗列一些面试常见问题前端面试（一）前端面试（二）前端面试（三）前端面试（四） ·END·]]></content>
     </entry>
 
     
