@@ -10,7 +10,6 @@
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="baidu-site-verification" content="vDCs4CW6Ba" />
 
 <script>
 var _hmt = _hmt || [];
@@ -1828,174 +1827,6 @@ var _hmt = _hmt || [];
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com2016/08/03/jQuery 如何存储，获取和删除 Cookies/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AlexZ33">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="镜心的小树屋">
-    </span>
-
-<span class="post-time">
-	   &nbsp; | &nbsp;
-           <span class="post-meta-item-icon">
-             <i class="fa fa-calendar-o"></i>
-           </span>
-           <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">186(字)</span> 
-         </span>
-        
-         
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="2016/08/03/jQuery 如何存储，获取和删除 Cookies/" itemprop="url">
-                  jQuery 如何存储，获取和删除 Cookies
-                </a>
-              
-            
-          </h1>
-        
-        
-
-        
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-03T18:44:12+08:00">
-                2016-08-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="2016/08/03/jQuery 如何存储，获取和删除 Cookies/" class="leancloud_visitors" data-flag-title="jQuery 如何存储，获取和删除 Cookies">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="jQuery-如何存储，获取和删除-Cookies"><a href="#jQuery-如何存储，获取和删除-Cookies" class="headerlink" title="jQuery 如何存储，获取和删除 Cookies"></a>jQuery 如何存储，获取和删除 Cookies</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">jQuery.cookie = function(name, value, options) &#123;</div><div class="line">    if (typeof value != &apos;undefined&apos;) &#123;</div><div class="line">        options = options || &#123;&#125;;</div><div class="line">        if (value === null) &#123;</div><div class="line">            value = &apos;&apos;;</div><div class="line">            options = $.extend(&#123;&#125;, options);</div><div class="line">            options.expires = -1;</div><div class="line">        &#125;</div><div class="line">        var expires = &apos;&apos;;</div><div class="line">        if (options.expires &amp;&amp; (typeof options.expires == &apos;number&apos; || options.expires.toUTCString)) &#123;</div><div class="line">            var date;</div><div class="line">            if (typeof options.expires == &apos;number&apos;) &#123;</div><div class="line">                date = new Date();</div><div class="line">                date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));</div><div class="line">            &#125; else &#123;</div><div class="line">                date = options.expires;</div><div class="line">            &#125;</div><div class="line">            expires = &apos;; expires=&apos; + date.toUTCString();</div><div class="line">        &#125;</div><div class="line">        var path = options.path ? &apos;; path=&apos; + (options.path) : &apos;&apos;;</div><div class="line">        var domain = options.domain ? &apos;; domain=&apos; + (options.domain) : &apos;&apos;;</div><div class="line">        var secure = options.secure ? &apos;; secure&apos; : &apos;&apos;;</div><div class="line">        document.cookie = [name, &apos;=&apos;, encodeURIComponent(value), expires, path, domain, secure].join(&apos;&apos;);</div><div class="line">        &#125; else &#123;</div><div class="line">            var cookieValue = null;</div><div class="line">            if (document.cookie &amp;&amp; document.cookie != &apos;&apos;) &#123;</div><div class="line">            var cookies = document.cookie.split(&apos;;&apos;);</div><div class="line">            for (var i = 0; i &lt; cookies.length; i++) &#123;</div><div class="line">                var cookie = jQuery.trim(cookies[i]);</div><div class="line">                if (cookie.substring(0, name.length + 1) == (name + &apos;=&apos;)) &#123;</div><div class="line">                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));</div><div class="line">                    break;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return cookieValue;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>然后通过下面方法使用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$(document).ready(function() &#123;</div><div class="line">    $(&apos;#write_cokies&apos;).click(function()&#123;</div><div class="line">        $.cookie(&apos;name&apos;, &apos;test&apos;,&#123;expires: 7&#125;);                  </div><div class="line">    &#125;);</div><div class="line">    $(&apos;#read_ookies&apos;).click(function()&#123;</div><div class="line">        var test = $.cookie(&apos;name&apos;);</div><div class="line">        alert (test);</div><div class="line">    &#125;);</div><div class="line">    $(&apos;#delete_cookies&apos;).click(function()&#123;</div><div class="line">        $.cookie(&apos;name&apos;, null);                              </div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://jxdxsw.com2016/08/03/css3_animation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2185,6 +2016,174 @@ var _hmt = _hmt || [];
 <blockquote>
 <p><a href="http://www.imooc.com/learn/252" target="_blank" rel="external">慕课网 css3实现网页平滑过渡效果</a><br><a href="http://getbootstrap.com/getting-started/" target="_blank" rel="external">Browser and device support</a><br><a href="http://www.dafont.com/" target="_blank" rel="external">http://www.dafont.com/</a><br><a href="http://www.google.com/webfonts" target="_blank" rel="external">http://www.google.com/webfonts</a><br><a href="http://www.runoob.com/css3/css3-fonts.html" target="_blank" rel="external">@font-face</a><br><a href="https://tympanus.net/codrops/2012/06/12/css-only-responsive-layout-with-smooth-transitions/" target="_blank" rel="external">CSS-Only Responsive Layout with Smooth Transitions</a></p>
 </blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com2016/08/03/jQuery 如何存储，获取和删除 Cookies/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AlexZ33">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="镜心的小树屋">
+    </span>
+
+<span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">186(字)</span> 
+         </span>
+        
+         
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="2016/08/03/jQuery 如何存储，获取和删除 Cookies/" itemprop="url">
+                  jQuery 如何存储，获取和删除 Cookies
+                </a>
+              
+            
+          </h1>
+        
+        
+
+        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-03T18:44:12+08:00">
+                2016-08-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="2016/08/03/jQuery 如何存储，获取和删除 Cookies/" class="leancloud_visitors" data-flag-title="jQuery 如何存储，获取和删除 Cookies">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="jQuery-如何存储，获取和删除-Cookies"><a href="#jQuery-如何存储，获取和删除-Cookies" class="headerlink" title="jQuery 如何存储，获取和删除 Cookies"></a>jQuery 如何存储，获取和删除 Cookies</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">jQuery.cookie = function(name, value, options) &#123;</div><div class="line">    if (typeof value != &apos;undefined&apos;) &#123;</div><div class="line">        options = options || &#123;&#125;;</div><div class="line">        if (value === null) &#123;</div><div class="line">            value = &apos;&apos;;</div><div class="line">            options = $.extend(&#123;&#125;, options);</div><div class="line">            options.expires = -1;</div><div class="line">        &#125;</div><div class="line">        var expires = &apos;&apos;;</div><div class="line">        if (options.expires &amp;&amp; (typeof options.expires == &apos;number&apos; || options.expires.toUTCString)) &#123;</div><div class="line">            var date;</div><div class="line">            if (typeof options.expires == &apos;number&apos;) &#123;</div><div class="line">                date = new Date();</div><div class="line">                date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));</div><div class="line">            &#125; else &#123;</div><div class="line">                date = options.expires;</div><div class="line">            &#125;</div><div class="line">            expires = &apos;; expires=&apos; + date.toUTCString();</div><div class="line">        &#125;</div><div class="line">        var path = options.path ? &apos;; path=&apos; + (options.path) : &apos;&apos;;</div><div class="line">        var domain = options.domain ? &apos;; domain=&apos; + (options.domain) : &apos;&apos;;</div><div class="line">        var secure = options.secure ? &apos;; secure&apos; : &apos;&apos;;</div><div class="line">        document.cookie = [name, &apos;=&apos;, encodeURIComponent(value), expires, path, domain, secure].join(&apos;&apos;);</div><div class="line">        &#125; else &#123;</div><div class="line">            var cookieValue = null;</div><div class="line">            if (document.cookie &amp;&amp; document.cookie != &apos;&apos;) &#123;</div><div class="line">            var cookies = document.cookie.split(&apos;;&apos;);</div><div class="line">            for (var i = 0; i &lt; cookies.length; i++) &#123;</div><div class="line">                var cookie = jQuery.trim(cookies[i]);</div><div class="line">                if (cookie.substring(0, name.length + 1) == (name + &apos;=&apos;)) &#123;</div><div class="line">                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));</div><div class="line">                    break;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return cookieValue;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>然后通过下面方法使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$(document).ready(function() &#123;</div><div class="line">    $(&apos;#write_cokies&apos;).click(function()&#123;</div><div class="line">        $.cookie(&apos;name&apos;, &apos;test&apos;,&#123;expires: 7&#125;);                  </div><div class="line">    &#125;);</div><div class="line">    $(&apos;#read_ookies&apos;).click(function()&#123;</div><div class="line">        var test = $.cookie(&apos;name&apos;);</div><div class="line">        alert (test);</div><div class="line">    &#125;);</div><div class="line">    $(&apos;#delete_cookies&apos;).click(function()&#123;</div><div class="line">        $.cookie(&apos;name&apos;, null);                              </div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 
           
         
@@ -2449,7 +2448,7 @@ var _hmt = _hmt || [];
           
             <div class="site-state-item site-state-posts">
               <a href="index.html">
-                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2471,7 +2470,7 @@ var _hmt = _hmt || [];
             
             <div class="site-state-item site-state-tags">
               <a href="tags/index.html">
-                <span class="site-state-item-count">86</span>
+                <span class="site-state-item-count">88</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
