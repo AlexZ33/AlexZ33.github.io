@@ -335,7 +335,7 @@ var _hmt = _hmt || [];
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/01/12/http/">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/01/12/httpfurther/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AlexZ33">
@@ -353,7 +353,7 @@ var _hmt = _hmt || [];
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">698(字)</span> 
+           <span class="post-count">761(字)</span> 
          </span>
         
          
@@ -367,8 +367,8 @@ var _hmt = _hmt || [];
             
               
                 
-                <a class="post-title-link" href="../../2016/01/12/http/" itemprop="url">
-                  在浏览器输入url到页面打开，都做了些什么？
+                <a class="post-title-link" href="../../2016/01/12/httpfurther/" itemprop="url">
+                  HTTP概念进阶
                 </a>
               
             
@@ -426,7 +426,7 @@ var _hmt = _hmt || [];
 
           
           
-             <span id="../../2016/01/12/http/" class="leancloud_visitors" data-flag-title="在浏览器输入url到页面打开，都做了些什么？">
+             <span id="../../2016/01/12/httpfurther/" class="leancloud_visitors" data-flag-title="HTTP概念进阶">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -457,58 +457,189 @@ var _hmt = _hmt || [];
       
         
           
-            <p><b>在浏览器输入url到页面打开，都做了些什么？<b></b></b></p>
+            <p><b>HTTP概念进阶<b></b></b></p>
+<p>Nodejs中http模块不解析请求的具体内容，只分离出请求头和请求体<br>1、什么是回调函数？<br>回调试异步编程时的基础，将后续逻辑封装成起始函数的参数，逐层嵌套<br>2、什么事同步/异步？<br>同步：发送方发送数据后，等待接收方发回响应以后才发下一个数据包的通讯方式<br>异步：发送方发出数据后，不等接收方发回响应，接着发送下个数据包的通讯方式<br>3、什么事I/O?<br>磁盘的写入（in）磁盘的读取（out）<br>4、什么是单线程/多线程？<br>一次只能执行一个程序叫做单线程<br>一次能执行多个程序叫做多线程<br>5、什么是阻塞/非阻塞？<br>阻塞：前一个程序未执行完就得一直等待<br>非阻塞：前一个程序未执行完时可以挂起，继续执行其他程序，等到使用时再执行<br>6、什么是事件？<br>一个触发动作（例如点击按钮）<br>7、什么是事件驱动？<br>一个触发动作引起的操作（例如点击按钮后弹出一个对话框）<br>8、什么是基于事件驱动的回调？<br>为了某个事件注册了回调函数，但是这个回调函数不是马上执行，只有当事件发生的时候，才会调用回掉函数，这种函数执行的方式叫做事件驱动~这种注册回掉就是基于事件驱动的回调，如果这些回调和异步I/O（数据写入、读取）操作相关，可以看作是基于回调的异步I/O。只不过这种回调在nodejs中是有事件来驱动的<br>9、什么是事件循环？<br>事件循环Eventloop，倘若有大量的异步操作，一些I/O的耗时操作，甚至是一些定时器控制的延时操作，它们完成的时候都要调用相应的回调函数，而从完成一些密集的任务，而又不会阻塞整个程序执行的流程，此时需要一种机制来管理，这种机制叫做事件循环<br>总而言之，管理大量异步操作的机制叫做事件循环</p>
+<p>EventLoop：<br>回调函数队列，当异步函数执行时回调函数会被压入这个队列；对于node.js来说，它有一个单线程不断查询队列是否有事件，当它读取到一个事件时候，将调用与这个事件关联的js函数。</p>
+<p>事件的循环是一个<code>先进先出</code>的任务队列，回调按照他们加入队列的顺序来执行。</p>
+<p>整个队列可以理解成是普通函数和回调函数构成的一个完整的队列。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var c=0;</div><div class="line">function printIt()&#123;</div><div class="line">	console.log(c);</div><div class="line">&#125;</div><div class="line"></div><div class="line">function plus(callback)&#123;</div><div class="line">	setTimeout(function()&#123;</div><div class="line">		c+=1;</div><div class="line">		callback();</div><div class="line">&#125;,1000)</div><div class="line">&#125;</div><div class="line">	</div><div class="line"></div><div class="line">plus(printIt);</div><div class="line"></div><div class="line">//1</div></pre></td></tr></table></figure>
+<p><strong>node.js 核心思想：</strong></p>
 <ul>
-<li>浏览器里输入网址</li>
-<li><p>浏览器查找域名对应的IP地址</p>
+<li>非阻塞</li>
+<li>单线程</li>
+<li>事件驱动</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/01/12/Canva绘制时钟/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AlexZ33">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="镜心的小树屋">
+    </span>
+
+<span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">38(字)</span> 
+         </span>
+        
+         
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="../../2016/01/12/Canva绘制时钟/" itemprop="url">
+                  Canvas 绘制时钟
+                </a>
+              
+            
+          </h1>
+        
+        
+
+        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-12T09:44:12+08:00">
+                2016-01-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../../categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="../../2016/01/12/Canva绘制时钟/" class="leancloud_visitors" data-flag-title="Canvas 绘制时钟">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Canvas-绘制时钟"><a href="#Canvas-绘制时钟" class="headerlink" title="Canvas 绘制时钟"></a><b>Canvas 绘制时钟<b></b></b></h2><h2 id="演示链接"><a href="#演示链接" class="headerlink" title="演示链接  "></a><a href="http://jxdxsw.com/canvas_demo/clock.html">演示链接</a>  </h2><p><img src="http://on891bjlf.bkt.clouddn.com/gif/GIF.gif" alt="显示效果"><br>主要知识点</p>
 <ul>
-<li>（<code>这一步包括DNS具体的查找过程，包括：浏览器缓存-&gt;系统缓存-&gt;路由器缓存…</code>）<ul>
-<li>浏览器搜索自身<code>DNS缓存</code></li>
-<li>搜索操作系统自身的DNS缓存（浏览器没有找到缓存或者缓存已失效）</li>
-<li>读取本地host文件（未找到）</li>
-<li>浏览器发起一个DNS的系统调用(向运营商DNS服务器发起域名解析请求)<ul>
-<li>宽带运营商服务器查看自身缓存 （未找到）</li>
-<li>运营商服务器发起一个迭代DNS解析请求（找根域DNS服务器-&gt;com域DNS服务器…）</li>
-<li>最后运营商服务器把结果返回给操作系统内核同时缓存起来</li>
-<li>操作系统内核把结果返回给浏览器</li>
+<li>canvas画图</li>
+<li>rotate(),lineCap(),save(),store()等api</li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>浏览器获取域名对应的IP地址后，发起HTTP“三次握手”        </p>
-</li>
-<li>TCP/IP连接建立后，浏览器向web服务器发送一个HTTP请求</li>
-<li>服务器的永久重定向响应（从<a href="http://example.com" target="_blank" rel="external">http://example.com</a> 到 <a href="http://www.example.com）" target="_blank" rel="external">http://www.example.com）</a><ul>
-<li>关于为什么要重定向。其中一个原因跟<code>搜索引擎</code>排名有关。如果一个页面有两个地址，就像<code>http://example.com/</code>和<code>http://www.example.com/</code>，搜索引擎会认为它们是两个网站，结果造成每一个的搜索链接都减少从而降低排名。所以要把带www的和不带www的地址归到同一个网站排名下。还有一个原因是用不同的地址会造成缓存友好性变差。</li>
-</ul>
-</li>
-<li>浏览器跟踪重定向地址，发起GET请求</li>
-<li>服务器”处理”请求，向浏览器发回一个HTML响应</li>
-<li>浏览器解析显示HTML</li>
-<li>浏览器发送请求获取嵌入在 HTML 中的资源（如图片、音频、视频、CSS、JS等等）</li>
-<li>浏览器发送异步请求（ajax请求等）</li>
-</ul>
-<p><strong>查看浏览器DNS缓存（以chrome为例）</strong><br>在chrome地址栏输入 <code>chrome://net-internals/#dns</code><br><img src="http://on891bjlf.bkt.clouddn.com/image/dns%E7%BC%93%E5%AD%98.png" alt=""></p>
-<p><strong>TCP/IP三次握手</strong></p>
-<p><img src="http://on891bjlf.bkt.clouddn.com/1491446302174.jpg" alt=""></p>
-<p><strong>DOM文档加载步骤</strong></p>
-<ul>
-<li>解析HTML结构</li>
-<li>加载外部脚本和样式表文件</li>
-<li>解析并执行脚本代码</li>
-<li>构造HTML DOM模型 <code>//ready</code></li>
-<li>加载图片等外部文件</li>
-<li>页面加载完毕<code>//load</code></li>
-</ul>
-<p>这里有一个坑 我们在写脚本时候，以jQuery为例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(document).ready(function()&#123;</div><div class="line">	//代码</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(document).load(function()&#123;</div><div class="line">	//代码</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>这两个是jQuery的文档加载方法，只是用ready就是在构建HTML DOM时候执行脚本  用load就是页面加载完毕执行<br>更多内容可以看看jQuery源码的解析，这里顺带提一下<br><strong>参考</strong></p>
-<blockquote>
-<p><a href="http://www.imooc.com/video/6712" target="_blank" rel="external">慕课网 node.js基础  HTTP知识</a><br><a href="http://www.imooc.com/learn/258" target="_blank" rel="external">慕课网 Linux网络基础</a></p>
-</blockquote>
+<h2 id="总体思路和教程"><a href="#总体思路和教程" class="headerlink" title="总体思路和教程"></a>总体思路和教程</h2><p><a href="http://www.imooc.com/learn/612" target="_blank" rel="external">慕课网 Canvas 绘制时钟</a></p>
 
           
         
@@ -1479,7 +1610,7 @@ var _hmt = _hmt || [];
           
             <div class="site-state-item site-state-posts">
               <a href="../../index.html">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1501,7 +1632,7 @@ var _hmt = _hmt || [];
             
             <div class="site-state-item site-state-tags">
               <a href="../../tags/index.html">
-                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-count">83</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
