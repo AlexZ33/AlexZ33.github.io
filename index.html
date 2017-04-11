@@ -1447,6 +1447,183 @@ var _hmt = _hmt || [];
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com2016/09/04/css3_picwall/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AlexZ33">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="镜心的小树屋">
+    </span>
+
+<span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">468(字)</span> 
+         </span>
+        
+         
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="2016/09/04/css3_picwall/" itemprop="url">
+                  CSS3实现旋转照片墙
+                </a>
+              
+            
+          </h1>
+        
+        
+
+        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-04T07:44:12+08:00">
+                2016-09-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="2016/09/04/css3_picwall/" class="leancloud_visitors" data-flag-title="CSS3实现旋转照片墙">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>CSS3实现旋转照片墙</strong><br><strong>效果</strong><br><img src="http://on891bjlf.bkt.clouddn.com/gif/picwall.gif" alt=""><br><strong>代码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;</div><div class="line">	&lt;title&gt;CSS3 transform旋转特效&lt;/title&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">	body&#123;</div><div class="line">	background-color:#eee;</div><div class="line">&#125;</div><div class="line"></div><div class="line">h1&#123;</div><div class="line">	text-align:center;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.container&#123;</div><div class="line">	width:960px; </div><div class="line">	height:450px; </div><div class="line">	margin:60px auto; </div><div class="line">	position:relative;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.container img&#123;</div><div class="line">	width:300px;</div><div class="line">	height: 400px;</div><div class="line">	padding:10px 10px 15px; </div><div class="line">	background:white; </div><div class="line">	border:1px solid #ddd; </div><div class="line">	box-shadow:2px 2px 3px rgba(50, 50, 50, 0.4);</div><div class="line">	-webkit-transition:all 0.5s ease-in;</div><div class="line">	-moz-transition:all 0.5s ease-in;</div><div class="line">	transition:all 0.5s ease-in; </div><div class="line">	position:absolute; </div><div class="line">	z-index:1;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.container img:hover&#123;</div><div class="line">	box-shadow:15px 15px 20px rgba(50, 50, 50, 0.4); </div><div class="line">	-webkit-transform:rotate(0deg) scale(1.20); </div><div class="line">	-moz-transform:rotate(0deg) scale(1.20); </div><div class="line">	transform:rotate(0deg) scale(1.20); </div><div class="line">	z-index:2;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pic1&#123;</div><div class="line">	left: 400px; </div><div class="line">	top: 0; </div><div class="line">	-webkit-transform: rotate(-5deg); </div><div class="line">	-moz-transform: rotate(-5deg); </div><div class="line">	transform: rotate(-5deg);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pic2&#123;</div><div class="line">	top: 0; </div><div class="line">	left: 600px; </div><div class="line">	-webkit-transform: rotate(-20deg); </div><div class="line">	-moz-transform: rotate(-20deg); </div><div class="line">	transform: rotate(-20deg);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pic3</div><div class="line">&#123;</div><div class="line">	bottom: 0; </div><div class="line">	right: 0; </div><div class="line">	-webkit-transform: rotate(5deg); </div><div class="line">	-moz-transform: rotate(5deg); </div><div class="line">	transform: rotate(5deg);</div><div class="line">&#125;</div><div class="line">	</div><div class="line">.pic4</div><div class="line">&#123;</div><div class="line">	bottom:0; </div><div class="line">	left:300px; </div><div class="line">	-webkit-transform: rotate(-10deg); </div><div class="line">	-moz-transform: rotate(-10deg); </div><div class="line">	transform: rotate(-10deg);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pic5</div><div class="line">&#123;</div><div class="line">	bottom: 0; </div><div class="line">	left: 0; </div><div class="line">	-webkit-transform: rotate(-10deg); </div><div class="line">	-moz-transform: rotate(-10deg); </div><div class="line">	transform: rotate(-10deg);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pic6</div><div class="line">&#123;</div><div class="line">	top: 0; </div><div class="line">	left:0; </div><div class="line">	-webkit-transform: rotate(10deg); </div><div class="line">	-moz-transform: rotate(10deg); </div><div class="line">	transform: rotate(10deg);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pic7</div><div class="line">&#123;</div><div class="line">	top: 0; </div><div class="line">	left: 850px; </div><div class="line">	-webkit-transform: rotate(20deg); </div><div class="line">	-moz-transform: rotate(20deg); </div><div class="line">	transform: rotate(20deg);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pic8</div><div class="line">&#123;</div><div class="line">	bottom: -20px; </div><div class="line">	right: 630px; </div><div class="line">	-webkit-transform: rotate(5deg); </div><div class="line">	-moz-transform: rotate(5deg); </div><div class="line">	transform: rotate(5deg);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pic9</div><div class="line">&#123;</div><div class="line">	top: 90px; </div><div class="line">	left: 550px; </div><div class="line">	-webkit-transform: rotate(15deg); </div><div class="line">	-moz-transform: rotate(15deg); </div><div class="line">	transform: rotate(15deg);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pic10</div><div class="line">&#123;</div><div class="line">	left:180px; </div><div class="line">	top:20px; </div><div class="line">	-webkit-transform: rotate(-10deg); </div><div class="line">	-moz-transform: rotate(-10deg); </div><div class="line">	transform: rotate(-10deg);</div><div class="line">&#125;</div><div class="line">		</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line">	&lt;h1&gt;CSS3照片墙&lt;/h1&gt;</div><div class="line">	&lt;div class=&quot;container&quot;&gt;</div><div class="line">		&lt;img class=&quot;pic pic1&quot; src=&quot;images/mm1.jpg&quot;&gt;</div><div class="line">		&lt;img class=&quot;pic pic2&quot; src=&quot;images/mm2.jpg&quot;&gt;</div><div class="line">		&lt;img class=&quot;pic pic3&quot; src=&quot;images/mm3.jpg&quot;&gt;</div><div class="line">		&lt;img class=&quot;pic pic4&quot; src=&quot;images/mm4.jpg&quot;&gt;</div><div class="line">		&lt;img class=&quot;pic pic5&quot; src=&quot;images/mm5.jpg&quot;&gt;</div><div class="line">		&lt;img class=&quot;pic pic6&quot; src=&quot;images/mm6.jpg&quot;&gt;</div><div class="line">		&lt;img class=&quot;pic pic7&quot; src=&quot;images/mm7.jpg&quot;&gt;</div><div class="line">		&lt;img class=&quot;pic pic8&quot; src=&quot;images/mm8.jpg&quot;&gt;</div><div class="line">		&lt;img class=&quot;pic pic9&quot; src=&quot;images/mm9.jpg&quot;&gt;</div><div class="line">		&lt;img class=&quot;pic pic10&quot; src=&quot;images/mm10.jpg&quot;&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p><strong>技术点</strong></p>
+<ul>
+<li>简单CSS3实现任意设置元素的旋转角</li>
+<li>简单CSS3实现图片的等比缩放</li>
+<li>利用CSS3将元素的样式变化以动画的方式展现出来。</li>
+</ul>
+<p><strong>参考</strong></p>
+<blockquote>
+<p><a href="http://www.imooc.com/learn/227" target="_blank" rel="external">慕课网 CSS3绚丽照片墙</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://jxdxsw.com2016/08/26/李清照有多伟大？/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1827,6 +2004,174 @@ var _hmt = _hmt || [];
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com2016/08/03/jQuery 如何存储，获取和删除 Cookies/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AlexZ33">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="镜心的小树屋">
+    </span>
+
+<span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">186(字)</span> 
+         </span>
+        
+         
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="2016/08/03/jQuery 如何存储，获取和删除 Cookies/" itemprop="url">
+                  jQuery 如何存储，获取和删除 Cookies
+                </a>
+              
+            
+          </h1>
+        
+        
+
+        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-03T18:44:12+08:00">
+                2016-08-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="2016/08/03/jQuery 如何存储，获取和删除 Cookies/" class="leancloud_visitors" data-flag-title="jQuery 如何存储，获取和删除 Cookies">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="jQuery-如何存储，获取和删除-Cookies"><a href="#jQuery-如何存储，获取和删除-Cookies" class="headerlink" title="jQuery 如何存储，获取和删除 Cookies"></a>jQuery 如何存储，获取和删除 Cookies</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">jQuery.cookie = function(name, value, options) &#123;</div><div class="line">    if (typeof value != &apos;undefined&apos;) &#123;</div><div class="line">        options = options || &#123;&#125;;</div><div class="line">        if (value === null) &#123;</div><div class="line">            value = &apos;&apos;;</div><div class="line">            options = $.extend(&#123;&#125;, options);</div><div class="line">            options.expires = -1;</div><div class="line">        &#125;</div><div class="line">        var expires = &apos;&apos;;</div><div class="line">        if (options.expires &amp;&amp; (typeof options.expires == &apos;number&apos; || options.expires.toUTCString)) &#123;</div><div class="line">            var date;</div><div class="line">            if (typeof options.expires == &apos;number&apos;) &#123;</div><div class="line">                date = new Date();</div><div class="line">                date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));</div><div class="line">            &#125; else &#123;</div><div class="line">                date = options.expires;</div><div class="line">            &#125;</div><div class="line">            expires = &apos;; expires=&apos; + date.toUTCString();</div><div class="line">        &#125;</div><div class="line">        var path = options.path ? &apos;; path=&apos; + (options.path) : &apos;&apos;;</div><div class="line">        var domain = options.domain ? &apos;; domain=&apos; + (options.domain) : &apos;&apos;;</div><div class="line">        var secure = options.secure ? &apos;; secure&apos; : &apos;&apos;;</div><div class="line">        document.cookie = [name, &apos;=&apos;, encodeURIComponent(value), expires, path, domain, secure].join(&apos;&apos;);</div><div class="line">        &#125; else &#123;</div><div class="line">            var cookieValue = null;</div><div class="line">            if (document.cookie &amp;&amp; document.cookie != &apos;&apos;) &#123;</div><div class="line">            var cookies = document.cookie.split(&apos;;&apos;);</div><div class="line">            for (var i = 0; i &lt; cookies.length; i++) &#123;</div><div class="line">                var cookie = jQuery.trim(cookies[i]);</div><div class="line">                if (cookie.substring(0, name.length + 1) == (name + &apos;=&apos;)) &#123;</div><div class="line">                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));</div><div class="line">                    break;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return cookieValue;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>然后通过下面方法使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$(document).ready(function() &#123;</div><div class="line">    $(&apos;#write_cokies&apos;).click(function()&#123;</div><div class="line">        $.cookie(&apos;name&apos;, &apos;test&apos;,&#123;expires: 7&#125;);                  </div><div class="line">    &#125;);</div><div class="line">    $(&apos;#read_ookies&apos;).click(function()&#123;</div><div class="line">        var test = $.cookie(&apos;name&apos;);</div><div class="line">        alert (test);</div><div class="line">    &#125;);</div><div class="line">    $(&apos;#delete_cookies&apos;).click(function()&#123;</div><div class="line">        $.cookie(&apos;name&apos;, null);                              </div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://jxdxsw.com2016/08/03/css3_animation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2050,355 +2395,6 @@ var _hmt = _hmt || [];
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com2016/08/03/jQuery 如何存储，获取和删除 Cookies/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AlexZ33">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="镜心的小树屋">
-    </span>
-
-<span class="post-time">
-	   &nbsp; | &nbsp;
-           <span class="post-meta-item-icon">
-             <i class="fa fa-calendar-o"></i>
-           </span>
-           <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">186(字)</span> 
-         </span>
-        
-         
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="2016/08/03/jQuery 如何存储，获取和删除 Cookies/" itemprop="url">
-                  jQuery 如何存储，获取和删除 Cookies
-                </a>
-              
-            
-          </h1>
-        
-        
-
-        
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-03T18:44:12+08:00">
-                2016-08-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="2016/08/03/jQuery 如何存储，获取和删除 Cookies/" class="leancloud_visitors" data-flag-title="jQuery 如何存储，获取和删除 Cookies">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="jQuery-如何存储，获取和删除-Cookies"><a href="#jQuery-如何存储，获取和删除-Cookies" class="headerlink" title="jQuery 如何存储，获取和删除 Cookies"></a>jQuery 如何存储，获取和删除 Cookies</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">jQuery.cookie = function(name, value, options) &#123;</div><div class="line">    if (typeof value != &apos;undefined&apos;) &#123;</div><div class="line">        options = options || &#123;&#125;;</div><div class="line">        if (value === null) &#123;</div><div class="line">            value = &apos;&apos;;</div><div class="line">            options = $.extend(&#123;&#125;, options);</div><div class="line">            options.expires = -1;</div><div class="line">        &#125;</div><div class="line">        var expires = &apos;&apos;;</div><div class="line">        if (options.expires &amp;&amp; (typeof options.expires == &apos;number&apos; || options.expires.toUTCString)) &#123;</div><div class="line">            var date;</div><div class="line">            if (typeof options.expires == &apos;number&apos;) &#123;</div><div class="line">                date = new Date();</div><div class="line">                date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));</div><div class="line">            &#125; else &#123;</div><div class="line">                date = options.expires;</div><div class="line">            &#125;</div><div class="line">            expires = &apos;; expires=&apos; + date.toUTCString();</div><div class="line">        &#125;</div><div class="line">        var path = options.path ? &apos;; path=&apos; + (options.path) : &apos;&apos;;</div><div class="line">        var domain = options.domain ? &apos;; domain=&apos; + (options.domain) : &apos;&apos;;</div><div class="line">        var secure = options.secure ? &apos;; secure&apos; : &apos;&apos;;</div><div class="line">        document.cookie = [name, &apos;=&apos;, encodeURIComponent(value), expires, path, domain, secure].join(&apos;&apos;);</div><div class="line">        &#125; else &#123;</div><div class="line">            var cookieValue = null;</div><div class="line">            if (document.cookie &amp;&amp; document.cookie != &apos;&apos;) &#123;</div><div class="line">            var cookies = document.cookie.split(&apos;;&apos;);</div><div class="line">            for (var i = 0; i &lt; cookies.length; i++) &#123;</div><div class="line">                var cookie = jQuery.trim(cookies[i]);</div><div class="line">                if (cookie.substring(0, name.length + 1) == (name + &apos;=&apos;)) &#123;</div><div class="line">                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));</div><div class="line">                    break;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return cookieValue;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>然后通过下面方法使用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$(document).ready(function() &#123;</div><div class="line">    $(&apos;#write_cokies&apos;).click(function()&#123;</div><div class="line">        $.cookie(&apos;name&apos;, &apos;test&apos;,&#123;expires: 7&#125;);                  </div><div class="line">    &#125;);</div><div class="line">    $(&apos;#read_ookies&apos;).click(function()&#123;</div><div class="line">        var test = $.cookie(&apos;name&apos;);</div><div class="line">        alert (test);</div><div class="line">    &#125;);</div><div class="line">    $(&apos;#delete_cookies&apos;).click(function()&#123;</div><div class="line">        $.cookie(&apos;name&apos;, null);                              </div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com2016/08/02/01-bootstrap-start/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AlexZ33">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="镜心的小树屋">
-    </span>
-
-<span class="post-time">
-	   &nbsp; | &nbsp;
-           <span class="post-meta-item-icon">
-             <i class="fa fa-calendar-o"></i>
-           </span>
-           <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">973(字)</span> 
-         </span>
-        
-         
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="2016/08/02/01-bootstrap-start/" itemprop="url">
-                  01-bootstrap组件简单实现网站布局
-                </a>
-              
-            
-          </h1>
-        
-        
-
-        
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-02T12:44:12+08:00">
-                2016-08-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="2016/08/02/01-bootstrap-start/" class="leancloud_visitors" data-flag-title="01-bootstrap组件简单实现网站布局">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><b> 01-bootstrap组件简单实现网站布局<b></b></b></p>
-<p><strong>效果</strong><br><img src="http://on891bjlf.bkt.clouddn.com/gif/01-bootstrap.gif" alt=""></p>
-<p><strong>技术点</strong></p>
-<ul>
-<li><p>用<code>&lt;div class=&quot;container&quot;&gt;&lt;/div&gt;</code>将元素包裹起来实现居中</p>
-</li>
-<li><p>栅格化布局</p>
-</li>
-<li><code>jumbotron</code>组件，<code>list-group</code>组件 ，<code>nav</code>组件</li>
-</ul>
-<p><strong>代码</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;&lt;/title&gt;</div><div class="line">	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0&quot;&gt;</div><div class="line">	&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; integrity=&quot;sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u&quot; crossorigin=&quot;anonymous&quot;&gt;</div><div class="line">	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;nav class=&quot;navbar navbar-inverse&quot;&gt;</div><div class="line">  &lt;div class=&quot;container-fluid container&quot;&gt;</div><div class="line">    &lt;!-- Brand and toggle get grouped for better mobile display --&gt;</div><div class="line">    &lt;div class=&quot;navbar-header&quot;&gt;</div><div class="line">      &lt;button type=&quot;button&quot; class=&quot;navbar-toggle collapsed&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#bs-example-navbar-collapse-1&quot; aria-expanded=&quot;false&quot;&gt;</div><div class="line">        &lt;span class=&quot;sr-only&quot;&gt;Toggle navigation&lt;/span&gt;</div><div class="line">        &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;</div><div class="line">        &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;</div><div class="line">        &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;</div><div class="line">      &lt;/button&gt;</div><div class="line">      &lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt;镜心的小树屋&lt;/a&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line"></div><div class="line">    &lt;!-- Collect the nav links, forms, and other content for toggling --&gt;</div><div class="line">    &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;bs-example-navbar-collapse-1&quot;&gt;</div><div class="line">      &lt;ul class=&quot;nav navbar-nav&quot;&gt;</div><div class="line">        &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;Home &lt;span class=&quot;sr-only&quot;&gt;(current)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;</div><div class="line">        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contant&lt;/a&gt;&lt;/li&gt;</div><div class="line">        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;</div><div class="line">      &lt;/ul&gt;</div><div class="line">   </div><div class="line">      </div><div class="line">     </div><div class="line">    &lt;/div&gt;&lt;!-- /.navbar-collapse --&gt;</div><div class="line">  &lt;/div&gt;&lt;!-- /.container-fluid --&gt;</div><div class="line">&lt;/nav&gt;</div><div class="line"></div><div class="line">	&lt;div class=&quot;container&quot;&gt;</div><div class="line">		&lt;div class=&quot;row&quot;&gt;</div><div class="line">			&lt;div class=&quot;col-sm-9&quot;&gt;</div><div class="line">				&lt;p class=&quot;pull-right visible-xs&quot;&gt;</div><div class="line">					&lt;button class=&quot;btn-xs btn btn-primary&quot;&gt;Toggle&lt;/button&gt;</div><div class="line">				&lt;/p&gt;</div><div class="line">				&lt;div class=&quot;jumbotron&quot;&gt;</div><div class="line">				  &lt;h1&gt;Hello, world!&lt;/h1&gt;</div><div class="line">				  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</div><div class="line">				  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div><div class="line">				  &lt;/p&gt;</div><div class="line">				  &lt;p&gt;&lt;a class=&quot;btn btn-primary btn-lg&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;Learn more&lt;/a&gt;&lt;/p&gt;</div><div class="line">				&lt;/div&gt;</div><div class="line">				&lt;div class=&quot;row&quot;&gt;</div><div class="line">					&lt;div class=&quot;col-6 col-sm-6 col-lg-4&quot;&gt;</div><div class="line">						&lt;h2&gt;headlinw&lt;/h2&gt;</div><div class="line">						&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</div><div class="line">						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div><div class="line">						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</div><div class="line">						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</div><div class="line">						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</div><div class="line">						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;</div><div class="line">						&lt;a href=&quot;&quot; class=&quot;btn btn-default&quot;&gt;View details&lt;/a&gt;</div><div class="line">					&lt;/div&gt;</div><div class="line">					&lt;div class=&quot;col-6 col-sm-6 col-lg-4&quot;&gt;</div><div class="line">						&lt;h2&gt;headlinw&lt;/h2&gt;</div><div class="line">						&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</div><div class="line">						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div><div class="line">						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</div><div class="line">						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</div><div class="line">						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</div><div class="line">						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;</div><div class="line">						&lt;a href=&quot;&quot; class=&quot;btn btn-default&quot;&gt;View details&lt;/a&gt;</div><div class="line">					&lt;/div&gt;</div><div class="line">					&lt;div class=&quot;col-6 col-sm-6 col-lg-4&quot;&gt;</div><div class="line">						&lt;h2&gt;headlinw&lt;/h2&gt;</div><div class="line">						&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</div><div class="line">						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div><div class="line">						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</div><div class="line">						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</div><div class="line">						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</div><div class="line">						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;</div><div class="line">						&lt;a href=&quot;&quot; class=&quot;btn btn-default&quot;&gt;View details&lt;/a&gt;</div><div class="line">					&lt;/div&gt;</div><div class="line">					&lt;div class=&quot;col-6 col-sm-6 col-lg-4&quot;&gt;</div><div class="line">						&lt;h2&gt;headlinw&lt;/h2&gt;</div><div class="line">						&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</div><div class="line">						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div><div class="line">						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</div><div class="line">						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</div><div class="line">						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</div><div class="line">						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;</div><div class="line">						&lt;a href=&quot;&quot; class=&quot;btn btn-default&quot;&gt;View details&lt;/a&gt;</div><div class="line">					&lt;/div&gt;</div><div class="line">					&lt;div class=&quot;col-6 col-sm-6 col-lg-4&quot;&gt;</div><div class="line">						&lt;h2&gt;headlinw&lt;/h2&gt;</div><div class="line">						&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</div><div class="line">						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div><div class="line">						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</div><div class="line">						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</div><div class="line">						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</div><div class="line">						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;</div><div class="line">						&lt;a href=&quot;&quot; class=&quot;btn btn-default&quot;&gt;View details&lt;/a&gt;</div><div class="line">					&lt;/div&gt;</div><div class="line">					&lt;div class=&quot;col-6 col-sm-6 col-lg-4&quot;&gt;</div><div class="line">						&lt;h2&gt;headlinw&lt;/h2&gt;</div><div class="line">						&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</div><div class="line">						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div><div class="line">						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</div><div class="line">						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</div><div class="line">						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</div><div class="line">						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;</div><div class="line">						&lt;a href=&quot;&quot; class=&quot;btn btn-default&quot;&gt;View details&lt;/a&gt;</div><div class="line">					&lt;/div&gt;</div><div class="line"></div><div class="line">				&lt;/div&gt;</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div class=&quot;col-sm-3&quot;&gt;</div><div class="line">				&lt;ul class=&quot;list-group&quot;&gt;</div><div class="line">				  &lt;li class=&quot;list-group-item&quot;&gt;Cras justo odio&lt;/li&gt;</div><div class="line">				  &lt;li class=&quot;list-group-item&quot;&gt;Dapibus ac facilisis in&lt;/li&gt;</div><div class="line">				  &lt;li class=&quot;list-group-item&quot;&gt;Morbi leo risus&lt;/li&gt;</div><div class="line">				  &lt;li class=&quot;list-group-item&quot;&gt;Porta ac consectetur ac&lt;/li&gt;</div><div class="line">				  &lt;li class=&quot;list-group-item&quot;&gt;Vestibulum at eros&lt;/li&gt;</div><div class="line">				&lt;/ul&gt;</div><div class="line">			&lt;/div&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p><strong>参考</strong></p>
-<blockquote>
-<p><a href="http://getbootstrap.com/components/#jumbotron" target="_blank" rel="external">bootstrap 组件</a><br><a href="http://www.imooc.com/learn/41" target="_blank" rel="external">慕课网 响应式布局</a></p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2448,7 +2444,7 @@ var _hmt = _hmt || [];
           
             <div class="site-state-item site-state-posts">
               <a href="index.html">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2470,7 +2466,7 @@ var _hmt = _hmt || [];
             
             <div class="site-state-item site-state-tags">
               <a href="tags/index.html">
-                <span class="site-state-item-count">88</span>
+                <span class="site-state-item-count">90</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
