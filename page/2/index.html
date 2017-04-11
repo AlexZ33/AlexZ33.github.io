@@ -748,6 +748,190 @@ var _hmt = _hmt || [];
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/05/11/css3_shadow/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AlexZ33">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="镜心的小树屋">
+    </span>
+
+<span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">730(字)</span> 
+         </span>
+        
+         
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="../../2016/05/11/css3_shadow/" itemprop="url">
+                  CSS3实现图片阴影效果
+                </a>
+              
+            
+          </h1>
+        
+        
+
+        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-11T17:44:12+08:00">
+                2016-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../../categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="../../2016/05/11/css3_shadow/" class="leancloud_visitors" data-flag-title="CSS3实现图片阴影效果">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong> CSS3实现图片阴影效果</strong></p>
+<p><img src="http://on891bjlf.bkt.clouddn.com/image/shadow.png" alt=""></p>
+<p><strong>技术点</strong></p>
+<ul>
+<li>:before</li>
+<li>:after</li>
+<li>box-shadow</li>
+<li>transform:skew()</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">border-radius: 100px/10px;</div></pre></td></tr></table></figure>
+<p><img src="http://on891bjlf.bkt.clouddn.com/gif/%E6%88%AA%E5%9B%BE1491881549.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">border-radius: 100px 10px;</div></pre></td></tr></table></figure>
+<p><img src="http://on891bjlf.bkt.clouddn.com/image/%E6%88%AA%E5%9B%BE1491881576.png" alt=""></p>
+<p><strong>代码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div></pre></td><td class="code"><pre><div class="line">body&#123;</div><div class="line">	font-family: Arial;</div><div class="line">	font-size: 20px;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">body,ul,li&#123;</div><div class="line">	margin:0;</div><div class="line">	padding:0;</div><div class="line">	list-style:none;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">.wrap&#123;</div><div class="line">	width: 70%;</div><div class="line">	height:200px;</div><div class="line">	margin:50px auto; </div><div class="line">	background: #fff;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.wrap h1&#123;</div><div class="line">	font-size: 20px;</div><div class="line">	text-align: center;</div><div class="line">	line-height: 200px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.effect&#123;</div><div class="line">	position: relative;</div><div class="line">	box-shadow: 0px 1px 4px rgba(0,0,0,0.3),0 0 40px rgba(0,0,0,0.1) inset;</div><div class="line">	-moz-box-shadow:0px 1px 4px rgba(0,0,0,0.3),0 0 40px rgba(0,0,0,0.1) inset;</div><div class="line">	-webkit-box-shadow: 0px 1px 4px rgba(0,0,0,0.3),0 0 40px rgba(0,0,0,0.1) inset;;</div><div class="line">	-o-box-shadow:0px 1px 4px rgba(0,0,0,0.3),0 0 40px rgba(0,0,0,0.1) inset; ;</div><div class="line">	-ms-box-shadow: 0px 1px 4px rgba(0,0,0,0.3),0 0 40px rgba(0,0,0,0.1) inset;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.effect:after,.effect:before&#123;</div><div class="line">	content: &apos;&apos;;</div><div class="line">	background: #f00;</div><div class="line">	position: absolute;</div><div class="line">	z-index:-1;</div><div class="line">	top: 50%;</div><div class="line">	bottom: 0;</div><div class="line">	left: 20px;</div><div class="line">	right: 20px;</div><div class="line">	-webkit-box-shadow:0 0 30px rgba(0,0,0,0.8);</div><div class="line">	-moz-box-shadow:0 0 30px rgba(0,0,0,0.8);</div><div class="line">	-o-box-shadow:0 0 20px rgba(0,0,0,0.8);</div><div class="line">	-ms-box-shadow:0 0 20px rgba(0,0,0,0.8);</div><div class="line">	box-shadow:0 0 20px rgba(0,0,0,0.8);</div><div class="line">	border-radius: 100px/10px;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">.box&#123;width: 980px;</div><div class="line">	height: auto;</div><div class="line">	clear: both;</div><div class="line">	overflow: hidden;</div><div class="line">	margin:20px auto;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">.box li&#123;</div><div class="line">	position: relative;</div><div class="line">	width: 300px;</div><div class="line">	height: 210px;</div><div class="line">	float: left;</div><div class="line">	background: #fff;</div><div class="line">	margin:20px 10px;</div><div class="line">	border:2px solid #efefef;</div><div class="line">	box-shadow: 0 1px 4px rgba(0,0,0,0.27),0 0 60px rgba(0,0,0,0.1) inset;</div><div class="line">	-webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.27),0 0 60px rgba(0,0,0,0.1) inset;</div><div class="line">	-moz-box-shadow: 0 1px 4px rgba(0,0,0,0.27),0 0 60px rgba(0,0,0,0.1) inset;</div><div class="line">	-o-box-shadow: 0 1px 4px rgba(0,0,0,0.27),0 0 60px rgba(0,0,0,0.1) inset;</div><div class="line">	-ms-box-shadow: 0 1px 4px rgba(0,0,0,0.27),0 0 60px rgba(0,0,0,0.1) inset;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.box li img&#123;</div><div class="line">	display: block;</div><div class="line">	width: 290px;</div><div class="line">	height: 200px;</div><div class="line">	margin:5px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.box li:before&#123;</div><div class="line"></div><div class="line">	content:&apos;&apos;;</div><div class="line">	position: absolute;</div><div class="line">	z-index: -2;</div><div class="line">	width: 90%;</div><div class="line">	height: 80%;</div><div class="line">	left: 20px;</div><div class="line">	bottom:8px;</div><div class="line">	background: transparent;</div><div class="line">	box-shadow: 0 8px 20px rgba(0,0,0,0.6);</div><div class="line">	-webkit-box-shadow: 0 8px 20px rgba(0,0,0,0.6);</div><div class="line">	-moz-box-shadow: 0 8px 20px rgba(0,0,0,0.6);</div><div class="line">	-ms-box-shadow: 0 8px 20px rgba(0,0,0,0.6);</div><div class="line">	-o-box-shadow: 0 8px 20px rgba(0,0,0,0.6);</div><div class="line">	-webkit-transform:skew(-12deg) rotate(-4deg);</div><div class="line">	-moz-transform:skew(-12deg) rotate(-4deg);</div><div class="line">	-o-transform:skew(-12deg) rotate(-4deg);</div><div class="line">	-ms-transform:skew(-12deg) rotate(-4deg);</div><div class="line">	transform:skew(-12deg) rotate(-4deg);</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">.box li:after&#123;</div><div class="line"></div><div class="line">	content:&apos;&apos;;</div><div class="line">	position: absolute;</div><div class="line">	z-index: -2;</div><div class="line">	width: 90%;</div><div class="line">	height: 80%;</div><div class="line">	right: 20px;</div><div class="line">	bottom:6px;</div><div class="line">	background: transparent;</div><div class="line">	box-shadow: 0 8px 20px rgba(0,0,0,0.6);</div><div class="line">	-webkit-box-shadow: 0 8px 20px rgba(0,0,0,0.6);</div><div class="line">	-moz-box-shadow: 0 8px 20px rgba(0,0,0,0.6);</div><div class="line">	-ms-box-shadow: 0 8px 20px rgba(0,0,0,0.6);</div><div class="line">	-o-box-shadow: 0 8px 20px rgba(0,0,0,0.6);</div><div class="line">	-webkit-transform:skew(12deg) rotate(4deg);</div><div class="line">	-moz-transform:skew(12deg) rotate(4deg);</div><div class="line">	-o-transform:skew(12deg) rotate(4deg);</div><div class="line">	-ms-transform:skew(12deg) rotate(4deg);</div><div class="line">	transform:skew(12deg) rotate(4deg);</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;css3实现图片阴影效果(曲线阴影和翘边阴影) | 镜心书社&lt;/title&gt;</div><div class="line">	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style/pic_shadow.css&quot;&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=&quot;wrap effect&quot;&gt;</div><div class="line">		&lt;h1&gt;Shadow Effect&lt;/h1&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">	&lt;ul class=&quot;box&quot;&gt;</div><div class="line">		&lt;li&gt;&lt;img src=&quot;images/1 (1).jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;</div><div class="line">		&lt;li&gt;&lt;img src=&quot;images/1 (2).jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;</div><div class="line">		&lt;li&gt;&lt;img src=&quot;images/1 (3).jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;</div><div class="line">	&lt;/ul&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="http://www.imooc.com/learn/240" target="_blank" rel="external">慕课网  CSS3实现“图片阴影”效果</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/04/15/js 几种类型的事件处理程序/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1501,6 +1685,174 @@ var _hmt = _hmt || [];
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/03/07/js闭包/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AlexZ33">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="镜心的小树屋">
+    </span>
+
+<span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">187(字)</span> 
+         </span>
+        
+         
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="../../2016/03/07/js闭包/" itemprop="url">
+                  js闭包
+                </a>
+              
+            
+          </h1>
+        
+        
+
+        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-07T18:44:12+08:00">
+                2016-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../../categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="../../2016/03/07/js闭包/" class="leancloud_visitors" data-flag-title="js闭包">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><b>js闭包<b></b></b></p>
+<p>闭包<br>（1）概念<br>闭包是指有权访问另一个函数作用域中的变量的函数。<br>（2）特性<br>闭包只能取得包含函数中任何变量的最后一个值。<br>（3）创建方式<br>在一个函数内部创建另一个函数。<br>（4）原理<br>在一个函数内部中定义的函数会将包含函数（外部函数）的活动对象添加到其作用域中，直至解除对内部函数的应用，内部函数被销毁，外部函数的活动对象才会被销毁。<br>（5）实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function closure()&#123;</div><div class="line">    var result=[];</div><div class="line">    for (var i = 0; i &lt; 4; i++) &#123;</div><div class="line">        result[i]=function()&#123;</div><div class="line">            console.log(i);</div><div class="line">            return i;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">    return result;</div><div class="line">&#125;</div><div class="line">var result=closure();</div><div class="line">for (var i = 0; i &lt; 4; i++) &#123;</div><div class="line">    result[i]();</div><div class="line">&#125;;</div><div class="line"></div><div class="line">//4 4 4 4</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/03/07/css实现简单图片展示/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1859,347 +2211,6 @@ var _hmt = _hmt || [];
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/03/07/js闭包/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AlexZ33">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="镜心的小树屋">
-    </span>
-
-<span class="post-time">
-	   &nbsp; | &nbsp;
-           <span class="post-meta-item-icon">
-             <i class="fa fa-calendar-o"></i>
-           </span>
-           <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">187(字)</span> 
-         </span>
-        
-         
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="../../2016/03/07/js闭包/" itemprop="url">
-                  js闭包
-                </a>
-              
-            
-          </h1>
-        
-        
-
-        
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-07T18:44:12+08:00">
-                2016-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="../../categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="../../2016/03/07/js闭包/" class="leancloud_visitors" data-flag-title="js闭包">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><b>js闭包<b></b></b></p>
-<p>闭包<br>（1）概念<br>闭包是指有权访问另一个函数作用域中的变量的函数。<br>（2）特性<br>闭包只能取得包含函数中任何变量的最后一个值。<br>（3）创建方式<br>在一个函数内部创建另一个函数。<br>（4）原理<br>在一个函数内部中定义的函数会将包含函数（外部函数）的活动对象添加到其作用域中，直至解除对内部函数的应用，内部函数被销毁，外部函数的活动对象才会被销毁。<br>（5）实例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function closure()&#123;</div><div class="line">    var result=[];</div><div class="line">    for (var i = 0; i &lt; 4; i++) &#123;</div><div class="line">        result[i]=function()&#123;</div><div class="line">            console.log(i);</div><div class="line">            return i;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">    return result;</div><div class="line">&#125;</div><div class="line">var result=closure();</div><div class="line">for (var i = 0; i &lt; 4; i++) &#123;</div><div class="line">    result[i]();</div><div class="line">&#125;;</div><div class="line"></div><div class="line">//4 4 4 4</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/02/21/canvas之arcTo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AlexZ33">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="镜心的小树屋">
-    </span>
-
-<span class="post-time">
-	   &nbsp; | &nbsp;
-           <span class="post-meta-item-icon">
-             <i class="fa fa-calendar-o"></i>
-           </span>
-           <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">546(字)</span> 
-         </span>
-        
-         
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="../../2016/02/21/canvas之arcTo/" itemprop="url">
-                  canvas之arcTo
-                </a>
-              
-            
-          </h1>
-        
-        
-
-        
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-02-21T16:44:12+08:00">
-                2016-02-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="../../categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="../../2016/02/21/canvas之arcTo/" class="leancloud_visitors" data-flag-title="canvas之arcTo">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><b>canvas之arcTo<b></b></b></p>
-<p>canvas提供画圆弧有两种方法，一个是arc，另一个就是arcTo，arc挺简单的，这里就不再说了，单说一下arcTo。<br>arcTo的作用是绘制介于两条切线之间的弧，语法是arcTo（x1,y1,x2,y2,r）,其中x1，y1是起始点的坐标，x2，y2是终点的坐标，r则是圆弧的半径。这里面有个很大的误区，一般的初学者看到这里，都会错误的判断起始点的位置，如图1所示：<br><img src="http://on891bjlf.bkt.clouddn.com/canvas/%E9%94%99%E8%AF%AF.png" alt=""><br><img src="http://on891bjlf.bkt.clouddn.com/canvas/%E6%AD%A3%E7%A1%AE.png" alt=""></p>
-<p>正确的理解应如图2所示，起始点位于两条切线相交的位置，另外，终点也并不是弧的终点，而是另一条切线上的任意一点，拿图2来说，终点是竖直的那条切线上的一点。有人会问，可不可以在起始点的上面那里，因为切线是直线，可以延伸的。答案是当然可以，但这样的结果是圆弧就会向上弯曲，而不是向下弯曲了。<br>按我的理解，可以总结为，起始点控制前半段弧的方向，终点控制后半段弧的方向，至于r嘛，控制弧的大小。</p>
-<p>下面一个简单的动画帮助理解<br><img src="http://on891bjlf.bkt.clouddn.com/gif/arcTo.gif" alt=""></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;  </div><div class="line">&lt;html&gt;  </div><div class="line">&lt;head&gt;  </div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;  </div><div class="line">&lt;title&gt;Insert title here&lt;/title&gt;  </div><div class="line">&lt;style&gt;  </div><div class="line">canvas &#123;  </div><div class="line">    width: 400px;  </div><div class="line">    height: 400px;  </div><div class="line">    background-color: #EEEEEE;  </div><div class="line">&#125;  </div><div class="line">&lt;/style&gt;  </div><div class="line">&lt;script&gt;  </div><div class="line">    window.onload = function() &#123;  </div><div class="line">        var canvas = document.getElementById(&apos;canvas&apos;);  </div><div class="line">        var arcToPoint1 = &#123;x:120, y:40&#125;;  </div><div class="line">        var arcToPoint2 = &#123;x:60, y:80&#125;  </div><div class="line">        var context = canvas.getContext(&apos;2d&apos;);  </div><div class="line">        if (!canvas || !canvas.getContext) &#123;  </div><div class="line">            return;  </div><div class="line">        &#125; else &#123;  </div><div class="line">            timer = setInterval(function()&#123;  </div><div class="line">                if (arcToPoint2.x &lt; 150) &#123;  </div><div class="line">                    arcTo (context, arcToPoint1, arcToPoint2);  </div><div class="line">                    arcToPoint2.x += 2;  </div><div class="line">                &#125; else &#123;  </div><div class="line">                    clearInterval(timer);  </div><div class="line">                &#125;  </div><div class="line">            &#125;, 300);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">      </div><div class="line">    function arcTo () &#123;  </div><div class="line">        var startPoint = &#123;x: 20, y: 40&#125;;  </div><div class="line">        var context = arguments[0];  </div><div class="line">        var arcToPoint1 = arguments[1];  </div><div class="line">        var arcToPoint2 = arguments[2];  </div><div class="line">        var context = canvas.getContext(&apos;2d&apos;);  </div><div class="line">          </div><div class="line">        context.clearRect(0,0,context.canvas.width, context.canvas.height)  </div><div class="line">          </div><div class="line">        context.beginPath();  </div><div class="line">        context.moveTo(startPoint.x, startPoint.y);  </div><div class="line">        context.strokeStyle = &quot;red&quot;;  </div><div class="line">        context.lineWidth = 1;  </div><div class="line">        context.arcTo(arcToPoint1.x, arcToPoint1.y, arcToPoint2.x, arcToPoint2.y, 40);  </div><div class="line">        context.stroke();  </div><div class="line">          </div><div class="line">        context.beginPath();  </div><div class="line">        context.moveTo(startPoint.x, startPoint.y);  </div><div class="line">        context.strokeStyle = &quot;black&quot;;  </div><div class="line">        context.lineWidth = 1;  </div><div class="line">        context.lineTo(arcToPoint1.x, arcToPoint1.y);  </div><div class="line">        context.fillText(&apos;arcToPoint1&apos;, arcToPoint1.x + 10, arcToPoint1.y - 5)   </div><div class="line">        context.stroke();  </div><div class="line">          </div><div class="line">        context.beginPath();  </div><div class="line">        context.moveTo(arcToPoint1.x, arcToPoint1.y);  </div><div class="line">        context.strokeStyle = &quot;black&quot;;  </div><div class="line">        context.lineWidth = 1;  </div><div class="line">        context.lineTo(arcToPoint2.x, arcToPoint2.y);  </div><div class="line">        context.fillText(&apos;arcToPoint2&apos;, arcToPoint2.x + 10, arcToPoint2.y + 10)   </div><div class="line">        context.stroke();  </div><div class="line">    &#125;  </div><div class="line">&lt;/script&gt;  </div><div class="line">&lt;/head&gt;  </div><div class="line">&lt;body&gt;  </div><div class="line">    &lt;canvas id=&quot;canvas&quot;&gt;  </div><div class="line">        此游览器不支持canvas标签  </div><div class="line">    &lt;/canvas&gt;  </div><div class="line">&lt;/body&gt;  </div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>参考</strong><br><a href="http://www.w3school.com.cn/tags/canvas_arcto.asp" target="_blank" rel="external">HTML5 canvas arcTo() 方法</a><br><a href="http://blog.csdn.net/songzheng_741/article/details/26084829" target="_blank" rel="external">Canavs arcTo方法的理解</a></p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2249,7 +2260,7 @@ var _hmt = _hmt || [];
           
             <div class="site-state-item site-state-posts">
               <a href="../../index.html">
-                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2271,7 +2282,7 @@ var _hmt = _hmt || [];
             
             <div class="site-state-item site-state-tags">
               <a href="../../tags/index.html">
-                <span class="site-state-item-count">94</span>
+                <span class="site-state-item-count">95</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
