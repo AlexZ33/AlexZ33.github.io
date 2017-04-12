@@ -335,7 +335,7 @@ var _hmt = _hmt || [];
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com2017/02/04/ajax跨域请求/">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com2017/03/02/nodejs_promise/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AlexZ33">
@@ -353,7 +353,7 @@ var _hmt = _hmt || [];
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">942(字)</span> 
+           <span class="post-count">632(字)</span> 
          </span>
         
          
@@ -367,8 +367,8 @@ var _hmt = _hmt || [];
             
               
                 
-                <a class="post-title-link" href="2017/02/04/ajax跨域请求/" itemprop="url">
-                  ajax跨域请求
+                <a class="post-title-link" href="2017/03/02/nodejs_promise/" itemprop="url">
+                  Promise初探
                 </a>
               
             
@@ -386,8 +386,8 @@ var _hmt = _hmt || [];
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-04T07:44:12+08:00">
-                2017-02-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-02T19:56:16+08:00">
+                2017-03-02
               </time>
             
 
@@ -426,7 +426,7 @@ var _hmt = _hmt || [];
 
           
           
-             <span id="2017/02/04/ajax跨域请求/" class="leancloud_visitors" data-flag-title="ajax跨域请求">
+             <span id="2017/03/02/nodejs_promise/" class="leancloud_visitors" data-flag-title="Promise初探">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -457,61 +457,43 @@ var _hmt = _hmt || [];
       
         
           
-            <p><strong>ajax跨域请求</strong></p>
-<p><strong>一、什么是跨域</strong></p>
-<p>我们先回顾一下域名地址的组成：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http:// www . google : 8080 / script/jquery.js</div></pre></td></tr></table></figure>
-<ul>
-<li>http:// （协议号）</li>
-<li>www  （子域名）</li>
-<li>google （主域名）</li>
-<li>8080 （端口号）</li>
-<li>script/jquery.js （请求的地址）</li>
-</ul>
-<ul>
-<li><p>当协议、子域名、主域名、端口号中任意一个不相同时，都算不同的“域”。</p>
-</li>
-<li><p>不同的域之间相互请求资源，就叫“跨域”。</p>
-</li>
-</ul>
-<p>比如：<a href="http://www.jxdxsw.com/index.html" target="_blank" rel="external">http://www.jxdxsw.com/index.html</a>  请求 <a href="http://www.unclay.com/sever.php" target="_blank" rel="external">http://www.unclay.com/sever.php</a></p>
-<p><strong>二、出现跨域问题的情况</strong></p>
-<p>工作中需要使用AJAX请求其他域名下的请求，但是会出现拒绝访问的情况，这是因为基于安全的考虑，AJAX只能访问本地的资源，而不能跨域访问。</p>
-<p>比如说你的网站域名是jxdsxw.com，想要通过AJAX请求unclay.com域名中的内容，浏览器就会认为是不安全的，所以拒绝访问。</p>
-<p>会出现跨域问题的几种情况：<br><img src="http://on891bjlf.bkt.clouddn.com/image/640.webp.jpg" alt=""></p>
-<p><strong>三、处理跨域的方法1 – 代理</strong></p>
-<p>这种方式是通过后台(ASP、PHP、JAVA、ASP.NET)获取其他域名下的内容，然后再把获得内容返回到前端，这样因为在同一个域名下，所以就不会出现跨域的问题。</p>
-<p>比如在北京（www.beijing.com/sever.php）和上海（www.shanghai.com/sever.php）各有一个服务器，北京的后端（www.beijing.com/sever.php）直接访问上海的服务，然后把获取的响应值返回给前端。也就是北京的服务在后台做了一个代理，前端只需要访问北京的服务器也就相当与访问了上海的服务器。这种代理属于后台的技术，所以不展开叙述。</p>
-<p><strong>处理跨域的方法2 – JSONP</strong><br>jsonp本质上就是一个script的标签</p>
-<p>假设在<a href="http://www.jxdxsw.com/index.php这个页面中向http://www.unclay.com/getinfo.php提交GET请求，那么我们在www.jxdxsw.com页面中添加如下代码：" target="_blank" rel="external">http://www.jxdxsw.com/index.php这个页面中向http://www.unclay.com/getinfo.php提交GET请求，那么我们在www.jxdxsw.com页面中添加如下代码：</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> eleScript= <span class="built_in">document</span>.createElement(<span class="string">"script"</span>); <span class="comment">//创建一个script元素</span></div><div class="line"> </div><div class="line">eleScript.type = <span class="string">"text/javascript"</span>; <span class="comment">//声明类型、</span></div><div class="line"> </div><div class="line">eleScript.src = <span class="string">"http://www.unclay.com/getinfo.php"</span>; <span class="comment">//添加src属性 引入跨域访问的url</span></div><div class="line"> </div><div class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">"HEAD"</span>)[<span class="number">0</span>].appendChild(eleScript); <span class="comment">//在页面中添加新创建的script元素</span></div></pre></td></tr></table></figure>
-<p>当GET请求从<a href="http://www.unclay.com/getinfo.php返回时，可以返回一段JavaScript代码，这段代码会自动执行，可以用来负责调用http://www.jxdxsw.com/index.php页面中的一个callback函数。看下面一个列子：" target="_blank" rel="external">http://www.unclay.com/getinfo.php返回时，可以返回一段JavaScript代码，这段代码会自动执行，可以用来负责调用http://www.jxdxsw.com/index.php页面中的一个callback函数。看下面一个列子：</a></p>
-<p>在www.jxdxsw.com页面中：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">　　function jsonp( json )&#123;</div><div class="line">  　</div><div class="line">  　document.write( json.name ); //输出镜心</div><div class="line"> </div><div class="line">&#125;</div><div class="line">&lt;script&gt; </div><div class="line">&lt;script src=&quot;http://www.unclay.com/getinfo.php&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>在www.unclay.com页面中：</p>
-<p>　　</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jsonp(&#123; &quot;name&quot;:&quot;镜心&quot;,&quot;age&quot;:8 &#125;);</div></pre></td></tr></table></figure>
-<p>也就是在www.jxdxsw.com页面中声明，在www.unclay.com页面中调用。但是JSONP只支持 “GET” 请求，但不支持 “POST” 请求。</p>
-<p><strong>处理跨域的方法3 – XHR2（推荐方法）</strong></p>
-<p><strong>以前 xhr时候</strong><br><img src="http://on891bjlf.bkt.clouddn.com/image/640.webp%20%281%29.jpg" alt=""></p>
-<p>这里的 url必须在同域，如果主域同，子域不同是绝对不能跨域的</p>
-<p><strong>现在升级成xhr2后</strong></p>
-<p>“XHR2” 全称 “XMLHttpRequest Level2” 是HTML5提供的方法，对跨域访问提供了很好的支持，并且还有一些新的功能。</p>
-<ul>
-<li><p>IE10一下的版本都不支持</p>
-</li>
-<li><p>只需要在服务器端头部加上下面两句代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">header( &quot;Access-Control-Allow-Origin:*&quot; );</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>打成*是所有域，如果限定特定的域,我们希望百度和镜心的服务器能跨域请求我们的接口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">header( &apos;Access-Control-Allow-Origin:www.baidu.com&apos;);</div></pre></td></tr></table></figure></p>
-<p>　我们以MDN这个网站为例，看看，就是允许任何域向这个域发起请求<br><img src="http://on891bjlf.bkt.clouddn.com/image/mdn.webp.jpg" alt=""><br><img src="http://on891bjlf.bkt.clouddn.com/image/640.webp%20%282%29.jpg" alt=""></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">header( &quot;Access-Control-Allow-Methods:POST,GET&quot; );</div></pre></td></tr></table></figure>
-<p><strong>处理跨域的方法4 – 利用hash来进行iframe结构的跨域访问</strong></p>
+            <p><img src="http://on891bjlf.bkt.clouddn.com/gif/nodejs_promise.gif" alt=""></p>
+<p>上面的动画<br><strong>用传统的回调的方法控制动画实现</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;Promise animation&lt;/title&gt;</div><div class="line">	&lt;style type=&quot;text/css&quot; media=&quot;screen&quot;&gt;</div><div class="line">		.ball&#123;</div><div class="line">			width: 40px;</div><div class="line">			height: 40px;</div><div class="line">			border-radius: 20px;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		.ball1&#123;</div><div class="line">			background: red;</div><div class="line">		&#125;</div><div class="line">		.ball2&#123;</div><div class="line">			background: yellow;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		.ball3&#123;</div><div class="line">			background: green;</div><div class="line">		&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=&quot;ball ball1&quot; style=&quot;margin-left:0px;&quot;&gt;&lt;/div&gt;</div><div class="line">	&lt;div class=&quot;ball ball2&quot; style=&quot;margin-left:0px;&quot;&gt;&lt;/div&gt;</div><div class="line">	&lt;div class=&quot;ball ball3&quot; style=&quot;margin-left:0px;&quot;&gt;&lt;/div&gt;</div><div class="line"></div><div class="line"></div><div class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">		</div><div class="line">		var ball1 = document.querySelector(&apos;.ball1&apos;)</div><div class="line">		var ball2 = document.querySelector(&apos;.ball2&apos;)</div><div class="line">		var ball3 = document.querySelector(&apos;.ball3&apos;)</div><div class="line"></div><div class="line">		function animate(ball,distance,callback)&#123;</div><div class="line">			setTimeout(function()&#123;</div><div class="line">				var marginLeft = parseInt(ball.style.marginLeft,10)</div><div class="line">				if (marginLeft === distance) &#123;</div><div class="line">					callback &amp;&amp; callback()</div><div class="line">				&#125;</div><div class="line">				else &#123;</div><div class="line">					if (marginLeft &lt; distance) &#123;</div><div class="line">						marginLeft ++</div><div class="line">					&#125;</div><div class="line">					else&#123;</div><div class="line">						marginLeft --</div><div class="line">					&#125;</div><div class="line"></div><div class="line">				ball.style.marginLeft = marginLeft+&apos;px&apos;</div><div class="line">	</div><div class="line">				animate(ball, distance,callback)</div><div class="line">				&#125;</div><div class="line">			&#125;,13)</div><div class="line">		&#125;</div><div class="line">		</div><div class="line"></div><div class="line">		animate(ball1,100,function()&#123;</div><div class="line">			animate(ball2,200,function()&#123;</div><div class="line">				animate(ball3,300,function()&#123;</div><div class="line">					animate(ball3,150,function()&#123;</div><div class="line">						animate(ball2,150,function()&#123;</div><div class="line">							animate(ball1,150,function()&#123;</div><div class="line"></div><div class="line">								&#125;)</div><div class="line">							&#125;)</div><div class="line">						&#125;)</div><div class="line">					&#125;)</div><div class="line">				&#125;)</div><div class="line">		&#125;)</div><div class="line">	&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>这种方式存在 <a href="">回调地狱</a></p>
+<p> <strong>我们用promise来实现一下</strong></p>
 <blockquote>
-<p><strong>更多内容参考这两篇博文</strong></p>
-<p><a href="http://www.cnblogs.com/pigtail/archive/2013/01/24/2875310.html" target="_blank" rel="external">iframe跨域访问</a></p>
-<p><a href="ttp://www.cnblogs.com/guohui/archive/2012/02/24/2366860.html" target="_blank" rel="external">JavaScript跨域脚本调用（iframe方式）</a></p>
+<p>promise的厉害之处就在于只用了一个api接口同时解决回调地狱和异步异常流程控制，还能轻松处理异步和同步流程混杂，说是JS语言内部缺少的一部分也不为过（实际上已经出现了原生Promise）</p>
+</blockquote>
+<p>这里用bluebird这个库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install bluebird</div></pre></td></tr></table></figure>
+<p><img src="http://on891bjlf.bkt.clouddn.com/image/bluebird.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div></pre></td><td class="code"><pre><div class="line"> &lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;Promise animation&lt;/title&gt;</div><div class="line">	&lt;style type=&quot;text/css&quot; media=&quot;screen&quot;&gt;</div><div class="line">		.ball&#123;</div><div class="line">			width: 40px;</div><div class="line">			height: 40px;</div><div class="line">			border-radius: 20px;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		.ball1&#123;</div><div class="line">			background: red;</div><div class="line">		&#125;</div><div class="line">		.ball2&#123;</div><div class="line">			background: yellow;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		.ball3&#123;</div><div class="line">			background: green;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">	&lt;/style&gt;</div><div class="line">	&lt;script type=&quot;text/javascript&quot; src=&quot;node_modules/bluebird/js/browser/bluebird.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=&quot;ball ball1&quot; style=&quot;margin-left:0px;&quot;&gt;&lt;/div&gt;</div><div class="line">	&lt;div class=&quot;ball ball2&quot; style=&quot;margin-left:0px;&quot;&gt;&lt;/div&gt;</div><div class="line">	&lt;div class=&quot;ball ball3&quot; style=&quot;margin-left:0px;&quot;&gt;&lt;/div&gt;</div><div class="line"></div><div class="line"></div><div class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">		</div><div class="line">		var ball1 = document.querySelector(&apos;.ball1&apos;)</div><div class="line">		var ball2 = document.querySelector(&apos;.ball2&apos;)</div><div class="line">		var ball3 = document.querySelector(&apos;.ball3&apos;)</div><div class="line"></div><div class="line">		function animate(ball,distance,callback)&#123;</div><div class="line">			setTimeout(function()&#123;</div><div class="line">				var marginLeft = parseInt(ball.style.marginLeft,10)</div><div class="line">				if (marginLeft === distance) &#123;</div><div class="line">					callback &amp;&amp; callback()</div><div class="line">				&#125;</div><div class="line">				else &#123;</div><div class="line">					if (marginLeft &lt; distance) &#123;</div><div class="line">						marginLeft ++</div><div class="line">					&#125;</div><div class="line">					else&#123;</div><div class="line">						marginLeft --</div><div class="line">					&#125;</div><div class="line"></div><div class="line">				ball.style.marginLeft = marginLeft+&apos;px&apos;</div><div class="line">	</div><div class="line">				animate(ball, distance,callback)</div><div class="line">				&#125;</div><div class="line">			&#125;,13)</div><div class="line">		&#125;</div><div class="line">		</div><div class="line"></div><div class="line">		// animate(ball1,100,function()&#123;</div><div class="line">		// 	animate(ball2,200,function()&#123;</div><div class="line">		// 		animate(ball3,300,function()&#123;</div><div class="line">		// 			animate(ball3,150,function()&#123;</div><div class="line">		// 				animate(ball2,150,function()&#123;</div><div class="line">		// 					animate(ball1,150,function()&#123;</div><div class="line"></div><div class="line">		// 						&#125;)</div><div class="line">		// 					&#125;)</div><div class="line">		// 				&#125;)</div><div class="line">		// 			&#125;)</div><div class="line">		// 		&#125;)</div><div class="line">		// &#125;)</div><div class="line">		</div><div class="line"></div><div class="line">		var Promise =window.Promise</div><div class="line"></div><div class="line">		function promiseAnimate(ball,distance)&#123;</div><div class="line">			return new Promise(function(resolve,reject)&#123;</div><div class="line">				</div><div class="line"></div><div class="line">				function _animate()&#123;</div><div class="line">					</div><div class="line">					setTimeout(function()&#123;</div><div class="line">						var marginLeft = parseInt(ball.style.marginLeft,10)</div><div class="line">						if (marginLeft === distance) &#123;</div><div class="line">							resolve()</div><div class="line">						&#125;</div><div class="line">						else &#123;</div><div class="line">							if (marginLeft &lt; distance) &#123;</div><div class="line">								marginLeft ++</div><div class="line">							&#125;</div><div class="line">							else&#123;</div><div class="line">								marginLeft --</div><div class="line">							&#125;</div><div class="line"></div><div class="line">						ball.style.marginLeft = marginLeft+&apos;px&apos;</div><div class="line">			</div><div class="line">						_animate()</div><div class="line">						&#125;</div><div class="line">					&#125;,13)</div><div class="line">				&#125;</div><div class="line"></div><div class="line">				_animate()</div><div class="line">			&#125;)</div><div class="line">		&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">		promiseAnimate(ball1,100)</div><div class="line">		.then(function()&#123;</div><div class="line">			return promiseAnimate(ball2,200)</div><div class="line">		&#125;)</div><div class="line">		.then(function()&#123;</div><div class="line">			return promiseAnimate(ball3,300)</div><div class="line">		&#125;)</div><div class="line">		.then(function()&#123;</div><div class="line">			return promiseAnimate(ball3,150)</div><div class="line">		&#125;)</div><div class="line">		.then(function()&#123;</div><div class="line">			return promiseAnimate(ball2,150)</div><div class="line">		&#125;)</div><div class="line">		.then(function()&#123;</div><div class="line">			return promiseAnimate(ball1,150)</div><div class="line">		&#125;)</div><div class="line"></div><div class="line">	&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p> 前面只是初探。<br>Promise学习什么？</p>
+<ul>
+<li>ES6的Promise语言标准、Promise/A+ 规范</li>
+<li>如何使用</li>
+<li>在什么场景使用</li>
+</ul>
+<p>Promise是javascript针对异步操作这种场景的解决方案</p>
+<p><a href="http://www.ruanyifeng.com/blog/2012/12/asynchronous＿javascript.html" target="_blank" rel="external">Javascript异步编程的4种方法</a></p>
+<ul>
+<li>回调函数</li>
+<li>事件监听</li>
+<li>发布/订阅</li>
+<li>Promises对象</li>
+</ul>
+<p>Promise对象三种状态</p>
+<ul>
+<li>未完成（pending）</li>
+<li>已完成（fufilled）</li>
+<li>失败 （rejected）</li>
+</ul>
+<p><img src="http://on891bjlf.bkt.clouddn.com/image/PromiseA&amp;PromiseA+.png" alt=""></p>
+<p><img src="http://on891bjlf.bkt.clouddn.com/image/nodejs/promise%E5%BA%93.png" alt=""></p>
+<p><strong>参考教程</strong></p>
+<blockquote>
+<p><a href="http://www.imooc.com/learn/637" target="_blank" rel="external">进击Node.js基础（二）</a><br><a href="http://www.ruanyifeng.com/blog/2012/12/asynchronous＿javascript.html" target="_blank" rel="external">Javascript异步编程的4种方法</a><br><a href="https://blog.risingstack.com/node-hero-async-programming-in-node-js/" target="_blank" rel="external">Understanding Async Programming in Node.js</a></p>
 </blockquote>
 
           
@@ -890,6 +872,227 @@ var _hmt = _hmt || [];
 <p><strong>代码</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;css3名片特效 | 镜心书社&lt;/title&gt;</div><div class="line">	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style/pic-scroll-out.css&quot;&gt;</div><div class="line"></div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">	&lt;img src=&quot;images/me.jpg&quot; alt=&quot;&quot; class=&quot;pic&quot;&gt;</div><div class="line">	&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;</div><div class="line">	&lt;div class=&quot;text&quot;&gt;A CSS3 Demo. Do you like it?&lt;/div&gt;</div><div class="line">	&lt;div class=&quot;contact&quot;&gt;</div><div class="line">		&lt;p&gt;E-mail: sha5xiang@gmail.com&lt;/p&gt;</div><div class="line">		&lt;p&gt;Blog: http://jxdxsw.com&lt;/p&gt;</div><div class="line">		&lt;p&gt;微信公众号：镜心的小树屋&lt;/p&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">	&lt;!--[if lt IE 9]&gt;</div><div class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">        //&lt;![[</div><div class="line">            var box = document.createElement(&quot;div&quot;),</div><div class="line">                bug = &#123;</div><div class="line">                    position:&apos;absolute&apos;,</div><div class="line">                    &apos;z-index&apos;: 9999,</div><div class="line">                    top:&apos;-51px&apos;,</div><div class="line">                    height:&apos;50px&apos;,</div><div class="line">                    width:&apos;100%&apos;,</div><div class="line">                    &apos;border-bottom&apos;:&apos;1px solid #238432&apos;,</div><div class="line">                    background:&apos;orange&apos;,</div><div class="line">                    &apos;text-align&apos;: &apos;center&apos;,</div><div class="line">                    &apos;line-height&apos;: &apos;50px&apos;,</div><div class="line">                    &apos;font-weight&apos;: &apos;bold&apos;</div><div class="line">                &#125;, key, csses = &apos;&apos;, timer = null;</div><div class="line"></div><div class="line">            for(key in bug)&#123;</div><div class="line">                csses += key + &quot;:&quot; + bug[key] + &quot;;&quot;;</div><div class="line">            &#125;</div><div class="line">            box.style.cssText = csses;</div><div class="line">            box.setAttribute(&apos;id&apos;, &apos;bug&apos;);</div><div class="line">            box.innerHTML = &quot;这个Demo只为Chrome准备，屌丝浏览器看不到效果~&quot;;</div><div class="line"></div><div class="line">            document.getElementsByTagName(&apos;body&apos;)[0].appendChild(box);</div><div class="line"></div><div class="line">            function ani()&#123;</div><div class="line">                timer = setTimeout(ani, 10);</div><div class="line">                var top = parseInt(box.style.top);</div><div class="line">                if(top &gt;= -1) clearTimeout(timer);</div><div class="line">                box.style.top = top + 1 + &apos;px&apos;;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            setTimeout(ani, 800);</div><div class="line">        //]]&gt;</div><div class="line">        &lt;/script&gt;</div><div class="line">    &lt;![end if]--&gt;</div><div class="line">	&lt;a href=&quot;https://github.com/AlexZ33/HTML5_CSS3/tree/master/CSS3_demo&quot;&gt;&lt;img style=&quot;position: absolute; top: 0; right: 0; border: 0;&quot; src=&quot;images/forkme.png&quot; alt=&quot;Fork me on GitHub&quot;&gt;&lt;/a&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line"></div><div class="line">`</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div></pre></td><td class="code"><pre><div class="line">html&#123;</div><div class="line">	height: 100%;</div><div class="line">	overflow: hidden;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">body&#123;</div><div class="line">	position: relative;</div><div class="line">	background: -webkit-gradient(linear,left top,left bottom,from(#666),colo-stop(0.5,#fff),to(#666));</div><div class="line">	height: 100%;</div><div class="line">	margin: 0;</div><div class="line">	padding: 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.line&#123;</div><div class="line">	height:3px;</div><div class="line">	background: red;</div><div class="line">	opacity: 0.3;</div><div class="line">	width: 100%;</div><div class="line">	position: absolute;</div><div class="line">	top: 50%;</div><div class="line">	-webkit-animation:stecth 2s linear;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.text&#123;</div><div class="line">	height: 90px;</div><div class="line">	width: 50%;</div><div class="line">	position: absolute;</div><div class="line">	left: 50%;</div><div class="line">	top:44%;</div><div class="line">	color: rgba(168,0,0,0.6);</div><div class="line">	font-weight: bold;</div><div class="line">	line-height: 45px;</div><div class="line">	font-size: 32px;</div><div class="line">	white-space: nowrap;</div><div class="line">	overflow: hidden;</div><div class="line">	text-overflow:clip;</div><div class="line">	text-transform: uppercase; </div><div class="line">	text-shadow:3px 3px 5px rgba(130,0,0,0.6);</div><div class="line">	-webkit-box-reflect:below -80px -webkit-gradient(linear,0 0,0 100%,from(transparent),to(white));</div><div class="line">	-webkit-animation:Tstecth 2s linear;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">.pic&#123;</div><div class="line">	border-radius: 12px;</div><div class="line">	position: absolute;</div><div class="line">	top: 28%;</div><div class="line">	left: 12%;</div><div class="line">	opacity: 0.9;</div><div class="line">	height: 40%;</div><div class="line">	box-shadow: 5px 5px 10px raba(15,13,13,0.6);</div><div class="line">	z-index:100;</div><div class="line">	-webkit-transform:rotate(-10deg);</div><div class="line">	-webkit-animation:pic 1s linear;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.contact&#123;</div><div class="line">	position:absolute;</div><div class="line">	bottom:20%;</div><div class="line">	left: 40%;</div><div class="line">	left:40%;</div><div class="line">	line-height:24px;</div><div class="line">	color: #666;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.contact p&#123;</div><div class="line">	margin:0;</div><div class="line">	-webkit-animation:contact 2s linear;</div><div class="line">	text-shadow:1px 1px 3px #666;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">@-webkit-keyframes stecth&#123;</div><div class="line">	from&#123;width: 0&#125;</div><div class="line">	to &#123;width:100%&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@-webkit-keyframes Tstecth&#123;</div><div class="line">	0%&#123;width:0;&#125;</div><div class="line">	50%&#123;width: 0;&#125;</div><div class="line">	100%&#123;width: 50%;&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@-webkit-keyframes pic&#123;</div><div class="line">	0%&#123;-webkit-transform:rotate(8deg); opacity: 0;&#125;</div><div class="line">	20%&#123;-webkit-transform:rotate(8deg);height:0;top:44%;left:18%;opacity: 0;&#125;</div><div class="line">	50% &#123;-webkit-transform:rotate(178deg);heihgt:20%;top:36%;left:16%;opacity: 0.5;&#125;</div><div class="line">	100%&#123;-webkit-transform:rotate(348deg);height: 40%;top: 28%;left: 12%;opacity: 1;&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@-webkit-keyframes contact&#123;</div><div class="line">	0%&#123;opacity: 0;&#125;</div><div class="line">	50%&#123;opacity: 0;color:#fff;&#125;</div><div class="line">	100%&#123;opacity: 1;color: #666;&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com2017/02/04/ajax跨域请求/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AlexZ33">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="镜心的小树屋">
+    </span>
+
+<span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">942(字)</span> 
+         </span>
+        
+         
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="2017/02/04/ajax跨域请求/" itemprop="url">
+                  ajax跨域请求
+                </a>
+              
+            
+          </h1>
+        
+        
+
+        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-04T07:44:12+08:00">
+                2017-02-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="2017/02/04/ajax跨域请求/" class="leancloud_visitors" data-flag-title="ajax跨域请求">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>ajax跨域请求</strong></p>
+<p><strong>一、什么是跨域</strong></p>
+<p>我们先回顾一下域名地址的组成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http:// www . google : 8080 / script/jquery.js</div></pre></td></tr></table></figure>
+<ul>
+<li>http:// （协议号）</li>
+<li>www  （子域名）</li>
+<li>google （主域名）</li>
+<li>8080 （端口号）</li>
+<li>script/jquery.js （请求的地址）</li>
+</ul>
+<ul>
+<li><p>当协议、子域名、主域名、端口号中任意一个不相同时，都算不同的“域”。</p>
+</li>
+<li><p>不同的域之间相互请求资源，就叫“跨域”。</p>
+</li>
+</ul>
+<p>比如：<a href="http://www.jxdxsw.com/index.html" target="_blank" rel="external">http://www.jxdxsw.com/index.html</a>  请求 <a href="http://www.unclay.com/sever.php" target="_blank" rel="external">http://www.unclay.com/sever.php</a></p>
+<p><strong>二、出现跨域问题的情况</strong></p>
+<p>工作中需要使用AJAX请求其他域名下的请求，但是会出现拒绝访问的情况，这是因为基于安全的考虑，AJAX只能访问本地的资源，而不能跨域访问。</p>
+<p>比如说你的网站域名是jxdsxw.com，想要通过AJAX请求unclay.com域名中的内容，浏览器就会认为是不安全的，所以拒绝访问。</p>
+<p>会出现跨域问题的几种情况：<br><img src="http://on891bjlf.bkt.clouddn.com/image/640.webp.jpg" alt=""></p>
+<p><strong>三、处理跨域的方法1 – 代理</strong></p>
+<p>这种方式是通过后台(ASP、PHP、JAVA、ASP.NET)获取其他域名下的内容，然后再把获得内容返回到前端，这样因为在同一个域名下，所以就不会出现跨域的问题。</p>
+<p>比如在北京（www.beijing.com/sever.php）和上海（www.shanghai.com/sever.php）各有一个服务器，北京的后端（www.beijing.com/sever.php）直接访问上海的服务，然后把获取的响应值返回给前端。也就是北京的服务在后台做了一个代理，前端只需要访问北京的服务器也就相当与访问了上海的服务器。这种代理属于后台的技术，所以不展开叙述。</p>
+<p><strong>处理跨域的方法2 – JSONP</strong><br>jsonp本质上就是一个script的标签</p>
+<p>假设在<a href="http://www.jxdxsw.com/index.php这个页面中向http://www.unclay.com/getinfo.php提交GET请求，那么我们在www.jxdxsw.com页面中添加如下代码：" target="_blank" rel="external">http://www.jxdxsw.com/index.php这个页面中向http://www.unclay.com/getinfo.php提交GET请求，那么我们在www.jxdxsw.com页面中添加如下代码：</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> eleScript= <span class="built_in">document</span>.createElement(<span class="string">"script"</span>); <span class="comment">//创建一个script元素</span></div><div class="line"> </div><div class="line">eleScript.type = <span class="string">"text/javascript"</span>; <span class="comment">//声明类型、</span></div><div class="line"> </div><div class="line">eleScript.src = <span class="string">"http://www.unclay.com/getinfo.php"</span>; <span class="comment">//添加src属性 引入跨域访问的url</span></div><div class="line"> </div><div class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">"HEAD"</span>)[<span class="number">0</span>].appendChild(eleScript); <span class="comment">//在页面中添加新创建的script元素</span></div></pre></td></tr></table></figure>
+<p>当GET请求从<a href="http://www.unclay.com/getinfo.php返回时，可以返回一段JavaScript代码，这段代码会自动执行，可以用来负责调用http://www.jxdxsw.com/index.php页面中的一个callback函数。看下面一个列子：" target="_blank" rel="external">http://www.unclay.com/getinfo.php返回时，可以返回一段JavaScript代码，这段代码会自动执行，可以用来负责调用http://www.jxdxsw.com/index.php页面中的一个callback函数。看下面一个列子：</a></p>
+<p>在www.jxdxsw.com页面中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">　　function jsonp( json )&#123;</div><div class="line">  　</div><div class="line">  　document.write( json.name ); //输出镜心</div><div class="line"> </div><div class="line">&#125;</div><div class="line">&lt;script&gt; </div><div class="line">&lt;script src=&quot;http://www.unclay.com/getinfo.php&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>在www.unclay.com页面中：</p>
+<p>　　</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jsonp(&#123; &quot;name&quot;:&quot;镜心&quot;,&quot;age&quot;:8 &#125;);</div></pre></td></tr></table></figure>
+<p>也就是在www.jxdxsw.com页面中声明，在www.unclay.com页面中调用。但是JSONP只支持 “GET” 请求，但不支持 “POST” 请求。</p>
+<p><strong>处理跨域的方法3 – XHR2（推荐方法）</strong></p>
+<p><strong>以前 xhr时候</strong><br><img src="http://on891bjlf.bkt.clouddn.com/image/640.webp%20%281%29.jpg" alt=""></p>
+<p>这里的 url必须在同域，如果主域同，子域不同是绝对不能跨域的</p>
+<p><strong>现在升级成xhr2后</strong></p>
+<p>“XHR2” 全称 “XMLHttpRequest Level2” 是HTML5提供的方法，对跨域访问提供了很好的支持，并且还有一些新的功能。</p>
+<ul>
+<li><p>IE10一下的版本都不支持</p>
+</li>
+<li><p>只需要在服务器端头部加上下面两句代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">header( &quot;Access-Control-Allow-Origin:*&quot; );</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>打成*是所有域，如果限定特定的域,我们希望百度和镜心的服务器能跨域请求我们的接口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">header( &apos;Access-Control-Allow-Origin:www.baidu.com&apos;);</div></pre></td></tr></table></figure></p>
+<p>　我们以MDN这个网站为例，看看，就是允许任何域向这个域发起请求<br><img src="http://on891bjlf.bkt.clouddn.com/image/mdn.webp.jpg" alt=""><br><img src="http://on891bjlf.bkt.clouddn.com/image/640.webp%20%282%29.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">header( &quot;Access-Control-Allow-Methods:POST,GET&quot; );</div></pre></td></tr></table></figure>
+<p><strong>处理跨域的方法4 – 利用hash来进行iframe结构的跨域访问</strong></p>
+<blockquote>
+<p><strong>更多内容参考这两篇博文</strong></p>
+<p><a href="http://www.cnblogs.com/pigtail/archive/2013/01/24/2875310.html" target="_blank" rel="external">iframe跨域访问</a></p>
+<p><a href="ttp://www.cnblogs.com/guohui/archive/2012/02/24/2366860.html" target="_blank" rel="external">JavaScript跨域脚本调用（iframe方式）</a></p>
+</blockquote>
 
           
         
@@ -2172,174 +2375,6 @@ var _hmt = _hmt || [];
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com2016/08/03/jQuery 如何存储，获取和删除 Cookies/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AlexZ33">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="镜心的小树屋">
-    </span>
-
-<span class="post-time">
-	   &nbsp; | &nbsp;
-           <span class="post-meta-item-icon">
-             <i class="fa fa-calendar-o"></i>
-           </span>
-           <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">186(字)</span> 
-         </span>
-        
-         
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="2016/08/03/jQuery 如何存储，获取和删除 Cookies/" itemprop="url">
-                  jQuery 如何存储，获取和删除 Cookies
-                </a>
-              
-            
-          </h1>
-        
-        
-
-        
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-03T18:44:12+08:00">
-                2016-08-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="2016/08/03/jQuery 如何存储，获取和删除 Cookies/" class="leancloud_visitors" data-flag-title="jQuery 如何存储，获取和删除 Cookies">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="jQuery-如何存储，获取和删除-Cookies"><a href="#jQuery-如何存储，获取和删除-Cookies" class="headerlink" title="jQuery 如何存储，获取和删除 Cookies"></a>jQuery 如何存储，获取和删除 Cookies</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">jQuery.cookie = function(name, value, options) &#123;</div><div class="line">    if (typeof value != &apos;undefined&apos;) &#123;</div><div class="line">        options = options || &#123;&#125;;</div><div class="line">        if (value === null) &#123;</div><div class="line">            value = &apos;&apos;;</div><div class="line">            options = $.extend(&#123;&#125;, options);</div><div class="line">            options.expires = -1;</div><div class="line">        &#125;</div><div class="line">        var expires = &apos;&apos;;</div><div class="line">        if (options.expires &amp;&amp; (typeof options.expires == &apos;number&apos; || options.expires.toUTCString)) &#123;</div><div class="line">            var date;</div><div class="line">            if (typeof options.expires == &apos;number&apos;) &#123;</div><div class="line">                date = new Date();</div><div class="line">                date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));</div><div class="line">            &#125; else &#123;</div><div class="line">                date = options.expires;</div><div class="line">            &#125;</div><div class="line">            expires = &apos;; expires=&apos; + date.toUTCString();</div><div class="line">        &#125;</div><div class="line">        var path = options.path ? &apos;; path=&apos; + (options.path) : &apos;&apos;;</div><div class="line">        var domain = options.domain ? &apos;; domain=&apos; + (options.domain) : &apos;&apos;;</div><div class="line">        var secure = options.secure ? &apos;; secure&apos; : &apos;&apos;;</div><div class="line">        document.cookie = [name, &apos;=&apos;, encodeURIComponent(value), expires, path, domain, secure].join(&apos;&apos;);</div><div class="line">        &#125; else &#123;</div><div class="line">            var cookieValue = null;</div><div class="line">            if (document.cookie &amp;&amp; document.cookie != &apos;&apos;) &#123;</div><div class="line">            var cookies = document.cookie.split(&apos;;&apos;);</div><div class="line">            for (var i = 0; i &lt; cookies.length; i++) &#123;</div><div class="line">                var cookie = jQuery.trim(cookies[i]);</div><div class="line">                if (cookie.substring(0, name.length + 1) == (name + &apos;=&apos;)) &#123;</div><div class="line">                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));</div><div class="line">                    break;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return cookieValue;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>然后通过下面方法使用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$(document).ready(function() &#123;</div><div class="line">    $(&apos;#write_cokies&apos;).click(function()&#123;</div><div class="line">        $.cookie(&apos;name&apos;, &apos;test&apos;,&#123;expires: 7&#125;);                  </div><div class="line">    &#125;);</div><div class="line">    $(&apos;#read_ookies&apos;).click(function()&#123;</div><div class="line">        var test = $.cookie(&apos;name&apos;);</div><div class="line">        alert (test);</div><div class="line">    &#125;);</div><div class="line">    $(&apos;#delete_cookies&apos;).click(function()&#123;</div><div class="line">        $.cookie(&apos;name&apos;, null);                              </div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2389,7 +2424,7 @@ var _hmt = _hmt || [];
           
             <div class="site-state-item site-state-posts">
               <a href="index.html">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2411,7 +2446,7 @@ var _hmt = _hmt || [];
             
             <div class="site-state-item site-state-tags">
               <a href="tags/index.html">
-                <span class="site-state-item-count">99</span>
+                <span class="site-state-item-count">101</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -2512,10 +2547,6 @@ var _hmt = _hmt || [];
               
                 <li class="links-of-blogroll-item">
                   <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://liuyubobobo.com/" title="刘宇波" target="_blank">刘宇波</a>
                 </li>
               
                 <li class="links-of-blogroll-item">

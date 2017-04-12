@@ -335,6 +335,196 @@ var _hmt = _hmt || [];
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/01/07/CSS3实现三角形和气泡效果/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AlexZ33">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="镜心的小树屋">
+    </span>
+
+<span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">806(字)</span> 
+         </span>
+        
+         
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="../../2016/01/07/CSS3实现三角形和气泡效果/" itemprop="url">
+                  CSS3实现三角形和气泡效果
+                </a>
+              
+            
+          </h1>
+        
+        
+
+        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-07T18:44:12+08:00">
+                2016-01-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../../categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="../../2016/01/07/CSS3实现三角形和气泡效果/" class="leancloud_visitors" data-flag-title="CSS3实现三角形和气泡效果">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><b>三角形的实现<b></b></b></p>
+<p>html结构<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>css样式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">      div&#123;</div><div class="line">	height: 0;</div><div class="line">	width: 0;</div><div class="line">	border-top: 40px solid #000;</div><div class="line">	border-right: 40px solid #ff0000;</div><div class="line">	border-left: 40px solid #ff0000;</div><div class="line">	border-bottom: 40px solid #000;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>显示效果<br><img src="http://on891bjlf.bkt.clouddn.com/mage/css3/%E6%88%AA%E5%9B%BE1490612265.png" alt="显示效果"><br>用css画三角形很简单，就是将一个块元素宽高设置为0，然后给某一边设一个比较厚的宽度<br>利用盒子的均分原理，盒子都是矩形或者正方形，从形状的中心，向4个<br>上下左右划分4个部分。保证元素是块级元素，设置元素的边框，不需要显示的边框使用透明色transparent。</p>
+<p>所以，如果你要一个向上或者向下的三角:border-left和border-right就是transparent，而border-bottom可见则三角向上，border-top可见则三角向下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">    div&#123;</div><div class="line">	height: 0;</div><div class="line">	width: 0;</div><div class="line">	border-top: 40px solid transparent;</div><div class="line">	border-right: 40px solid transparent;</div><div class="line">	border-left: 40px solid transparent;</div><div class="line">	border-bottom: 40px solid #000;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://on891bjlf.bkt.clouddn.com/mage/css3/%E6%88%AA%E5%9B%BE1490612957.png" alt="显示效果"><br>如果你要一个向左或者向右的三角:border-top和border-bottom就是transparent，而设置border-left则三角向右，设置border-right则三角向左<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">    div&#123;</div><div class="line">	height: 0;</div><div class="line">	width: 0;</div><div class="line">	border-top: 40px solid transparent;</div><div class="line">	border-right: 40px solid transparent;</div><div class="line">	border-left: 40px solid #000;</div><div class="line">	border-bottom: 40px solid transparent;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://on891bjlf.bkt.clouddn.com/mage/css3/%E6%88%AA%E5%9B%BE1490613205.png" alt="显示效果"></p>
+<p>如果它的上是有的，但是右是透明的，就会是下面的效果<br>border-top: 100px solid red;<br>border-right: 100px solid transparent;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">   div&#123;</div><div class="line">	height: 0;</div><div class="line">	width: 0;</div><div class="line">	border-top: 40px solid #000;</div><div class="line">	border-right: 40px solid transparent;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://on891bjlf.bkt.clouddn.com/mage/css3/%E6%88%AA%E5%9B%BE1490613452.png" alt=""></p>
+<p>当然还有这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">  div&#123;</div><div class="line">	height: 0;</div><div class="line">	width: 0;</div><div class="line">	border-top: 40px solid #000;</div><div class="line">	border-right: 30px solid #ff0000;</div><div class="line">	border-left: 50px solid #ff0000;</div><div class="line">	border-bottom: 25px solid #000;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://on891bjlf.bkt.clouddn.com/mage/css3/%E6%88%AA%E5%9B%BE1490613733.png" alt=""><br>很明显的左三角和下三角的比例是2:1，在下三角可以明显的看出来，下三角的底边，左右2:1；<br>同理，根据上面的上下左右布局，应该没有什么三角是画不出来的</p>
+<p>示例 </p>
+<p>如下图的时光轴旁边的小三角  就可以用以上的方法实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> .content_item_icon_arrow&#123;</div><div class="line">	position: absolute;</div><div class="line">	left: -10px;</div><div class="line">	top: 20px;</div><div class="line">	height: 0px;</div><div class="line">	border-color:transparent #e2e2e2 transparent transparent;</div><div class="line">	border-width: 10px 10px 10px 0px;</div><div class="line">	border-style: dashed solid dashed dashed;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><b>气泡效果实现<b></b></b></p>
+<blockquote>
+<p>以前我们要实现对话气泡效果很麻烦，基本上是用切图的方法。现在有了CSS3就变得简单多了。一个HTML元素，一些CSS3代码，不需要图片，也不需要JavaScript。如下图：</p>
+</blockquote>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">    <span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>	css3实现气泡<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">			.box&#123;</div><div class="line">				width: 200px;height: 100px; border: 5px solid #eee;margin-left: 10px;position: relative;</div><div class="line">			&#125;</div><div class="line">			.box .arrow&#123;</div><div class="line">				position: absolute;top: 100px;left: 30px;width: 50px;height: 50px;</div><div class="line">			&#125;</div><div class="line">			.a1&#123;</div><div class="line">				border: 30px solid #f00;display: block;border-color: #eee transparent transparent transparent;</div><div class="line">			&#125;</div><div class="line">			.a2&#123;position: absolute;left: 0;top: -8px;border: 30px solid #f00;display: block;border-color: #fff transparent transparent transparent &#125;</div><div class="line">		</div><div class="line">	<span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"arrow"</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"a1"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"a2"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">			css3实现气泡</div><div class="line">		<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>效果<br><img src="http://on891bjlf.bkt.clouddn.com/mage/css3/%E6%88%AA%E5%9B%BE1490616586.png" alt=""></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></div><div class="line">#demo&#123;</div><div class="line">    position: relative;</div><div class="line">    width: 200px;</div><div class="line">    height: 100px;</div><div class="line">    background-color: #fff;</div><div class="line">    border: 8px solid #666;</div><div class="line">    -webkit-border-radius: 30px;</div><div class="line">    -moz-border-radius: 30px;</div><div class="line">    border-radius: 30px;</div><div class="line">    -webkit-box-shadow: 2px 2px 4px #888;</div><div class="line">    -moz-box-shadow: 2px 2px 4px #888;</div><div class="line">    box-shadow: 2px 2px 4px #888;</div><div class="line">&#125;</div><div class="line">#demo:before&#123;</div><div class="line">    content: ' ';</div><div class="line">    position: absolute;</div><div class="line">    width: 0;</div><div class="line">    height: 0;</div><div class="line">    left: 30px;</div><div class="line">    top: 100px;</div><div class="line">    border: 25px solid;</div><div class="line">    border-color: #666 transparent transparent #666;</div><div class="line">&#125;</div><div class="line">#demo:after&#123;</div><div class="line">    content: ' ';</div><div class="line">    position: absolute;</div><div class="line">    width: 0;</div><div class="line">    height: 0;</div><div class="line">    left: 38px;</div><div class="line">    top: 100px;</div><div class="line">    border: 15px solid;</div><div class="line">    border-color: #fff transparent transparent #fff;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>效果：<br><img src="http://on891bjlf.bkt.clouddn.com/mage/css3/%E6%88%AA%E5%9B%BE1490616951.png" alt=""></p>
+<blockquote>
+<p>参考：<br><a href="https://segmentfault.com/a/1190000000479199" target="_blank" rel="external">CSS3实现气泡效果</a><br><a href="https://segmentfault.com/a/1190000007159738" target="_blank" rel="external">CSS3 巧妙实现聊天气泡</a><br><a href="https://segmentfault.com/a/1190000006023203" target="_blank" rel="external">CSS3 聊天气泡框以及 inherit、currentColor 关键字</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2015/12/30/如何阅读历史/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1072,7 +1262,7 @@ var _hmt = _hmt || [];
           
             <div class="site-state-item site-state-posts">
               <a href="../../index.html">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1094,7 +1284,7 @@ var _hmt = _hmt || [];
             
             <div class="site-state-item site-state-tags">
               <a href="../../tags/index.html">
-                <span class="site-state-item-count">99</span>
+                <span class="site-state-item-count">101</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1195,10 +1385,6 @@ var _hmt = _hmt || [];
               
                 <li class="links-of-blogroll-item">
                   <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://liuyubobobo.com/" title="刘宇波" target="_blank">刘宇波</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
