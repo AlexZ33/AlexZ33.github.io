@@ -335,6 +335,366 @@ var _hmt = _hmt || [];
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/03/07/css实现简单图片展示/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AlexZ33">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="镜心的小树屋">
+    </span>
+
+<span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">187(字)</span> 
+         </span>
+        
+         
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="../../2016/03/07/css实现简单图片展示/" itemprop="url">
+                  CSS实现简单图片展示
+                </a>
+              
+            
+          </h1>
+        
+        
+
+        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-07T18:44:12+08:00">
+                2016-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../../categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="../../2016/03/07/css实现简单图片展示/" class="leancloud_visitors" data-flag-title="CSS实现简单图片展示">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><b>CSS实现简单图片展示<b></b></b></p>
+<p>  <strong>效果：</strong><br>  <img src="http://on891bjlf.bkt.clouddn.com/gif/picshow.gif" alt=""></p>
+<p>css部分<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">  </div><div class="line"><span class="selector-tag">div</span>,<span class="selector-tag">ul</span>,<span class="selector-tag">li</span>,<span class="selector-tag">dl</span>,<span class="selector-tag">dt</span>,<span class="selector-tag">dd</span>&#123;</div><div class="line">	<span class="attribute">margin</span>:<span class="number">0</span>;</div><div class="line">	<span class="attribute">padding</span>:<span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">ul</span>,<span class="selector-tag">li</span>,<span class="selector-tag">dl</span>,<span class="selector-tag">dt</span>,<span class="selector-tag">dd</span>&#123;</div><div class="line">	<span class="attribute">list-style</span>:none;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.demo</span>&#123;</div><div class="line">	<span class="attribute">margin</span>:<span class="number">0</span> auto;</div><div class="line">	<span class="attribute">width</span>:<span class="number">930px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.demo</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span>&#123;</div><div class="line">	<span class="attribute">float</span>:left;</div><div class="line">	<span class="attribute">width</span>:<span class="number">300px</span>;</div><div class="line">	<span class="attribute">margin-right</span>:<span class="number">6px</span>;</div><div class="line">	<span class="attribute">position</span>:relative;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.demo</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">img</span>&#123;</div><div class="line">    <span class="attribute">border</span>:none;</div><div class="line">	<span class="attribute">position</span>:relative;</div><div class="line">	<span class="attribute">z-index</span>:<span class="number">22</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.demo</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;</div><div class="line">	<span class="attribute">width</span>:<span class="number">300px</span>;</div><div class="line">    <span class="attribute">display</span>:block;</div><div class="line">	<span class="attribute">border</span>:<span class="number">2px</span> solid <span class="number">#ccc</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.demo</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>&#123;</div><div class="line">	<span class="attribute">border</span>:<span class="number">2px</span> solid <span class="number">#C03</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.demo</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span> <span class="selector-tag">span</span>&#123;</div><div class="line">    <span class="attribute">position</span>:absolute;</div><div class="line">	<span class="attribute">z-index</span>:<span class="number">33</span>;</div><div class="line">	<span class="attribute">bottom</span>:<span class="number">2px</span>;</div><div class="line">	<span class="attribute">left</span>:<span class="number">2px</span>;</div><div class="line">	<span class="attribute">width</span>:<span class="number">300px</span>;</div><div class="line">	<span class="attribute">height</span>:<span class="number">40px</span>;</div><div class="line">	<span class="attribute">filter</span>:<span class="built_in">alpha</span>(Opacity=50);</div><div class="line">	<span class="attribute">-moz-opacity</span>:<span class="number">0.5</span>;</div><div class="line">	<span class="attribute">opacity</span>: <span class="number">0.5</span>;</div><div class="line">	<span class="attribute">background</span>:<span class="number">#000</span>;</div><div class="line">	<span class="attribute">color</span>:<span class="number">#fff</span>;</div><div class="line">	<span class="attribute">line-height</span>:<span class="number">40px</span>;</div><div class="line">	<span class="attribute">text-align</span>:left;</div><div class="line">	<span class="attribute">display</span>:none;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.demo</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">span</span>&#123;</div><div class="line">	<span class="attribute">display</span>:block;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>html部分</p>
+<pre><code>&lt;div class=&quot;demo&quot;&gt;
+&lt;ul&gt;
+   &lt;li&gt;
+     &lt;a&gt;
+       &lt;img src=&quot;1.jpg&quot;  /&gt;
+       &lt;span&gt;keep moving&lt;/span&gt;
+     &lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+     &lt;a&gt;
+       &lt;img src=&quot;2.jpg&quot;  /&gt;
+       &lt;span&gt;stay hungry &lt;/span&gt;
+     &lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+     &lt;a&gt;
+       &lt;img src=&quot;3.jpg&quot;  /&gt;
+       &lt;span&gt;stay foolish&lt;/span&gt;
+     &lt;/a&gt;
+   &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p> </p>
+<p><strong>参考</strong><br><a href="http://www.imooc.com/learn/31" target="_blank" rel="external">慕课网 图片展示特效</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/03/07/js闭包/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AlexZ33">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="镜心的小树屋">
+    </span>
+
+<span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">187(字)</span> 
+         </span>
+        
+         
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="../../2016/03/07/js闭包/" itemprop="url">
+                  js闭包
+                </a>
+              
+            
+          </h1>
+        
+        
+
+        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-07T18:44:12+08:00">
+                2016-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../../categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="../../2016/03/07/js闭包/" class="leancloud_visitors" data-flag-title="js闭包">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><b>js闭包<b></b></b></p>
+<p>闭包<br>（1）概念<br>闭包是指有权访问另一个函数作用域中的变量的函数。<br>（2）特性<br>闭包只能取得包含函数中任何变量的最后一个值。<br>（3）创建方式<br>在一个函数内部创建另一个函数。<br>（4）原理<br>在一个函数内部中定义的函数会将包含函数（外部函数）的活动对象添加到其作用域中，直至解除对内部函数的应用，内部函数被销毁，外部函数的活动对象才会被销毁。<br>（5）实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function closure()&#123;</div><div class="line">    var result=[];</div><div class="line">    for (var i = 0; i &lt; 4; i++) &#123;</div><div class="line">        result[i]=function()&#123;</div><div class="line">            console.log(i);</div><div class="line">            return i;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">    return result;</div><div class="line">&#125;</div><div class="line">var result=closure();</div><div class="line">for (var i = 0; i &lt; 4; i++) &#123;</div><div class="line">    result[i]();</div><div class="line">&#125;;</div><div class="line"></div><div class="line">//4 4 4 4</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/03/07/node_http_crawler/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -863,182 +1223,6 @@ var _hmt = _hmt || [];
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/01/25/canvas_basical_details/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AlexZ33">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="镜心的小树屋">
-    </span>
-
-<span class="post-time">
-	   &nbsp; | &nbsp;
-           <span class="post-meta-item-icon">
-             <i class="fa fa-calendar-o"></i>
-           </span>
-           <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">67(字)</span> 
-         </span>
-        
-         
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="../../2016/01/25/canvas_basical_details/" itemprop="url">
-                  Canvas����֪ʶ
-                </a>
-              
-            
-          </h1>
-        
-        
-
-        
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-25T19:56:16+08:00">
-                2016-01-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="../../categories/j��/" itemprop="url" rel="index">
-                    <span itemprop="name">ǰ��</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="../../2016/01/25/canvas_basical_details/" class="leancloud_visitors" data-flag-title="Canvas����֪ʶ">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><b>canvas������˸����Ч��<b></b></b></p>
-<p>��������</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var canvas = document.querySelector(&apos;canvas&apos;);</div><div class="line">var context = canvas.getContext(&apos;2d&apos;);</div><div class="line">// ��������</div><div class="line">context.clearRect(0, 0, canvas.width, canvas.height);</div></pre></td></tr></table></figure>
-<p>��������<br><a href="http://www.zhangxinxu.com/wordpress/2013/09/css3-animation-requestanimationframe-tween-�����㷨/" target="_blank" rel="external">ʹ��requestAnimationFrame��ʵ��ˢ�»���</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// requestAnimationFrame�����¼��ݴ���</div><div class="line">if (!window.requestAnimationFrame) &#123;</div><div class="line">    window.requestAnimationFrame = function(fn) &#123;</div><div class="line">        setTimeout(fn, 17);</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>����·����</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var canvas = document.querySelector(&apos;canvas&apos;);</div><div class="line">var context = canvas.getContext(&apos;2d&apos;);</div><div class="line"></div><div class="line">// ������Ⱦ</div><div class="line">var render = function () &#123;</div><div class="line">    // ��������</div><div class="line">    context.clearRect(0, 0, canvas.width, canvas.height);</div><div class="line"></div><div class="line">    // ����</div><div class="line">    draw();</div><div class="line"></div><div class="line">    // ������Ⱦ</div><div class="line">    requestAnimationFrame(render);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">render();`</div></pre></td></tr></table></figure>
-<p>�ο�</p>
-<blockquote>
-<p><a href="http://www.zhangxinxu.com/wordpress/2017/03/canvas-2d-cool-affect-skills-technology/" target="_blank" rel="external">canvas 2D�ſᶯЧ��ʵ����·����Ҫ�ļ�������</a><br><a href="http://www.zhangxinxu.com/wordpress/?p=3695" target="_blank" rel="external">CSS3������ôǿ��requestAnimationFrame����ë���ã�</a></p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/01/25/Canvas绘制闪烁的星星/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1228,6 +1412,182 @@ var _hmt = _hmt || [];
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/01/25/canvas_basical_details/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AlexZ33">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="镜心的小树屋">
+    </span>
+
+<span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">67(字)</span> 
+         </span>
+        
+         
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="../../2016/01/25/canvas_basical_details/" itemprop="url">
+                  Canvas����֪ʶ
+                </a>
+              
+            
+          </h1>
+        
+        
+
+        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-25T19:56:16+08:00">
+                2016-01-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../../categories/j��/" itemprop="url" rel="index">
+                    <span itemprop="name">ǰ��</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="../../2016/01/25/canvas_basical_details/" class="leancloud_visitors" data-flag-title="Canvas����֪ʶ">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><b>canvas������˸����Ч��<b></b></b></p>
+<p>��������</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var canvas = document.querySelector(&apos;canvas&apos;);</div><div class="line">var context = canvas.getContext(&apos;2d&apos;);</div><div class="line">// ��������</div><div class="line">context.clearRect(0, 0, canvas.width, canvas.height);</div></pre></td></tr></table></figure>
+<p>��������<br><a href="http://www.zhangxinxu.com/wordpress/2013/09/css3-animation-requestanimationframe-tween-�����㷨/" target="_blank" rel="external">ʹ��requestAnimationFrame��ʵ��ˢ�»���</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// requestAnimationFrame�����¼��ݴ���</div><div class="line">if (!window.requestAnimationFrame) &#123;</div><div class="line">    window.requestAnimationFrame = function(fn) &#123;</div><div class="line">        setTimeout(fn, 17);</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>����·����</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var canvas = document.querySelector(&apos;canvas&apos;);</div><div class="line">var context = canvas.getContext(&apos;2d&apos;);</div><div class="line"></div><div class="line">// ������Ⱦ</div><div class="line">var render = function () &#123;</div><div class="line">    // ��������</div><div class="line">    context.clearRect(0, 0, canvas.width, canvas.height);</div><div class="line"></div><div class="line">    // ����</div><div class="line">    draw();</div><div class="line"></div><div class="line">    // ������Ⱦ</div><div class="line">    requestAnimationFrame(render);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">render();`</div></pre></td></tr></table></figure>
+<p>�ο�</p>
+<blockquote>
+<p><a href="http://www.zhangxinxu.com/wordpress/2017/03/canvas-2d-cool-affect-skills-technology/" target="_blank" rel="external">canvas 2D�ſᶯЧ��ʵ����·����Ҫ�ļ�������</a><br><a href="http://www.zhangxinxu.com/wordpress/?p=3695" target="_blank" rel="external">CSS3������ôǿ��requestAnimationFrame����ë���ã�</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/01/17/canvas仿知乎登录页面动画/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1366,177 +1726,6 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>参考：<br><a href="http://www.zhangxinxu.com/wordpress/2013/09/css3-animation-requestanimationframe-tween-动画算法/" target="_blank" rel="external">requestAnimationFrame</a><br><a href="http://es6.ruanyifeng.com/#docs/class" target="_blank" rel="external">ECMAScript 6 入门 Class</a><br><a href="http://mp.weixin.qq.com/s/e5aCrcYXjtl5msclPyDMgA" target="_blank" rel="external">初学canvas仿知乎登录页面动画</a></p>
 </blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/01/12/Canva绘制时钟/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AlexZ33">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="镜心的小树屋">
-    </span>
-
-<span class="post-time">
-	   &nbsp; | &nbsp;
-           <span class="post-meta-item-icon">
-             <i class="fa fa-calendar-o"></i>
-           </span>
-           <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">38(字)</span> 
-         </span>
-        
-         
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="../../2016/01/12/Canva绘制时钟/" itemprop="url">
-                  Canvas 绘制时钟
-                </a>
-              
-            
-          </h1>
-        
-        
-
-        
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-12T09:44:12+08:00">
-                2016-01-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="../../categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="../../2016/01/12/Canva绘制时钟/" class="leancloud_visitors" data-flag-title="Canvas 绘制时钟">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Canvas-绘制时钟"><a href="#Canvas-绘制时钟" class="headerlink" title="Canvas 绘制时钟"></a><b>Canvas 绘制时钟<b></b></b></h2><h2 id="演示链接"><a href="#演示链接" class="headerlink" title="演示链接  "></a><a href="http://jxdxsw.com/canvas_demo/clock.html">演示链接</a>  </h2><p><img src="http://on891bjlf.bkt.clouddn.com/gif/GIF.gif" alt="显示效果"><br>主要知识点</p>
-<ul>
-<li>canvas画图</li>
-<li>rotate(),lineCap(),save(),store()等api</li>
-</ul>
-<h2 id="总体思路和教程"><a href="#总体思路和教程" class="headerlink" title="总体思路和教程"></a>总体思路和教程</h2><p><a href="http://www.imooc.com/learn/612" target="_blank" rel="external">慕课网 Canvas 绘制时钟</a></p>
 
           
         
@@ -1797,7 +1986,7 @@ var _hmt = _hmt || [];
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/01/12/httpfurther/">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/01/12/Canva绘制时钟/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AlexZ33">
@@ -1815,7 +2004,7 @@ var _hmt = _hmt || [];
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">761(字)</span> 
+           <span class="post-count">38(字)</span> 
          </span>
         
          
@@ -1829,8 +2018,8 @@ var _hmt = _hmt || [];
             
               
                 
-                <a class="post-title-link" href="../../2016/01/12/httpfurther/" itemprop="url">
-                  HTTP概念进阶
+                <a class="post-title-link" href="../../2016/01/12/Canva绘制时钟/" itemprop="url">
+                  Canvas 绘制时钟
                 </a>
               
             
@@ -1888,7 +2077,7 @@ var _hmt = _hmt || [];
 
           
           
-             <span id="../../2016/01/12/httpfurther/" class="leancloud_visitors" data-flag-title="HTTP概念进阶">
+             <span id="../../2016/01/12/Canva绘制时钟/" class="leancloud_visitors" data-flag-title="Canvas 绘制时钟">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1919,197 +2108,12 @@ var _hmt = _hmt || [];
       
         
           
-            <p><b>HTTP概念进阶<b></b></b></p>
-<p>Nodejs中http模块不解析请求的具体内容，只分离出请求头和请求体<br>1、什么是回调函数？<br>回调试异步编程时的基础，将后续逻辑封装成起始函数的参数，逐层嵌套<br>2、什么事同步/异步？<br>同步：发送方发送数据后，等待接收方发回响应以后才发下一个数据包的通讯方式<br>异步：发送方发出数据后，不等接收方发回响应，接着发送下个数据包的通讯方式<br>3、什么事I/O?<br>磁盘的写入（in）磁盘的读取（out）<br>4、什么是单线程/多线程？<br>一次只能执行一个程序叫做单线程<br>一次能执行多个程序叫做多线程<br>5、什么是阻塞/非阻塞？<br>阻塞：前一个程序未执行完就得一直等待<br>非阻塞：前一个程序未执行完时可以挂起，继续执行其他程序，等到使用时再执行<br>6、什么是事件？<br>一个触发动作（例如点击按钮）<br>7、什么是事件驱动？<br>一个触发动作引起的操作（例如点击按钮后弹出一个对话框）<br>8、什么是基于事件驱动的回调？<br>为了某个事件注册了回调函数，但是这个回调函数不是马上执行，只有当事件发生的时候，才会调用回掉函数，这种函数执行的方式叫做事件驱动~这种注册回掉就是基于事件驱动的回调，如果这些回调和异步I/O（数据写入、读取）操作相关，可以看作是基于回调的异步I/O。只不过这种回调在nodejs中是有事件来驱动的<br>9、什么是事件循环？<br>事件循环Eventloop，倘若有大量的异步操作，一些I/O的耗时操作，甚至是一些定时器控制的延时操作，它们完成的时候都要调用相应的回调函数，而从完成一些密集的任务，而又不会阻塞整个程序执行的流程，此时需要一种机制来管理，这种机制叫做事件循环<br>总而言之，管理大量异步操作的机制叫做事件循环</p>
-<p>EventLoop：<br>回调函数队列，当异步函数执行时回调函数会被压入这个队列；对于node.js来说，它有一个单线程不断查询队列是否有事件，当它读取到一个事件时候，将调用与这个事件关联的js函数。</p>
-<p>事件的循环是一个<code>先进先出</code>的任务队列，回调按照他们加入队列的顺序来执行。</p>
-<p>整个队列可以理解成是普通函数和回调函数构成的一个完整的队列。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var c=0;</div><div class="line">function printIt()&#123;</div><div class="line">	console.log(c);</div><div class="line">&#125;</div><div class="line"></div><div class="line">function plus(callback)&#123;</div><div class="line">	setTimeout(function()&#123;</div><div class="line">		c+=1;</div><div class="line">		callback();</div><div class="line">&#125;,1000)</div><div class="line">&#125;</div><div class="line">	</div><div class="line"></div><div class="line">plus(printIt);</div><div class="line"></div><div class="line">//1</div></pre></td></tr></table></figure>
-<p><strong>node.js 核心思想：</strong></p>
+            <h2 id="Canvas-绘制时钟"><a href="#Canvas-绘制时钟" class="headerlink" title="Canvas 绘制时钟"></a><b>Canvas 绘制时钟<b></b></b></h2><h2 id="演示链接"><a href="#演示链接" class="headerlink" title="演示链接  "></a><a href="http://jxdxsw.com/canvas_demo/clock.html">演示链接</a>  </h2><p><img src="http://on891bjlf.bkt.clouddn.com/gif/GIF.gif" alt="显示效果"><br>主要知识点</p>
 <ul>
-<li>非阻塞</li>
-<li>单线程</li>
-<li>事件驱动</li>
+<li>canvas画图</li>
+<li>rotate(),lineCap(),save(),store()等api</li>
 </ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/01/11/js_why_block_scoping/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AlexZ33">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="镜心的小树屋">
-    </span>
-
-<span class="post-time">
-	   &nbsp; | &nbsp;
-           <span class="post-meta-item-icon">
-             <i class="fa fa-calendar-o"></i>
-           </span>
-           <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">244(字)</span> 
-         </span>
-        
-         
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="../../2016/01/11/js_why_block_scoping/" itemprop="url">
-                  为什么需要块级作用域？
-                </a>
-              
-            
-          </h1>
-        
-        
-
-        
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-11T09:56:16+08:00">
-                2016-01-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="../../categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="../../2016/01/11/js_why_block_scoping/" class="leancloud_visitors" data-flag-title="为什么需要块级作用域？">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>为什么需要块级作用域？</p>
-</blockquote>
-<p>ES5 只有全局作用域和函数作用域，没有块级作用域，这带来很多不合理的场景。</p>
-<p>第一种场景，内层变量可能会覆盖外层变量。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var tmp = new Date();</div><div class="line"></div><div class="line">function f() &#123;</div><div class="line">  console.log(tmp);</div><div class="line">  if (false) &#123;</div><div class="line">    var tmp = &apos;hello world&apos;;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">f(); // undefined</div></pre></td></tr></table></figure>
-<p>上面代码的原意是，if代码块的外部使用外层的tmp变量，内部使用内层的tmp变量。但是，函数f执行后，输出结果为undefined，原因在于变量提升，导致内层的tmp变量覆盖了外层的tmp变量。</p>
-<p>第二种场景，用来计数的循环变量泄露为全局变量。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var s = &apos;hello&apos;;</div><div class="line"></div><div class="line">for (var i = 0; i &lt; s.length; i++) &#123;</div><div class="line">  console.log(s[i]);</div><div class="line">&#125;</div><div class="line">console.log(i); // 5</div></pre></td></tr></table></figure>
-<p>上面代码中，变量i只用来控制循环，但是循环结束后，它并没有消失，泄露成了全局变量。</p>
-<p>所以ES6中引入了块级作用域。</p>
-<blockquote>
-<p><a href="http://es6.ruanyifeng.com/#docs/let#ES6-的块级作用域" target="_blank" rel="external">ES6 的块级作用域</a></p>
-</blockquote>
+<h2 id="总体思路和教程"><a href="#总体思路和教程" class="headerlink" title="总体思路和教程"></a>总体思路和教程</h2><p><a href="http://www.imooc.com/learn/612" target="_blank" rel="external">慕课网 Canvas 绘制时钟</a></p>
 
           
         
@@ -2193,7 +2197,7 @@ var _hmt = _hmt || [];
           
             <div class="site-state-item site-state-posts">
               <a href="../../index.html">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
