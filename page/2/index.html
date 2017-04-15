@@ -335,6 +335,568 @@ var _hmt = _hmt || [];
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/09/10/apache-ab并发负载压力测试/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AlexZ33">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="镜心的小树屋">
+    </span>
+
+<span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">767(字)</span> 
+         </span>
+        
+         
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="../../2016/09/10/apache-ab并发负载压力测试/" itemprop="url">
+                  apache-ab并发负载压力测试
+                </a>
+              
+            
+          </h1>
+        
+        
+
+        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-10T12:44:12+08:00">
+                2016-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../../categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="../../2016/09/10/apache-ab并发负载压力测试/" class="leancloud_visitors" data-flag-title="apache-ab并发负载压力测试">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><b>HTTP性能小测试<b></b></b></p>
+<p><strong>工具</strong><br>apache-ab</p>
+<p><strong>ab命令原理</strong> </p>
+<p>Apache的ab命令模拟多线程并发请求，测试服务器负载压力，也可以测试nginx、lighthttp、IIS等其它Web服务器的压力。<br>ab命令对发出负载的计算机要求很低，既不会占用很多CPU，也不会占用太多的内存，但却会给目标服务器造成巨大的负载，因此是某些DDOS攻击之必备良药，老少皆宜。自己使用也须谨慎。否则一次上太多的负载，造成目标服务器直接因内存耗光死机，而不得不硬重启，得不偿失。</p>
+<p>在带宽不足的情况下，最好是本机进行测试，建议使用内网的另一台或者多台服务器通过内网进行测试，这样得出的数据，准确度会高很多。远程对web服务器进行压力测试，往往效果不理想（因为网络延时过大或带宽不足）</p>
+<p><strong>下载安装：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#yum install httpd-tools</div></pre></td></tr></table></figure>
+<p><strong>参数文档：</strong><br><a href="http://httpd.apache.org/docs/2.2/programs/ab.html" target="_blank" rel="external">ab - Apache HTTP server benchmarking tool</a></p>
+<p>键入命令： </p>
+<blockquote>
+<p>ab -n1000 -c10 <a href="http://www.imooc.com/" target="_blank" rel="external">http://www.imooc.com/</a> </p>
+</blockquote>
+<p>-n发出1000个请求，-c模拟10并发，相当10人同时访问，后面是测试url） </p>
+<blockquote>
+<p>ab -t 60 -c 100 <a href="http://jxdxsw.com/">http://jxdxsw.com/</a><br>在60秒内发请求，一次100个请求。 </p>
+</blockquote>
+<p>别用我的小网站测试啊  本来就慢。。。哈哈</p>
+<p><strong>结果参数解释：</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">This is ApacheBench, Version 2.3 &lt;$Revision: 1430300 $&gt;</div><div class="line"></div><div class="line">This is ApacheBench, Version 2.3 &lt;$Revision: 1430300 $&gt;</div><div class="line">Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/</div><div class="line">Licensed to The Apache Software Foundation, http://www.apache.org/</div><div class="line"></div><div class="line"></div><div class="line">Benchmarking www.imooc.com (be patient)</div><div class="line">Completed 100 requests</div><div class="line">Completed 200 requests</div><div class="line">Completed 300 requests</div><div class="line">Completed 400 requests</div><div class="line">Completed 500 requests</div><div class="line">Completed 600 requests</div><div class="line">Completed 700 requests</div><div class="line">Completed 800 requests</div><div class="line">Completed 900 requests</div><div class="line">Completed 1000 requests</div><div class="line">Finished 1000 requests</div><div class="line"></div><div class="line"></div><div class="line">Server Software:        nginx</div><div class="line">Server Hostname:        www.imooc.com</div><div class="line">Server Port:            80</div><div class="line"></div><div class="line"></div><div class="line">Document Path:          /</div><div class="line">Document Length:        183809 bytes  //  HTTP响应数据的正文长度</div><div class="line"></div><div class="line">Concurrency Level:      10</div><div class="line">Time taken for tests:   150.110 seconds  //  所有这些请求处理完成所花费的时间 </div><div class="line">Complete requests:      1000  // 完成请求数 </div><div class="line">Failed requests:        0     // 失败请求数</div><div class="line">Write errors:           0</div><div class="line">Total transferred:      184566000 bytes  //网络总传输量 </div><div class="line">HTML transferred:       183809000 bytes   //HTML内容传输量 </div><div class="line">Requests per second:    6.66 [#/sec] (mean)  //吞吐量-每秒请求数 </div><div class="line">Time per request:       1501.104 [ms] (mean) //服务器收到请求，响应页面要花费的时间 </div><div class="line">Time per request:       150.110 [ms] (mean, across all concurrent requests)  //并发的每个请求平均消耗时间 </div><div class="line">Transfer rate:          1200.72 [Kbytes/sec] received  //平均每秒网络上的流量，可以帮助排除是否存在网络流量过大导致响应时间延长的问题</div><div class="line"></div><div class="line"></div><div class="line">//网络上消耗的时间的分解：</div><div class="line">Connection Times (ms)</div><div class="line">              min  mean[+/-sd] median   max</div><div class="line">Connect:       31  435 1009.6     43    3060</div><div class="line">Processing:   761 1047 139.6   1026    2440</div><div class="line">Waiting:      520  801 133.4    781    2191</div><div class="line">Total:        805 1482 1010.1   1100    4507</div><div class="line"></div><div class="line"></div><div class="line">// 整个场景中所有请求的响应情况。在场景中每个请求都有一个响应时间 </div><div class="line">// 其中 50％ 的用户响应时间小于 1100 毫秒 </div><div class="line">// 80 ％ 的用户响应时间小于 1297 毫秒 </div><div class="line">// 最大的响应时间小于4507 毫秒 </div><div class="line">Percentage of the requests served within a certain time (ms)</div><div class="line">  50%   1100</div><div class="line">  66%   1189</div><div class="line">  75%   1247</div><div class="line">  80%   1297</div><div class="line">  90%   3964</div><div class="line">  95%   4082</div><div class="line">  98%   4198</div><div class="line">  99%   4227</div><div class="line"> 100%   4507 (longest request)</div></pre></td></tr></table></figure>
+<p><strong>参考：</strong></p>
+<blockquote>
+<p><a href="http://www.imooc.com/video/7964" target="_blank" rel="external">慕课网  进击node.js基础 </a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/09/04/css3_picwall/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AlexZ33">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="镜心的小树屋">
+    </span>
+
+<span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">468(字)</span> 
+         </span>
+        
+         
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="../../2016/09/04/css3_picwall/" itemprop="url">
+                  CSS3实现旋转照片墙
+                </a>
+              
+            
+          </h1>
+        
+        
+
+        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-04T07:44:12+08:00">
+                2016-09-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../../categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="../../2016/09/04/css3_picwall/" class="leancloud_visitors" data-flag-title="CSS3实现旋转照片墙">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>CSS3实现旋转照片墙</strong><br><strong>效果</strong><br><img src="http://on891bjlf.bkt.clouddn.com/gif/picwall.gif" alt=""><br><strong>代码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;</div><div class="line">	&lt;title&gt;CSS3 transform旋转特效&lt;/title&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">	body&#123;</div><div class="line">	background-color:#eee;</div><div class="line">&#125;</div><div class="line"></div><div class="line">h1&#123;</div><div class="line">	text-align:center;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.container&#123;</div><div class="line">	width:960px; </div><div class="line">	height:450px; </div><div class="line">	margin:60px auto; </div><div class="line">	position:relative;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.container img&#123;</div><div class="line">	width:300px;</div><div class="line">	height: 400px;</div><div class="line">	padding:10px 10px 15px; </div><div class="line">	background:white; </div><div class="line">	border:1px solid #ddd; </div><div class="line">	box-shadow:2px 2px 3px rgba(50, 50, 50, 0.4);</div><div class="line">	-webkit-transition:all 0.5s ease-in;</div><div class="line">	-moz-transition:all 0.5s ease-in;</div><div class="line">	transition:all 0.5s ease-in; </div><div class="line">	position:absolute; </div><div class="line">	z-index:1;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.container img:hover&#123;</div><div class="line">	box-shadow:15px 15px 20px rgba(50, 50, 50, 0.4); </div><div class="line">	-webkit-transform:rotate(0deg) scale(1.20); </div><div class="line">	-moz-transform:rotate(0deg) scale(1.20); </div><div class="line">	transform:rotate(0deg) scale(1.20); </div><div class="line">	z-index:2;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pic1&#123;</div><div class="line">	left: 400px; </div><div class="line">	top: 0; </div><div class="line">	-webkit-transform: rotate(-5deg); </div><div class="line">	-moz-transform: rotate(-5deg); </div><div class="line">	transform: rotate(-5deg);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pic2&#123;</div><div class="line">	top: 0; </div><div class="line">	left: 600px; </div><div class="line">	-webkit-transform: rotate(-20deg); </div><div class="line">	-moz-transform: rotate(-20deg); </div><div class="line">	transform: rotate(-20deg);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pic3</div><div class="line">&#123;</div><div class="line">	bottom: 0; </div><div class="line">	right: 0; </div><div class="line">	-webkit-transform: rotate(5deg); </div><div class="line">	-moz-transform: rotate(5deg); </div><div class="line">	transform: rotate(5deg);</div><div class="line">&#125;</div><div class="line">	</div><div class="line">.pic4</div><div class="line">&#123;</div><div class="line">	bottom:0; </div><div class="line">	left:300px; </div><div class="line">	-webkit-transform: rotate(-10deg); </div><div class="line">	-moz-transform: rotate(-10deg); </div><div class="line">	transform: rotate(-10deg);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pic5</div><div class="line">&#123;</div><div class="line">	bottom: 0; </div><div class="line">	left: 0; </div><div class="line">	-webkit-transform: rotate(-10deg); </div><div class="line">	-moz-transform: rotate(-10deg); </div><div class="line">	transform: rotate(-10deg);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pic6</div><div class="line">&#123;</div><div class="line">	top: 0; </div><div class="line">	left:0; </div><div class="line">	-webkit-transform: rotate(10deg); </div><div class="line">	-moz-transform: rotate(10deg); </div><div class="line">	transform: rotate(10deg);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pic7</div><div class="line">&#123;</div><div class="line">	top: 0; </div><div class="line">	left: 850px; </div><div class="line">	-webkit-transform: rotate(20deg); </div><div class="line">	-moz-transform: rotate(20deg); </div><div class="line">	transform: rotate(20deg);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pic8</div><div class="line">&#123;</div><div class="line">	bottom: -20px; </div><div class="line">	right: 630px; </div><div class="line">	-webkit-transform: rotate(5deg); </div><div class="line">	-moz-transform: rotate(5deg); </div><div class="line">	transform: rotate(5deg);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pic9</div><div class="line">&#123;</div><div class="line">	top: 90px; </div><div class="line">	left: 550px; </div><div class="line">	-webkit-transform: rotate(15deg); </div><div class="line">	-moz-transform: rotate(15deg); </div><div class="line">	transform: rotate(15deg);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.pic10</div><div class="line">&#123;</div><div class="line">	left:180px; </div><div class="line">	top:20px; </div><div class="line">	-webkit-transform: rotate(-10deg); </div><div class="line">	-moz-transform: rotate(-10deg); </div><div class="line">	transform: rotate(-10deg);</div><div class="line">&#125;</div><div class="line">		</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line">	&lt;h1&gt;CSS3照片墙&lt;/h1&gt;</div><div class="line">	&lt;div class=&quot;container&quot;&gt;</div><div class="line">		&lt;img class=&quot;pic pic1&quot; src=&quot;images/mm1.jpg&quot;&gt;</div><div class="line">		&lt;img class=&quot;pic pic2&quot; src=&quot;images/mm2.jpg&quot;&gt;</div><div class="line">		&lt;img class=&quot;pic pic3&quot; src=&quot;images/mm3.jpg&quot;&gt;</div><div class="line">		&lt;img class=&quot;pic pic4&quot; src=&quot;images/mm4.jpg&quot;&gt;</div><div class="line">		&lt;img class=&quot;pic pic5&quot; src=&quot;images/mm5.jpg&quot;&gt;</div><div class="line">		&lt;img class=&quot;pic pic6&quot; src=&quot;images/mm6.jpg&quot;&gt;</div><div class="line">		&lt;img class=&quot;pic pic7&quot; src=&quot;images/mm7.jpg&quot;&gt;</div><div class="line">		&lt;img class=&quot;pic pic8&quot; src=&quot;images/mm8.jpg&quot;&gt;</div><div class="line">		&lt;img class=&quot;pic pic9&quot; src=&quot;images/mm9.jpg&quot;&gt;</div><div class="line">		&lt;img class=&quot;pic pic10&quot; src=&quot;images/mm10.jpg&quot;&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p><strong>技术点</strong></p>
+<ul>
+<li>简单CSS3实现任意设置元素的旋转角</li>
+<li>简单CSS3实现图片的等比缩放</li>
+<li>利用CSS3将元素的样式变化以动画的方式展现出来。</li>
+</ul>
+<p><strong>参考</strong></p>
+<blockquote>
+<p><a href="http://www.imooc.com/learn/227" target="_blank" rel="external">慕课网 CSS3绚丽照片墙</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/08/26/李清照有多伟大？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AlexZ33">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="镜心的小树屋">
+    </span>
+
+<span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">807(字)</span> 
+         </span>
+        
+         
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="../../2016/08/26/李清照有多伟大？/" itemprop="url">
+                  李清照有多伟大
+                </a>
+              
+            
+          </h1>
+        
+        
+
+        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-26T12:44:12+08:00">
+                2016-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../../categories/文学/" itemprop="url" rel="index">
+                    <span itemprop="name">文学</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="../../2016/08/26/李清照有多伟大？/" class="leancloud_visitors" data-flag-title="李清照有多伟大">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><b>李清照有多伟大<b></b></b></p>
+<blockquote>
+<p>本文系博主回答知乎同名问题所写文章，谢绝转载。<br><a href="https://www.zhihu.com/question/27710947/answer/119024410" target="_blank" rel="external">知乎问题链接</a></p>
+</blockquote>
+<p><strong>“秀影茕立，凝眉终古”</strong></p>
+<p>这是我脑海里易安居士的形象。</p>
+<p>我不知道她算不算的得上伟大，但我深深的被她所吸引。<br>吸引我的，</p>
+<p>是她喷珠漱玉的词章；<br>是她澄明清透的心性；<br>是她凝眉轻蹙的倩影；</p>
+<blockquote>
+<p>千古风流八咏楼，江山留与后人愁。<br>水通南国三千里，气压江城十四州。</p>
+</blockquote>
+<p>强敌临境，国脉衰颓下的八咏楼，她登临其上，再难生起“遥吟俯畅，逸兴遄飞”的博雅风华，填塞胸臆的唯有漫天匝地，茫茫无际的国恨家愁。<br>时光穿透近九百年，我仿佛看到了这位已过知命之年的女词仙，她面带倦容，风尘仆仆，两弯凝眉似蹙非蹙，一腔悲抑残形消骨。<br>生怕离别苦，多少事、欲说还休。新来瘦，非干病酒，不是悲秋<br>她少年繁华，中经丧乱，晚景凄苦。一语谓之“忧患得失，何其多也”。<br>其诗其词其人，非一个“愁”字所能概括的，可以说极为繁杂丰富，情思深远。</p>
+<blockquote>
+<p>沉醉不知归路，兴尽晚回舟，误入藕花深处</p>
+</blockquote>
+<p>这是她少女年华的娇憨</p>
+<blockquote>
+<p>小院闲窗春已深。重帘未卷影沉沉。倚楼无语理瑶琴。<br>远岫出云催薄暮，细风吹雨弄轻阴。梨花欲谢恐难禁。</p>
+</blockquote>
+<p>这是她内心的苦闷与骚动。（爱情这位不速之客终于叩启了她的心扉，撩拨着这颗多情易感的芳心，“醒时空对烛花红”当是她春情萌动的伊始。）</p>
+<blockquote>
+<p>红藕香残玉簟秋。轻解罗裳，独上兰舟。云中谁寄锦书来，雁字回时，月满西楼。<br>花自飘零水自流。一种相思，两处闲愁。此情无计可消除，才下眉头，却上心头。</p>
+</blockquote>
+<p>这是她倾诉愁肠，思恋负笈远游的丈夫的闺怨。<br>同样的情境的还有：</p>
+<blockquote>
+<p>薄雾浓云愁永昼，瑞脑销金兽。佳节又重阳，玉枕纱厨，半夜凉初透。<br>东篱把酒黄昏后，有暗香盈袖。莫道不销魂，帘卷西风，人比黄花瘦。</p>
+</blockquote>
+<p>最后三句“莫道不销魂，帘卷西风，人比黄花瘦”，可谓万斛愁情。</p>
+<blockquote>
+<p>寻寻觅觅，冷冷清清，凄凄惨惨戚戚。乍暖还寒时候，最难将息。三杯两盏淡酒，怎敌他、晚来风急？雁过也，正伤心，却是旧时相识。<br>满地黄花堆积。憔悴损，如今有谁堪摘？守着窗儿，独自怎生得黑？梧桐更兼细雨，到黄昏、点点滴滴。这次第，怎一个愁字了得！</p>
+</blockquote>
+<p>这是她晚年的凄清孤寂。<br>白铸清词，骚坛独步，这就是她的成就<br>现实中爱的匮乏与破灭，悲凉之雾广被华林，恰好为她的艺术创造提供了源源不竭的灵泉。<br>或许，她的端庄典雅、凄清之美，她那灵明的心性会同她的词句一起<br>终古滋润着浊世人群的心田。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/08/08/css3_ToolTips/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1672,531 +2234,6 @@ var _hmt = _hmt || [];
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/03/30/js实现放大镜特效/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AlexZ33">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="镜心的小树屋">
-    </span>
-
-<span class="post-time">
-	   &nbsp; | &nbsp;
-           <span class="post-meta-item-icon">
-             <i class="fa fa-calendar-o"></i>
-           </span>
-           <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">802(字)</span> 
-         </span>
-        
-         
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="../../2016/03/30/js实现放大镜特效/" itemprop="url">
-                  js实现放大镜特效
-                </a>
-              
-            
-          </h1>
-        
-        
-
-        
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-30T12:44:12+08:00">
-                2016-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="../../categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="../../2016/03/30/js实现放大镜特效/" class="leancloud_visitors" data-flag-title="js实现放大镜特效">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><b>js实现放大镜特效<b></b></b></p>
-<p><strong>效果</strong><br><img src="http://on891bjlf.bkt.clouddn.com/gif/%E6%94%BE%E5%A4%A7%E9%95%9C.gif" alt=""></p>
-<p><strong>实现原理：</strong></p>
-<p>鼠标在小图片上移动时，通过捕获鼠标在小图片上的位置，定位大图片的相应位置</p>
-<p><strong>技术点</strong></p>
-<ul>
-<li>事件捕获<ul>
-<li>onmouseover</li>
-<li>onmouseout</li>
-<li>onmousemove</li>
-</ul>
-</li>
-<li>定位<ul>
-<li>offsetLeft</li>
-<li>offsetTop</li>
-<li>offsetWidth</li>
-<li>offsetHeight</li>
-<li>event.clientX</li>
-<li>event.clientY<br><img src="http://on891bjlf.bkt.clouddn.com/image/%E6%88%AA%E5%9B%BE1491364873.png" alt=""><br><img src="http://on891bjlf.bkt.clouddn.com/image/%E6%88%AA%E5%9B%BE1491365021.png" alt=""></li>
-</ul>
-</li>
-<li>计算<br><img src="http://on891bjlf.bkt.clouddn.com/%E6%88%AA%E5%9B%BE1491389316.png" alt=""></li>
-<li>浏览器兼容性</li>
-</ul>
-<p>问号部分即：<br>objBigBoxImage.style.left<br>很容易求出  </p>
-<p>同理可以求出<br>objBigBoxImage.style.top</p>
-<p><strong>源码</strong><br><a href="https://github.com/AlexZ33/commom_special_efficiency" target="_blank" rel="external">github clone地址:</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div></pre></td><td class="code"><pre><div class="line">    &lt;!doctype html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;放大镜&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        * &#123;</div><div class="line">            margin: 0;</div><div class="line">            padding: 0</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        #demo &#123;</div><div class="line">            display: block;</div><div class="line">            width: 400px;</div><div class="line">            height: 255px;</div><div class="line">            margin: 50px;</div><div class="line">            position: relative;</div><div class="line">            border: 1px solid #ccc;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        #small-box &#123;</div><div class="line">            position: relative;</div><div class="line">            z-index: 1;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        #float-box &#123;</div><div class="line">            display: none;</div><div class="line">            width: 160px;</div><div class="line">            height: 120px;</div><div class="line">            position: absolute;</div><div class="line">            background: #ffffcc;</div><div class="line">            border: 1px solid #ccc;</div><div class="line">            filter: alpha(opacity=50);</div><div class="line">            opacity: 0.5;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        #mark &#123;</div><div class="line">            position: absolute;</div><div class="line">            display: block;</div><div class="line">            width: 400px;</div><div class="line">            height: 255px;</div><div class="line">            background-color: #fff;</div><div class="line">            filter: alpha(opacity=0);</div><div class="line">            opacity: 0;</div><div class="line">            z-index: 10;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        #big-box &#123;</div><div class="line">            display: none;</div><div class="line">            position: absolute;</div><div class="line">            top: 0;</div><div class="line">            left: 460px;</div><div class="line">            width: 400px;</div><div class="line">            height: 300px;</div><div class="line">            overflow: hidden;</div><div class="line">            border: 1px solid #ccc;</div><div class="line">            z-index: 1;;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        #big-box img &#123;</div><div class="line">            position: absolute;</div><div class="line">            z-index: 5</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">    &lt;script&gt;</div><div class="line"></div><div class="line">        //页面加载完毕后执行</div><div class="line">        window.onload = function () &#123;</div><div class="line"></div><div class="line">            var objDemo = document.getElementById(&quot;demo&quot;);</div><div class="line">            var objSmallBox = document.getElementById(&quot;small-box&quot;);</div><div class="line">            var objMark = document.getElementById(&quot;mark&quot;);</div><div class="line">            var objFloatBox = document.getElementById(&quot;float-box&quot;);</div><div class="line">            var objBigBox = document.getElementById(&quot;big-box&quot;);</div><div class="line">            var objBigBoxImage = objBigBox.getElementsByTagName(&quot;img&quot;)[0];</div><div class="line"></div><div class="line">            objMark.onmouseover = function () &#123;</div><div class="line">                objFloatBox.style.display = &quot;block&quot;</div><div class="line">                objBigBox.style.display = &quot;block&quot;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            objMark.onmouseout = function () &#123;</div><div class="line">                objFloatBox.style.display = &quot;none&quot;</div><div class="line">                objBigBox.style.display = &quot;none&quot;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            objMark.onmousemove = function (ev) &#123;</div><div class="line"></div><div class="line">                var _event = ev || window.event;  //兼容多个浏览器的event参数模式</div><div class="line"></div><div class="line">                var left = _event.clientX - objDemo.offsetLeft - objSmallBox.offsetLeft - objFloatBox.offsetWidth / 2;</div><div class="line">                var top = _event.clientY - objDemo.offsetTop - objSmallBox.offsetTop - objFloatBox.offsetHeight / 2;</div><div class="line"></div><div class="line">                if (left &lt; 0) &#123;</div><div class="line">                    left = 0;</div><div class="line">                &#125; else if (left &gt; (objMark.offsetWidth - objFloatBox.offsetWidth)) &#123;</div><div class="line">                    left = objMark.offsetWidth - objFloatBox.offsetWidth;</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                if (top &lt; 0) &#123;</div><div class="line">                    top = 0;</div><div class="line">                &#125; else if (top &gt; (objMark.offsetHeight - objFloatBox.offsetHeight)) &#123;</div><div class="line">                    top = objMark.offsetHeight - objFloatBox.offsetHeight;</div><div class="line"></div><div class="line">                &#125;</div><div class="line"></div><div class="line">                objFloatBox.style.left = left + &quot;px&quot;;   //oSmall.offsetLeft的值是相对什么而言</div><div class="line">                objFloatBox.style.top = top + &quot;px&quot;;</div><div class="line"></div><div class="line">                var percentX = left / (objMark.offsetWidth - objFloatBox.offsetWidth);</div><div class="line">                var percentY = top / (objMark.offsetHeight - objFloatBox.offsetHeight);</div><div class="line"></div><div class="line">                objBigBoxImage.style.left = -percentX * (objBigBoxImage.offsetWidth - objBigBox.offsetWidth) + &quot;px&quot;;</div><div class="line">                objBigBoxImage.style.top = -percentY * (objBigBoxImage.offsetHeight - objBigBox.offsetHeight) + &quot;px&quot;;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div id=&quot;demo&quot;&gt;</div><div class="line">    &lt;div id=&quot;small-box&quot;&gt;</div><div class="line">        &lt;div id=&quot;mark&quot;&gt;&lt;/div&gt;</div><div class="line">        &lt;div id=&quot;float-box&quot;&gt;&lt;/div&gt;</div><div class="line">        &lt;img src=&quot;image/macbook-small.jpg&quot;/&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div id=&quot;big-box&quot;&gt;</div><div class="line">        &lt;img src=&quot;image/macbook-big.jpg&quot;/&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
-<p><strong>解决兼容性问题</strong><br>测试工具：IETester<br><a href="http://www.imooc.com/video/419" target="_blank" rel="external">详情讲解</a></p>
-<p>主要思路：加一个遮罩层</p>
-<p>另附jQuery实现代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div></pre></td><td class="code"><pre><div class="line"> &lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;放大镜&lt;/title&gt;</div><div class="line">&lt;script src=&quot;http://libs.baidu.com/jquery/1.10.0/jquery.min.js&quot;&gt;&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">* &#123;</div><div class="line">margin: 0;</div><div class="line">padding: 0</div><div class="line">&#125;</div><div class="line"></div><div class="line">#demo &#123;</div><div class="line">display: block;</div><div class="line">width: 400px;</div><div class="line">height: 255px;</div><div class="line">margin: 50px;</div><div class="line">position: relative;</div><div class="line">border: 1px solid #ccc;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#small-box &#123;</div><div class="line">position: relative;</div><div class="line">z-index: 1;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#float-box &#123;</div><div class="line">display: none;</div><div class="line">width: 160px;</div><div class="line">height: 120px;</div><div class="line">position: absolute;</div><div class="line">background: #ffffcc;</div><div class="line">border: 1px solid #ccc;</div><div class="line">filter: alpha(opacity=50);</div><div class="line">opacity: 0.5;</div><div class="line">cursor: move;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#mark &#123;</div><div class="line">position: absolute;</div><div class="line">display: block;</div><div class="line">width: 400px;</div><div class="line">height: 255px;</div><div class="line">z-index: 10;</div><div class="line">background: #fff;</div><div class="line">filter: alpha(opacity=0);</div><div class="line">opacity: 0;</div><div class="line">cursor: move;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#big-box &#123;</div><div class="line">display: none;</div><div class="line">position: absolute;</div><div class="line">top: 0;</div><div class="line">left: 460px;</div><div class="line">width: 400px;</div><div class="line">height: 300px;</div><div class="line">overflow: hidden;</div><div class="line">border: 1px solid #ccc;</div><div class="line">z-index: 1;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#big-box img &#123;</div><div class="line">position: absolute;</div><div class="line">z-index: 5</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    $(function()&#123;</div><div class="line">        var markWidth = $(&apos;#mark&apos;).width(),</div><div class="line">            markHeight = $(&apos;#mark&apos;).height(),</div><div class="line">            floatBoxWidth = $(&apos;#float-box&apos;).width(),</div><div class="line">            floatBoxHeight = $(&apos;#float-box&apos;).height(),</div><div class="line">            percent = $(&apos;#big-box&apos;).width() / $(&apos;#float-box&apos;).width()</div><div class="line">        $(&apos;#mark&apos;).on(&apos;mouseover&apos;, function()&#123;</div><div class="line">            $(&apos;#float-box&apos;).show()</div><div class="line">            $(&apos;#big-box&apos;).show()</div><div class="line">        &#125;).on(&apos;mouseout&apos;, function()&#123;</div><div class="line">            $(&apos;#float-box&apos;).hide()</div><div class="line">            $(&apos;#big-box&apos;).hide()</div><div class="line">        &#125;).on(&apos;mousemove&apos;, function(e)&#123;</div><div class="line">            e = e || window.event</div><div class="line">            var markOffset = $(&apos;#mark&apos;).offset()</div><div class="line">            var left = e.clientX - markOffset.left - floatBoxWidth / 2,</div><div class="line">                top = e.clientY - markOffset.top - floatBoxHeight / 2</div><div class="line">            if(left &lt; 0) left =0</div><div class="line">            else if(left &gt; markWidth - floatBoxWidth) left = markWidth - floatBoxWidth</div><div class="line">            if(top &lt; 0) top =0</div><div class="line">            else if(top &gt; markHeight - floatBoxHeight) top = markHeight - floatBoxHeight</div><div class="line">            $(&apos;#float-box&apos;).css(&#123;left: left+&apos;px&apos;, top: top+&apos;px&apos;&#125;)</div><div class="line">            $(&apos;#big-box&gt;img&apos;).css(&#123;left: -left*percent+&apos;px&apos;, top: -top*percent+&apos;px&apos;&#125;)</div><div class="line">        &#125;)</div><div class="line">    &#125;)</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line"></div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div id=&quot;demo&quot;&gt;</div><div class="line">&lt;div id=&quot;small-box&quot;&gt;</div><div class="line">&lt;div id=&quot;mark&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;div id=&quot;float-box&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;img src=&quot;image/macbook-small.jpg&quot;/&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div id=&quot;big-box&quot;&gt;</div><div class="line">&lt;img src=&quot;image/macbook-big.jpg&quot;/&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p>参考：</p>
-<blockquote>
-<p><a href="http://www.imooc.com/learn/32" target="_blank" rel="external">慕课网 用JS实现放大镜特效</a></p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/03/25/Python中的布尔类型运算/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AlexZ33">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="镜心的小树屋">
-    </span>
-
-<span class="post-time">
-	   &nbsp; | &nbsp;
-           <span class="post-meta-item-icon">
-             <i class="fa fa-calendar-o"></i>
-           </span>
-           <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">352(字)</span> 
-         </span>
-        
-         
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="../../2016/03/25/Python中的布尔类型运算/" itemprop="url">
-                  python中的布尔类型运算
-                </a>
-              
-            
-          </h1>
-        
-        
-
-        
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-25T14:56:16+08:00">
-                2016-03-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="../../2016/03/25/Python中的布尔类型运算/" class="leancloud_visitors" data-flag-title="python中的布尔类型运算">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><b>python中的布尔类型运算<b></b></b></p>
-<p>布尔运算在计算机中用来做条件判断，根据计算结果为True或者False，计算机可以自动执行不同的后续代码。</p>
-<p>在Python中，布尔类型还可以与其他数据类型做 and、or和not运算，请看下面的代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = True</div><div class="line">print a and &apos;a=T&apos; or &apos;a=F&apos;</div></pre></td></tr></table></figure>
-<p>计算结果不是布尔类型，而是字符串 ‘a=T’，这是为什么呢？</p>
-<p>因为Python把0、空字符串’’和None看成 False，其他数值和非空字符串都看成 True，所以：</p>
-<p>True and ‘a=T’ 计算结果是 ‘a=T’<br>继续计算 ‘a=T’ or ‘a=F’ 计算结果还是 ‘a=T’<br>要解释上述结果，又涉及到 and 和 or 运算的一条重要法则：<strong>短路计算</strong>。</p>
-<ol>
-<li><p>在计算 a and b 时，如果 a 是 False，则根据与运算法则，整个结果必定为 False，因此返回 a；如果 a 是 True，则整个计算结果必定取决与 b，因此返回 b。</p>
-</li>
-<li><p>在计算 a or b 时，如果 a 是 True，则根据或运算法则，整个计算结果必定为 True，因此返回 a；如果 a 是 False，则整个计算结果必定取决于 b，因此返回 b。</p>
-</li>
-</ol>
-<p>所以Python解释器在做布尔运算时，只要能提前确定计算结果，它就不会往后算了，直接返回结果。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://jxdxsw.com../../2016/03/07/js闭包/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AlexZ33">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://on891bjlf.bkt.clouddn.com/image/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="镜心的小树屋">
-    </span>
-
-<span class="post-time">
-	   &nbsp; | &nbsp;
-           <span class="post-meta-item-icon">
-             <i class="fa fa-calendar-o"></i>
-           </span>
-           <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">187(字)</span> 
-         </span>
-        
-         
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="../../2016/03/07/js闭包/" itemprop="url">
-                  js闭包
-                </a>
-              
-            
-          </h1>
-        
-        
-
-        
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-07T18:44:12+08:00">
-                2016-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="../../categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="../../2016/03/07/js闭包/" class="leancloud_visitors" data-flag-title="js闭包">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><b>js闭包<b></b></b></p>
-<p>闭包<br>（1）概念<br>闭包是指有权访问另一个函数作用域中的变量的函数。<br>（2）特性<br>闭包只能取得包含函数中任何变量的最后一个值。<br>（3）创建方式<br>在一个函数内部创建另一个函数。<br>（4）原理<br>在一个函数内部中定义的函数会将包含函数（外部函数）的活动对象添加到其作用域中，直至解除对内部函数的应用，内部函数被销毁，外部函数的活动对象才会被销毁。<br>（5）实例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function closure()&#123;</div><div class="line">    var result=[];</div><div class="line">    for (var i = 0; i &lt; 4; i++) &#123;</div><div class="line">        result[i]=function()&#123;</div><div class="line">            console.log(i);</div><div class="line">            return i;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">    return result;</div><div class="line">&#125;</div><div class="line">var result=closure();</div><div class="line">for (var i = 0; i &lt; 4; i++) &#123;</div><div class="line">    result[i]();</div><div class="line">&#125;;</div><div class="line"></div><div class="line">//4 4 4 4</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2246,7 +2283,7 @@ var _hmt = _hmt || [];
           
             <div class="site-state-item site-state-posts">
               <a href="../../index.html">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">38</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2268,7 +2305,7 @@ var _hmt = _hmt || [];
             
             <div class="site-state-item site-state-tags">
               <a href="../../tags/index.html">
-                <span class="site-state-item-count">101</span>
+                <span class="site-state-item-count">133</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
